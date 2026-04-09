@@ -26,6 +26,7 @@ SCOPES = [
     "https://www.googleapis.com/auth/gmail.compose",
     "https://www.googleapis.com/auth/chat.spaces.readonly",
     "https://www.googleapis.com/auth/chat.messages.readonly",
+    "https://www.googleapis.com/auth/calendar",
 ]
 
 
@@ -239,6 +240,76 @@ def create_gmail_draft(service, to: str, subject: str, body_text: str,
     raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
     draft = service.users().drafts().create(userId="me", body={"message": {"raw": raw}}).execute()
     return draft["id"]
+
+
+def get_calendar_service():
+    """Build authenticated Google Calendar API service."""
+    from google.auth.transport.requests import Request
+    from google.oauth2.credentials import Credentials
+    from google_auth_oauthlib.flow import InstalledAppFlow
+    from googleapiclient.discovery import build
+
+    creds = None
+    if GMAIL_TOKEN_PATH.exists():
+        creds = Credentials.from_authorized_user_file(str(GMAIL_TOKEN_PATH), SCOPES)
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(str(GMAIL_CREDS_PATH), SCOPES)
+            creds = flow.run_local_server(port=0)
+        GMAIL_TOKEN_PATH.write_text(creds.to_json())
+    return build("calendar", "v3", credentials=creds)
+
+
+def create_calendar_event(
+    summary: str,
+    description: str = "",
+    start_date: str = None,
+    start_datetime: str = None,
+    duration_minutes: int = 30,
+    attendees: list[str] = None,
+    calendar_id: str = "giovanni@atomicfungi.com",
+) -> str:
+    """Create a Google Calendar event. Returns event ID.
+
+    Use start_date for all-day events (YYYY-MM-DD) or
+    start_datetime for timed events (YYYY-MM-DDTHH:MM:SS-04:00).
+    """
+    from datetime import datetime as dt, timedelta, timezone as tz
+    cal = get_calendar_service()
+
+    event = {"summary": summary, "description": description}
+
+    if start_date:
+        event["start"] = {"date": start_date}
+        # All-day events: end = next day
+        end = dt.strptime(start_date, "%Y-%m-%d") + timedelta(days=1)
+        event["end"] = {"date": end.strftime("%Y-%m-%d")}
+    elif start_datetime:
+        event["start"] = {"dateTime": start_datetime, "timeZone": "America/New_York"}
+        # Parse and add duration
+        if "T" in start_datetime:
+            base = start_datetime[:19]  # strip timezone
+            start_dt = dt.strptime(base, "%Y-%m-%dT%H:%M:%S")
+            end_dt = start_dt + timedelta(minutes=duration_minutes)
+            tz_part = start_datetime[19:] or "-04:00"
+            event["end"] = {"dateTime": end_dt.strftime("%Y-%m-%dT%H:%M:%S") + tz_part, "timeZone": "America/New_York"}
+    else:
+        # Default: tomorrow at 10am ET
+        tomorrow = dt.now() + timedelta(days=1)
+        start = tomorrow.replace(hour=10, minute=0, second=0)
+        event["start"] = {"dateTime": start.strftime("%Y-%m-%dT%H:%M:%S") + "-04:00", "timeZone": "America/New_York"}
+        end = start + timedelta(minutes=duration_minutes)
+        event["end"] = {"dateTime": end.strftime("%Y-%m-%dT%H:%M:%S") + "-04:00", "timeZone": "America/New_York"}
+
+    if attendees:
+        event["attendees"] = [{"email": e} for e in attendees]
+
+    event["reminders"] = {"useDefault": False, "overrides": [{"method": "popup", "minutes": 30}]}
+
+    result = cal.events().insert(calendarId=calendar_id, body=event, sendUpdates="none").execute()
+    return result.get("id", "")
 
 
 def load_prompt_template(name: str) -> str:
