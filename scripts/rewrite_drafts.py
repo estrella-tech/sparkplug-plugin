@@ -146,10 +146,15 @@ def main():
     # Categorize and filter drafts
     skip_subjects = ["af daily intel", "daily intel", "test"]
     skip_domains = ["atomicfungi.com", "gmail.com", "mass.gov"]  # skip internal + govt
+    # Non-dispensary domains to skip
+    skip_non_dispensary = [
+        "worcesterfoodhub.org", "worcesterma.gov", "mass.gov", "hbs.edu",
+        "larsendigitalexperts.com", "acquisitionsdirect.com",
+    ]
     budtender_keywords = ["requesting our samples", "connected us", "budtender", "engaging", "your team", "engaged with"]
 
     outreach_drafts = []
-    skipped = {"internal": 0, "govt": 0, "already_done": 0, "daily_intel": 0}
+    skipped = {"internal": 0, "govt": 0, "non_dispensary": 0, "already_done": 0, "daily_intel": 0}
 
     for d in drafts:
         subj_lower = d["subject"].lower()
@@ -166,8 +171,22 @@ def main():
         if domain.endswith(".gov"):
             skipped["govt"] += 1
             continue
+        if domain in skip_non_dispensary:
+            skipped["non_dispensary"] += 1
+            continue
         if skip_existing and d["draft_id"] in rewritten_ids:
             skipped["already_done"] += 1
+            continue
+
+        # Only rewrite if we can match to a dispensary/cannabis company or budtender data
+        # Check if subject/body has cannabis/dispensary signals
+        dispensary_signals = ["dispensary", "cannabis", "samples", "budtender", "sparkplug",
+                              "snap", "atomic fungi", "canna", "weed", "thc", "retail",
+                              "connected us", "your team", "your store", "your location"]
+        has_signal = any(sig in subj_lower or sig in body_lower for sig in dispensary_signals)
+
+        if not has_signal:
+            skipped["non_dispensary"] += 1
             continue
 
         # Categorize
