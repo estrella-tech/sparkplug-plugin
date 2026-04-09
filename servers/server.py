@@ -230,7 +230,7 @@ async def list_tools():
 
 def _default_export_path(name: str) -> str:
     """Return a default export path under ~/sparkplug_exports/."""
-    ts = datetime.now().strftime("%Y%m%d")
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d")
     export_dir = Path.home() / "sparkplug_exports"
     export_dir.mkdir(parents=True, exist_ok=True)
     return str(export_dir / f"sparkplug_{name}_{ts}.csv")
@@ -496,8 +496,8 @@ async def _dispatch(name: str, args: dict) -> str:
                 args["date_start"],
                 args["date_end"],
                 args["spreadsheet_id"],
-                worksheet,
-                args.get("frequency", "monthly"),
+                worksheet_name=worksheet,
+                frequency=args.get("frequency", "monthly"),
             )
         else:
             return f"Unknown data_type: {data_type}"
