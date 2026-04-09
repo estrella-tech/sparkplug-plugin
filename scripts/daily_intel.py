@@ -128,7 +128,7 @@ def analyze_data() -> dict:
     # Snap stats
     snap_stats = {
         "total_snaps": len(snaps),
-        "total_events": snap_summary.get("data", {}).get("total_events", 0) if isinstance(snap_summary.get("data"), dict) else snap_summary.get("data", 0),
+        "total_interactions": snap_summary.get("data", {}).get("total_interactions", 0) if isinstance(snap_summary.get("data"), dict) else snap_summary.get("data", 0),
         "unique_employees": snap_summary.get("data", {}).get("unique_employees", 0) if isinstance(snap_summary.get("data"), dict) else 0,
         "unique_retailers": snap_summary.get("data", {}).get("unique_retailers", 0) if isinstance(snap_summary.get("data"), dict) else 0,
     }
@@ -178,7 +178,7 @@ def format_team_chat(insights: dict) -> str:
 
     # Snaps
     ss = insights["snap_stats"]
-    lines.append(f"📱 Snaps: {ss['total_events']} events | {ss['unique_employees']} budtenders | {ss['unique_retailers']} retailers")
+    lines.append(f"📱 Snaps: {ss['total_interactions']} interactions | {ss['unique_employees']} budtenders | {ss['unique_retailers']} retailers")
     lines.append("")
 
     # Action items
@@ -214,7 +214,7 @@ def format_marketing_chat(insights: dict) -> str:
     lines = [
         f"📱 *AF Snap Engagement — {insights['date']}*",
         "",
-        f"Total events: *{ss['total_events']}*",
+        f"Total Interactions: *{ss['total_interactions']}*",
         f"Unique budtenders reached: *{ss['unique_employees']}*",
         f"Unique retailers: *{ss['unique_retailers']}*",
         f"Published Snaps: *{ss['total_snaps']}*",
@@ -293,7 +293,7 @@ def format_email_html(insights: dict) -> str:
 
         <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">📱 Snap Engagement</h2>
         <table style="width:100%;border-collapse:collapse">
-            <tr><td style="padding:6px">Total Events</td><td style="padding:6px"><b>{ss['total_events']}</b></td></tr>
+            <tr><td style="padding:6px">Total Interactions</td><td style="padding:6px"><b>{ss['total_interactions']}</b></td></tr>
             <tr><td style="padding:6px">Unique Budtenders</td><td style="padding:6px"><b>{ss['unique_employees']}</b></td></tr>
             <tr><td style="padding:6px">Unique Retailers</td><td style="padding:6px"><b>{ss['unique_retailers']}</b></td></tr>
             <tr><td style="padding:6px">Published Snaps</td><td style="padding:6px"><b>{ss['total_snaps']}</b></td></tr>
@@ -308,11 +308,9 @@ def format_email_html(insights: dict) -> str:
     return html
 
 
-def send_email_via_claude(subject: str, html_body: str, recipients: list[str], dry_run: bool = False):
-    """
-    Use Claude Code CLI to send the email via Gmail MCP.
-    Falls back to saving the HTML report locally if sending fails.
-    """
+def send_email(subject: str, html_body: str, recipients: list[str], dry_run: bool = False):
+    """Send email via gmail_sender module (OAuth2 or App Password)."""
+    # Always save a copy
     report_path = EXPORTS_DIR / f"daily_intel_{datetime.now().strftime('%Y%m%d')}.html"
     report_path.write_text(html_body, encoding="utf-8")
     print(f"  Report saved to {report_path}")
@@ -321,29 +319,11 @@ def send_email_via_claude(subject: str, html_body: str, recipients: list[str], d
         print("  [DRY RUN] Email not sent.")
         return
 
-    # Try using the Gmail MCP via Claude CLI
-    to_list = ", ".join(recipients)
-    prompt = (
-        f'Use the Gmail MCP to create and send an email draft. '
-        f'To: {to_list}. '
-        f'Subject: {subject}. '
-        f'The HTML body is saved at {report_path}. Read it and send it as an HTML email.'
-    )
-    try:
-        result = subprocess.run(
-            ["claude", "--print", "-p", prompt],
-            capture_output=True, text=True, timeout=120,
-        )
-        if result.returncode == 0:
-            print(f"  Email sent via Claude CLI")
-        else:
-            print(f"  Claude CLI email failed: {result.stderr[:200]}")
-            print(f"  Report saved at {report_path} — send manually.")
-    except FileNotFoundError:
-        print("  Claude CLI not found — report saved locally. Send manually.")
-    except Exception as e:
-        print(f"  Email send error: {e}")
-        print(f"  Report saved at {report_path} — send manually.")
+    sys.path.insert(0, str(PROJECT_ROOT / "servers"))
+    from gmail_sender import send_email as gmail_send
+    success = gmail_send(to=recipients, subject=subject, html_body=html_body)
+    if not success:
+        print(f"  Email failed — report saved at {report_path}")
 
 
 def main():
@@ -376,10 +356,8 @@ def main():
     webhooks = load_webhooks()
 
     chat_messages = {
-        "team_chat": format_team_chat(insights),
         "crm": format_crm_chat(insights),
         "digital_marketing": format_marketing_chat(insights),
-        "sample_requests": format_samples_chat(insights),
     }
 
     for key, msg in chat_messages.items():
@@ -398,7 +376,7 @@ def main():
         print("[4/4] Sending email...")
         subject = f"AF Daily Intel — {insights['date']}"
         html = format_email_html(insights)
-        send_email_via_claude(subject, html, RECIPIENTS, dry_run=dry_run)
+        send_email(subject, html, RECIPIENTS, dry_run=dry_run)
     else:
         print("[4/4] Email skipped (--chat-only)")
 

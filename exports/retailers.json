@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-04-09T17:06:07.754169+00:00",
+  "exported_at": "2026-04-09T17:23:01.188058+00:00",
   "data": [
     {
       "accountId": "64c7bccf2ce7de0012bd8022",
@@ -44,13 +44,12 @@
             "responsibleForSale": false,
             "useInventoryPipeline": true,
             "useProductPipeline": false,
-            "isFullProductSync": false,
-            "aggregateRoomInventory": false
+            "isFullProductSync": false
           },
           "name": "Ideal Craft Cannabis",
           "parentId": "64c7bd82b26dbd00129bd67d",
           "timeZone": "US/Eastern",
-          "updatedAt": "2026-04-09T16:50:54.628Z",
+          "updatedAt": "2026-04-09T17:19:26.539Z",
           "licenseNumber": "MR281779"
         }
       ],
@@ -123,7 +122,7 @@
           "name": "Major Bloom ",
           "parentId": "65aedf4a47657600123d23c7",
           "timeZone": "America/New_York",
-          "updatedAt": "2026-04-09T16:38:00.595Z",
+          "updatedAt": "2026-04-09T17:08:31.098Z",
           "licenseNumber": "MR283033"
         }
       ],
