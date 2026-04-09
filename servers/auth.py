@@ -3,12 +3,14 @@ Sparkplug auth manager.
 
 Uses Playwright to open my.sparkplug.app (or connect to an already-running
 Chrome instance) and extract the JWT token from localStorage, then stores it
-in config/sparkplug.json.
+in ~/.sparkplug/sparkplug.json.
 """
 
 import json
+import os
+import stat
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -75,7 +77,7 @@ def extract_token_via_playwright(headless: bool = False, cdp_url: str = None) ->
             "jwt_token": token,
             "group_id": group_id or "691270b4e489475b3f933902",
             "user_id": user_id,
-            "extracted_at": datetime.utcnow().isoformat() + "Z",
+            "extracted_at": datetime.now(timezone.utc).isoformat(),
         }
 
         browser.close()
@@ -83,10 +85,14 @@ def extract_token_via_playwright(headless: bool = False, cdp_url: str = None) ->
 
 
 def save_token(config: dict):
-    """Write token config to disk."""
+    """Write token config to disk with restricted permissions."""
     CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(CONFIG_PATH, "w") as f:
         json.dump(config, f, indent=2)
+    try:
+        os.chmod(CONFIG_PATH, stat.S_IRUSR | stat.S_IWUSR)
+    except OSError:
+        pass  # Windows may not support Unix-style permissions
     print(f"Token saved → {CONFIG_PATH}")
     print(f"  group_id : {config.get('group_id')}")
     print(f"  user_id  : {config.get('user_id')}")

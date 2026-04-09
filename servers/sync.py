@@ -8,7 +8,7 @@ Sync Sparkplug data to external targets:
 import csv
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -57,7 +57,7 @@ def export_sales_csv(
         row = dict(r)
         row["retailer_id"] = retailer_id
         row["retailer_name"] = retailer_name
-        row["exported_at"] = datetime.utcnow().isoformat() + "Z"
+        row["exported_at"] = datetime.now(timezone.utc).isoformat()
         rows.append(row)
 
     fieldnames = list(rows[0].keys()) if rows else ["retailer_id", "retailer_name", "exported_at"]
@@ -76,18 +76,27 @@ def export_budtender_csv(
 ) -> int:
     """Export per-budtender performance to CSV."""
     data = client.get_budtender_performance(retailer_id, date_start, date_end, frequency)
-    rows = [
-        {
-            "retailer_id": retailer_id,
-            "retailer_name": retailer_name,
-            "employee_id": emp_id,
-            "units_sold": units,
-            "date_start": date_start,
-            "date_end": date_end,
-            "exported_at": datetime.utcnow().isoformat() + "Z",
-        }
-        for emp_id, units in (data.items() if isinstance(data, dict) else {})
-    ]
+    if isinstance(data, dict):
+        rows = [
+            {
+                "retailer_id": retailer_id,
+                "retailer_name": retailer_name,
+                "employee_id": emp_id,
+                "units_sold": units,
+                "date_start": date_start,
+                "date_end": date_end,
+                "exported_at": datetime.now(timezone.utc).isoformat(),
+            }
+            for emp_id, units in data.items()
+        ]
+    elif isinstance(data, list):
+        rows = [
+            {**item, "retailer_id": retailer_id, "retailer_name": retailer_name,
+             "exported_at": datetime.now(timezone.utc).isoformat()}
+            for item in data
+        ]
+    else:
+        rows = []
     fieldnames = ["retailer_id", "retailer_name", "employee_id", "units_sold", "date_start", "date_end", "exported_at"]
     _write_csv(output_path, fieldnames, rows)
     return len(rows)
@@ -138,7 +147,7 @@ def sync_retailers_to_sheets(
             r.get("accountStatus", ""),
             str(r.get("shareSalesData", "")),
             r.get("createdAt", ""),
-            datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+            datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         ]
         for r in retailers
     ]
@@ -190,7 +199,7 @@ def sync_sales_to_sheets(
             retailer_name,
             r.get("key", r.get("date", "")),
             r.get("value", ""),
-            datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+            datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         ])
 
     sh = gc.open_by_key(spreadsheet_id)
@@ -242,7 +251,7 @@ def sync_retailers_to_hubspot(
             "sparkplug_markets": markets,
             "sparkplug_status": r.get("status", ""),
             "sparkplug_shares_sales_data": str(r.get("shareSalesData", False)).lower(),
-            "sparkplug_last_synced": datetime.utcnow().isoformat() + "Z",
+            "sparkplug_last_synced": datetime.now(timezone.utc).isoformat(),
         }
 
         try:

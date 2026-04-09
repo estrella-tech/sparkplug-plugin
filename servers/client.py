@@ -2,9 +2,12 @@
 
 import json
 import os
+import stat
 import requests
 from pathlib import Path
 from typing import Optional
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 BASE_URL = "https://api-server-production.sparkplug-technology.io/api/v1"
 VENDOR_GROUP_ID = "691270b4e489475b3f933902"
@@ -16,7 +19,17 @@ class SparkplugClient:
     def __init__(self, config_path: Optional[Path] = None):
         self.config_path = config_path or (Path.home() / ".sparkplug" / "sparkplug.json")
         self._token: Optional[str] = None
-        self._group_id: str = VENDOR_GROUP_ID
+        self._group_id: Optional[str] = None
+        self._session: Optional[requests.Session] = None
+
+    def _get_session(self) -> requests.Session:
+        if self._session is None:
+            self._session = requests.Session()
+            retry = Retry(total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504])
+            adapter = HTTPAdapter(max_retries=retry)
+            self._session.mount("https://", adapter)
+            self._session.mount("http://", adapter)
+        return self._session
 
     def load_config(self) -> dict:
         """Load token and config from file or env."""
@@ -26,10 +39,14 @@ class SparkplugClient:
         return {}
 
     def save_config(self, config: dict):
-        """Persist config to disk."""
+        """Persist config to disk with restricted permissions."""
         self.config_path.parent.mkdir(parents=True, exist_ok=True)
         with open(self.config_path, "w") as f:
             json.dump(config, f, indent=2)
+        try:
+            os.chmod(self.config_path, stat.S_IRUSR | stat.S_IWUSR)
+        except OSError:
+            pass  # Windows may not support Unix-style permissions
 
     @property
     def token(self) -> str:
@@ -47,8 +64,11 @@ class SparkplugClient:
 
     @property
     def group_id(self) -> str:
+        if self._group_id:
+            return self._group_id
         config = self.load_config()
-        return config.get("group_id") or os.environ.get("SPARKPLUG_GROUP_ID", VENDOR_GROUP_ID)
+        self._group_id = config.get("group_id") or os.environ.get("SPARKPLUG_GROUP_ID", VENDOR_GROUP_ID)
+        return self._group_id
 
     @property
     def headers(self) -> dict:
@@ -57,15 +77,26 @@ class SparkplugClient:
             "Content-Type": "application/json",
         }
 
-    def _get(self, path: str, params: dict = None) -> dict:
-        resp = requests.get(f"{BASE_URL}{path}", headers=self.headers, params=params, timeout=30)
+    def _handle_response(self, resp: requests.Response) -> dict:
+        if resp.status_code == 401:
+            self._token = None  # Clear cached token
+            raise RuntimeError(
+                "Sparkplug API returned 401 Unauthorized — JWT token may be expired. "
+                "Re-extract from browser: DevTools → Application → Local Storage → my.sparkplug.app → token, "
+                "then save to ~/.sparkplug/sparkplug.json"
+            )
         resp.raise_for_status()
         return resp.json()
 
+    def _get(self, path: str, params: dict = None) -> dict:
+        session = self._get_session()
+        resp = session.get(f"{BASE_URL}{path}", headers=self.headers, params=params, timeout=30)
+        return self._handle_response(resp)
+
     def _post(self, path: str, body: dict) -> dict:
-        resp = requests.post(f"{BASE_URL}{path}", headers=self.headers, json=body, timeout=30)
-        resp.raise_for_status()
-        return resp.json()
+        session = self._get_session()
+        resp = session.post(f"{BASE_URL}{path}", headers=self.headers, json=body, timeout=30)
+        return self._handle_response(resp)
 
     # ─── Core API methods ─────────────────────────────────────────────────────
 
@@ -124,19 +155,18 @@ class SparkplugClient:
             return data
         return data.get("snaps", data.get("data", []))
 
-    def get_snap_engagement(self, storiyme_snap_id: str) -> list[dict]:
+    def get_snap_engagement(self, storifyme_snap_id: str) -> list[dict]:
         """
         Fetch per-employee engagement rows for a single Snap.
         Returns a list of dicts with: Employee, Retailer, Location, Action,
         Total Slides, Slide, Component Id, and a raw 'data' JSON string.
 
-        storiyme_snap_id: numeric ID (storifymeSnapId field from get_snaps_list).
+        storifyme_snap_id: numeric ID (storifymeSnapId field from get_snaps_list).
         Endpoint: GET /accounts/{groupId}/{snapId}/engagement-csv
         """
-        raw = self._get(f"/accounts/{self.group_id}/{storiyme_snap_id}/engagement-csv")
+        raw = self._get(f"/accounts/{self.group_id}/{storifyme_snap_id}/engagement-csv")
         if isinstance(raw, list):
             return raw
-        # Some responses wrap in a key
         return raw.get("data", raw.get("rows", [raw]))
 
     def get_config(self) -> dict:

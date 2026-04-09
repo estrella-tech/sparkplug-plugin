@@ -8,7 +8,7 @@ import asyncio
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 # Ensure local modules are importable
@@ -96,12 +96,16 @@ TOOLS = [
         },
     ),
     types.Tool(
-        name="sparkplug_get_snaps",
-        description="List Snaps (brand content posts) published by Atomic Fungi on Sparkplug. Optionally filter to featured Snaps only.",
+        name="sparkplug_list_snaps",
+        description=(
+            "List all Snaps (brand content posts) published by Atomic Fungi on Sparkplug, including their "
+            "storifymeSnapId (needed for engagement export), name, markets, page count, and thumbnail. "
+            "Optionally filter to featured Snaps only."
+        ),
         inputSchema={
             "type": "object",
             "properties": {
-                "featured_only": {"type": "boolean", "description": "Only return featured Snaps (default: true)", "default": True},
+                "featured_only": {"type": "boolean", "description": "Only return featured Snaps (default: false)", "default": False},
             },
             "required": [],
         },
@@ -133,7 +137,7 @@ TOOLS = [
                 "date_end": {"type": "string", "description": "YYYY-MM-DD"},
                 "output_path": {
                     "type": "string",
-                    "description": "Full path where CSV will be saved (default: ~/Desktop/sparkplug_<type>_<date>.csv)",
+                    "description": "Full path where CSV will be saved (default: ~/sparkplug_exports/sparkplug_<type>_<date>.csv)",
                 },
             },
             "required": ["data_type"],
@@ -151,10 +155,10 @@ TOOLS = [
                 "spreadsheet_id": {"type": "string", "description": "Google Sheets ID (from the URL)"},
                 "data_type": {"type": "string", "enum": ["retailers", "sales_trend"], "default": "retailers"},
                 "worksheet_name": {"type": "string", "description": "Tab name to write to"},
-                "retailer_id": {"type": "string"},
+                "retailer_id": {"type": "string", "description": "Required for sales_trend"},
                 "retailer_name": {"type": "string"},
-                "date_start": {"type": "string"},
-                "date_end": {"type": "string"},
+                "date_start": {"type": "string", "description": "Required for sales_trend (YYYY-MM-DD)"},
+                "date_end": {"type": "string", "description": "Required for sales_trend (YYYY-MM-DD)"},
                 "frequency": {"type": "string", "enum": ["daily", "weekly", "monthly"], "default": "monthly"},
             },
             "required": ["spreadsheet_id"],
@@ -169,14 +173,6 @@ TOOLS = [
         inputSchema={"type": "object", "properties": {}, "required": []},
     ),
     types.Tool(
-        name="sparkplug_list_snaps",
-        description=(
-            "List all Snaps published by Atomic Fungi on Sparkplug, including their "
-            "storifymeSnapId (needed for engagement export), name, markets, and page count."
-        ),
-        inputSchema={"type": "object", "properties": {}, "required": []},
-    ),
-    types.Tool(
         name="sparkplug_get_snap_engagement",
         description=(
             "Fetch per-employee engagement rows for a specific Snap — who viewed it, "
@@ -187,7 +183,7 @@ TOOLS = [
         inputSchema={
             "type": "object",
             "properties": {
-                "storiyme_snap_id": {
+                "storifyme_snap_id": {
                     "type": "string",
                     "description": "Numeric Snap ID from storifymeSnapId field (e.g. '407108')",
                 },
@@ -196,7 +192,7 @@ TOOLS = [
                     "description": "Optional: human-readable name for labeling output",
                 },
             },
-            "required": ["storiyme_snap_id"],
+            "required": ["storifyme_snap_id"],
         },
     ),
     types.Tool(
@@ -211,7 +207,7 @@ TOOLS = [
             "properties": {
                 "output_path": {
                     "type": "string",
-                    "description": "Where to save the CSV (default: ~/Desktop/sparkplug_snap_analytics_<date>.csv)",
+                    "description": "Where to save the CSV (default: ~/sparkplug_exports/sparkplug_snap_analytics_<date>.csv)",
                 },
             },
             "required": [],
@@ -230,6 +226,16 @@ async def list_tools():
     return TOOLS
 
 
+# ─── Helpers ─────────────────────────────────────────────────────────────────
+
+def _default_export_path(name: str) -> str:
+    """Return a default export path under ~/sparkplug_exports/."""
+    ts = datetime.now().strftime("%Y%m%d")
+    export_dir = Path.home() / "sparkplug_exports"
+    export_dir.mkdir(parents=True, exist_ok=True)
+    return str(export_dir / f"sparkplug_{name}_{ts}.csv")
+
+
 # ─── Tool handler ─────────────────────────────────────────────────────────────
 
 @server.call_tool()
@@ -238,7 +244,7 @@ async def call_tool(name: str, arguments: dict):
         result = await _dispatch(name, arguments)
         return [types.TextContent(type="text", text=result)]
     except Exception as exc:
-        return [types.TextContent(type="text", text=f"❌ Error: {exc}")]
+        return [types.TextContent(type="text", text=f"Error: {exc}")]
 
 
 async def _dispatch(name: str, args: dict) -> str:
@@ -248,7 +254,7 @@ async def _dispatch(name: str, args: dict) -> str:
             config_path = client.config_path
             exists = config_path.exists()
             token_ok = bool(client.token)
-            retailers = client.get_retailers()
+            retailers = await asyncio.to_thread(client.get_retailers)
             return json.dumps({
                 "config_file_exists": exists,
                 "token_valid": token_ok,
@@ -260,7 +266,7 @@ async def _dispatch(name: str, args: dict) -> str:
 
     # ── Retailers ────────────────────────────────────────────────────────────
     elif name == "sparkplug_get_retailers":
-        retailers = client.get_retailers()
+        retailers = await asyncio.to_thread(client.get_retailers)
         formatted = [
             {
                 "id": r.get("accountId"),
@@ -277,7 +283,8 @@ async def _dispatch(name: str, args: dict) -> str:
 
     # ── Sales totals ─────────────────────────────────────────────────────────
     elif name == "sparkplug_get_sales":
-        data = client.get_sales_totals(
+        data = await asyncio.to_thread(
+            client.get_sales_totals,
             args["retailer_id"],
             args["date_start"],
             args["date_end"],
@@ -287,7 +294,8 @@ async def _dispatch(name: str, args: dict) -> str:
 
     # ── Sales trend (buckets) ────────────────────────────────────────────────
     elif name == "sparkplug_get_sales_trend":
-        data = client.get_sales_buckets(
+        data = await asyncio.to_thread(
+            client.get_sales_buckets,
             args["retailer_id"],
             args["date_start"],
             args["date_end"],
@@ -297,27 +305,43 @@ async def _dispatch(name: str, args: dict) -> str:
 
     # ── Budtender performance ────────────────────────────────────────────────
     elif name == "sparkplug_get_budtender_performance":
-        data = client.get_budtender_performance(
+        data = await asyncio.to_thread(
+            client.get_budtender_performance,
             args["retailer_id"],
             args["date_start"],
             args["date_end"],
             args.get("frequency", "monthly"),
         )
-        # Format as list for readability
-        formatted = [{"employee_id": k, "units_sold": v} for k, v in (data.items() if isinstance(data, dict) else {})]
-        formatted.sort(key=lambda x: x["units_sold"], reverse=True)
+        if isinstance(data, dict):
+            formatted = [{"employee_id": k, "units_sold": v} for k, v in data.items()]
+        elif isinstance(data, list):
+            formatted = data
+        else:
+            formatted = []
+        formatted.sort(key=lambda x: x.get("units_sold", 0), reverse=True)
         return json.dumps(formatted, indent=2)
 
     # ── Products with sales ──────────────────────────────────────────────────
     elif name == "sparkplug_get_products_with_sales":
-        products = client.get_products_with_sales(
-            args["retailer_id"], args["date_start"], args["date_end"]
+        products = await asyncio.to_thread(
+            client.get_products_with_sales,
+            args["retailer_id"], args["date_start"], args["date_end"],
         )
         return json.dumps({"products_with_sales": products, "count": len(products)}, indent=2)
 
     # ── Snap list ────────────────────────────────────────────────────────────
     elif name == "sparkplug_list_snaps":
-        snaps = client.get_snaps_list()
+        featured = args.get("featured_only", False)
+        if featured:
+            data = await asyncio.to_thread(
+                client._get,
+                f"/accounts/{client.group_id}/snaps",
+                {"featured": "true"},
+            )
+            snaps = data if isinstance(data, list) else data.get("snaps", data.get("data", []))
+        else:
+            snaps = await asyncio.to_thread(client.get_snaps_list)
+
         formatted = [
             {
                 "snap_id": s.get("storifymeSnapId"),
@@ -328,15 +352,15 @@ async def _dispatch(name: str, args: dict) -> str:
                 "thumbnail": s.get("thumbnailUrl"),
                 "created_at": s.get("createdAt"),
             }
-            for s in snaps
+            for s in (snaps if isinstance(snaps, list) else [snaps])
         ]
         return json.dumps(formatted, indent=2)
 
     # ── Snap engagement (per-snap) ────────────────────────────────────────────
     elif name == "sparkplug_get_snap_engagement":
-        snap_id = args["storiyme_snap_id"]
+        snap_id = args["storifyme_snap_id"]
         snap_name = args.get("snap_name", snap_id)
-        rows = client.get_snap_engagement(snap_id)
+        rows = await asyncio.to_thread(client.get_snap_engagement, snap_id)
         summary = {
             "snap_id": snap_id,
             "snap_name": snap_name,
@@ -353,14 +377,11 @@ async def _dispatch(name: str, args: dict) -> str:
 
     # ── Export ALL snap analytics to CSV ─────────────────────────────────────
     elif name == "sparkplug_export_all_snap_analytics":
-        from pathlib import Path
         import csv as csv_mod
 
-        ts = datetime.now().strftime("%Y%m%d")
-        default_path = str(Path.home() / "Desktop" / f"sparkplug_snap_analytics_{ts}.csv")
-        output_path = args.get("output_path", default_path)
+        output_path = args.get("output_path", _default_export_path("snap_analytics"))
 
-        snaps = client.get_snaps_list()
+        snaps = await asyncio.to_thread(client.get_snaps_list)
         all_rows = []
         for snap in snaps:
             snap_id = snap.get("storifymeSnapId")
@@ -368,7 +389,7 @@ async def _dispatch(name: str, args: dict) -> str:
             if not snap_id:
                 continue
             try:
-                rows = client.get_snap_engagement(str(snap_id))
+                rows = await asyncio.to_thread(client.get_snap_engagement, str(snap_id))
                 for r in rows:
                     row = {
                         "snap_name": snap_name,
@@ -399,36 +420,18 @@ async def _dispatch(name: str, args: dict) -> str:
             "file": output_path if all_rows else "No data to export",
         }, indent=2)
 
-    # ── Snaps (featured list) ─────────────────────────────────────────────────
-    elif name == "sparkplug_get_snaps":
-        featured = args.get("featured_only", True)
-        data = client._get(
-            f"/accounts/{client.group_id}/snaps",
-            params={"featured": str(featured).lower()},
-        )
-        snaps = data if isinstance(data, list) else data.get("snaps", data.get("data", []))
-        formatted = [
-            {
-                "id": s.get("_id") or s.get("id"),
-                "title": s.get("title"),
-                "type": s.get("type"),
-                "status": s.get("status"),
-                "featured": s.get("featured"),
-                "created_at": s.get("createdAt"),
-                "views": s.get("views"),
-            }
-            for s in (snaps if isinstance(snaps, list) else [snaps])
-        ]
-        return json.dumps(formatted, indent=2)
-
     # ── Reach analytics ──────────────────────────────────────────────────────
     elif name == "sparkplug_get_reach":
-        data = client._post(f"/accounts/{client.group_id}/reach-with-breakdown", body={})
+        data = await asyncio.to_thread(
+            client._post, f"/accounts/{client.group_id}/reach-with-breakdown", {},
+        )
         return json.dumps(data, indent=2)
 
     # ── Brands ───────────────────────────────────────────────────────────────
     elif name == "sparkplug_get_brands":
-        data = client._get(f"/accounts/{client.group_id}/spark-brands")
+        data = await asyncio.to_thread(
+            client._get, f"/accounts/{client.group_id}/spark-brands",
+        )
         brands = data if isinstance(data, list) else data.get("data", [])
         formatted = [
             {"id": b.get("_id") or b.get("id"), "name": b.get("name"), "photo": b.get("photo")}
@@ -439,14 +442,15 @@ async def _dispatch(name: str, args: dict) -> str:
     # ── CSV Export ───────────────────────────────────────────────────────────
     elif name == "sparkplug_export_csv":
         data_type = args["data_type"]
-        ts = datetime.now().strftime("%Y%m%d")
-        default_path = str(Path.home() / "Desktop" / f"sparkplug_{data_type}_{ts}.csv")
-        output_path = args.get("output_path", default_path)
+        output_path = args.get("output_path", _default_export_path(data_type))
 
         if data_type == "retailers":
-            count = sp_sync.export_retailers_csv(client, output_path)
+            count = await asyncio.to_thread(sp_sync.export_retailers_csv, client, output_path)
         elif data_type == "sales_trend":
-            count = sp_sync.export_sales_csv(
+            if "retailer_id" not in args or "date_start" not in args or "date_end" not in args:
+                return json.dumps({"error": "sales_trend requires retailer_id, date_start, and date_end"})
+            count = await asyncio.to_thread(
+                sp_sync.export_sales_csv,
                 client,
                 args["retailer_id"],
                 args.get("retailer_name", args["retailer_id"]),
@@ -456,7 +460,10 @@ async def _dispatch(name: str, args: dict) -> str:
                 args.get("frequency", "monthly"),
             )
         elif data_type == "budtender_performance":
-            count = sp_sync.export_budtender_csv(
+            if "retailer_id" not in args or "date_start" not in args or "date_end" not in args:
+                return json.dumps({"error": "budtender_performance requires retailer_id, date_start, and date_end"})
+            count = await asyncio.to_thread(
+                sp_sync.export_budtender_csv,
                 client,
                 args["retailer_id"],
                 args.get("retailer_name", args["retailer_id"]),
@@ -475,17 +482,22 @@ async def _dispatch(name: str, args: dict) -> str:
         worksheet = args.get("worksheet_name", f"Sparkplug {data_type.replace('_', ' ').title()}")
 
         if data_type == "retailers":
-            count = sp_sync.sync_retailers_to_sheets(client, args["spreadsheet_id"], worksheet_name=worksheet)
+            count = await asyncio.to_thread(
+                sp_sync.sync_retailers_to_sheets, client, args["spreadsheet_id"], worksheet,
+            )
         elif data_type == "sales_trend":
-            count = sp_sync.sync_sales_to_sheets(
+            if "retailer_id" not in args or "date_start" not in args or "date_end" not in args:
+                return json.dumps({"error": "sales_trend requires retailer_id, date_start, and date_end"})
+            count = await asyncio.to_thread(
+                sp_sync.sync_sales_to_sheets,
                 client,
                 args["retailer_id"],
                 args.get("retailer_name", ""),
                 args["date_start"],
                 args["date_end"],
                 args["spreadsheet_id"],
-                worksheet_name=worksheet,
-                frequency=args.get("frequency", "monthly"),
+                worksheet,
+                args.get("frequency", "monthly"),
             )
         else:
             return f"Unknown data_type: {data_type}"
@@ -494,7 +506,7 @@ async def _dispatch(name: str, args: dict) -> str:
 
     # ── HubSpot Sync ─────────────────────────────────────────────────────────
     elif name == "sparkplug_sync_to_hubspot":
-        result = sp_sync.sync_retailers_to_hubspot(client)
+        result = await asyncio.to_thread(sp_sync.sync_retailers_to_hubspot, client)
         return json.dumps(result, indent=2)
 
     else:
