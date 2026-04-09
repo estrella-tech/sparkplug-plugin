@@ -1,0 +1,98 @@
+{
+  "exported_at": "2026-04-09T16:18:06.335784+00:00",
+  "data": [
+    {
+      "retailer_id": "64c7bccf2ce7de0012bd8022",
+      "retailer_name": "Ideal Craft Cannabis",
+      "period": "7d",
+      "date_start": "2026-04-02",
+      "date_end": "2026-04-09",
+      "data": {
+        "keys": [],
+        "rows": []
+      }
+    },
+    {
+      "retailer_id": "64c7bccf2ce7de0012bd8022",
+      "retailer_name": "Ideal Craft Cannabis",
+      "period": "30d",
+      "date_start": "2026-03-10",
+      "date_end": "2026-04-09",
+      "data": {
+        "keys": [],
+        "rows": []
+      }
+    },
+    {
+      "retailer_id": "64c7bccf2ce7de0012bd8022",
+      "retailer_name": "Ideal Craft Cannabis",
+      "period": "90d",
+      "date_start": "2026-01-09",
+      "date_end": "2026-04-09",
+      "data": {
+        "keys": [],
+        "rows": []
+      }
+    },
+    {
+      "retailer_id": "65aedee5ae79f200127e9754",
+      "retailer_name": "Major Bloom",
+      "period": "7d",
+      "date_start": "2026-04-02",
+      "date_end": "2026-04-09",
+      "data": {
+        "keys": [
+          "value",
+          "label"
+        ],
+        "rows": [
+          {
+            "key": "*",
+            "value": 3,
+            "label": "Total Units of All 1 Retailer"
+          }
+        ]
+      }
+    },
+    {
+      "retailer_id": "65aedee5ae79f200127e9754",
+      "retailer_name": "Major Bloom",
+      "period": "30d",
+      "date_start": "2026-03-10",
+      "date_end": "2026-04-09",
+      "data": {
+        "keys": [
+          "value",
+          "label"
+        ],
+        "rows": [
+          {
+            "key": "*",
+            "value": 17,
+            "label": "Total Units of All 1 Retailer"
+          }
+        ]
+      }
+    },
+    {
+      "retailer_id": "65aedee5ae79f200127e9754",
+      "retailer_name": "Major Bloom",
+      "period": "90d",
+      "date_start": "2026-01-09",
+      "date_end": "2026-04-09",
+      "data": {
+        "keys": [
+          "value",
+          "label"
+        ],
+        "rows": [
+          {
+            "key": "*",
+            "value": 17,
+            "label": "Total Units of All 1 Retailer"
+          }
+        ]
+      }
+    }
+  ]
+}

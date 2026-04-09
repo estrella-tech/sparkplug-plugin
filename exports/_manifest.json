@@ -1,0 +1,18 @@
+{
+  "exported_at": "2026-04-09T16:18:22.268659+00:00",
+  "data": {
+    "export_date": "2026-04-09",
+    "export_timestamp": "2026-04-09T16:18:00.992486+00:00",
+    "retailers_count": 2,
+    "snaps_count": 20,
+    "files": [
+      "retailers.json",
+      "sales_totals.json",
+      "sales_trends.json",
+      "budtender_performance.json",
+      "snaps.json",
+      "snap_engagement.csv",
+      "snap_engagement_summary.json"
+    ]
+  }
+}

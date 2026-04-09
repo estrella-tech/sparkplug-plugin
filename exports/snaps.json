@@ -1,0 +1,533 @@
+{
+  "exported_at": "2026-04-09T16:18:07.416986+00:00",
+  "data": [
+    {
+      "_id": "6977a5c0909038193cd1e3ae",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 364177,
+      "__v": 0,
+      "createdAt": "2026-01-26T17:34:56.668Z",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1769373731244-239418-1769374139548",
+      "markets": null,
+      "name": "SparkPlug 1",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/364177/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-01-26T17:34:56.668Z"
+    },
+    {
+      "_id": "69815a9f187c0bac4e1180d3",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 364205,
+      "__v": 0,
+      "createdAt": "2026-02-03T02:17:03.575Z",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1769375176588-646688-1769375317795",
+      "markets": null,
+      "name": "SparkPlug 3",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/364205/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-02-03T02:17:03.575Z"
+    },
+    {
+      "_id": "6977a655909038193cd1e3fa",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 364780,
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-01-26T17:37:25.602Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-01-26T17:36:19.514Z",
+          "_id": "6977a655dcea31d5703543ac",
+          "endDate": "2026-01-29T21:15:23.676Z"
+        },
+        {
+          "startDate": "2026-03-13T19:10:54.000Z",
+          "_id": "69b4614415ddda05fb9202c9",
+          "endDate": "2026-03-15T18:38:52.394Z"
+        },
+        {
+          "startDate": "2026-03-18T18:02:29.603Z",
+          "_id": "69bae8b6e409070f7b015de4",
+          "endDate": "2026-03-18T19:02:12.665Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1769448983491-1005733-1769449044512",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/364780/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-03-18T19:02:12.951Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "697bce9f187c0bac4e109a65",
+      "storifymeSnapId": 367779,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-01-29T21:18:23.823Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-01-29T21:17:24.587Z",
+          "_id": "697bce9f9dd4410eacc83e7b",
+          "endDate": "2026-02-03T02:27:41.435Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1769721447904-367345-1769721502709",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/367779/poster.png",
+      "totalPages": 4,
+      "updatedAt": "2026-02-03T02:27:42.254Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69815d47187c0bac4e118180",
+      "storifymeSnapId": 370485,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-02-03T02:28:23.157Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-02-03T02:27:49.367Z",
+          "_id": "69815d47605ed7b6f06f3dd6",
+          "endDate": "2026-02-03T02:31:45.457Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1770085673009-408268-1770085697607",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/370485/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-02-03T02:31:50.120Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69853140187c0bac4e1262f3",
+      "storifymeSnapId": 370486,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "createdAt": "2026-02-06T00:09:36.224Z",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1770085730407-438572-1770085856784",
+      "markets": null,
+      "name": "SparkPlug 4",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/370486/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-02-06T00:09:36.224Z"
+    },
+    {
+      "_id": "6985311f187c0bac4e1262ef",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 370487,
+      "__v": 0,
+      "createdAt": "2026-02-06T00:09:03.753Z",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1770086087908-696126-1770086168066",
+      "markets": null,
+      "name": "SparkPlug 5",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/370487/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-02-06T00:09:03.753Z"
+    },
+    {
+      "_id": "69815f47187c0bac4e118193",
+      "storifymeSnapId": 370488,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-02-03T02:36:55.158Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-02-03T02:36:19.692Z",
+          "_id": "69815f47605ed7b6f070a505",
+          "endDate": "2026-02-06T00:11:41.780Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1770086183533-978809-1770086209974",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/370488/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-02-06T00:11:41.925Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69853619187c0bac4e126648",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 372915,
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-02-06T00:30:17.351Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-02-06T00:29:39.101Z",
+          "_id": "69853619a37f0b3896548367",
+          "endDate": "2026-02-10T22:50:12.438Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1770337782148-661974-1770337816537",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/372915/poster.png",
+      "totalPages": 4,
+      "updatedAt": "2026-02-10T22:50:13.414Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "698bb6f733d802119bb6b103",
+      "storifymeSnapId": 376243,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-02-10T22:53:43.073Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-02-10T22:52:21.664Z",
+          "_id": "698bb6f797c7d2e95a71415a",
+          "endDate": "2026-02-17T00:07:13.223Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1770763944341-500870-1770764019007",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/376243/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-02-17T00:07:13.537Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "6993b1a48426ec013c6da643",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 380913,
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-02-17T00:09:08.609Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-02-17T00:07:47.865Z",
+          "_id": "6993b1a4d0b9b8819b283bf1",
+          "endDate": "2026-02-21T03:32:55.798Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1771286871966-535076-1771286946370",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/380913/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-02-21T03:32:56.173Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "6999289e8426ec013c6ed148",
+      "storifymeSnapId": 384579,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-02-21T03:38:06.495Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-02-21T03:33:03.206Z",
+          "_id": "6999289e04d6e5ca865316ad",
+          "endDate": "2026-02-23T20:22:45.832Z"
+        },
+        {
+          "startDate": "2026-02-23T20:22:59.005Z",
+          "_id": "699cb72539e77daf3217a01c",
+          "endDate": "2026-03-01T21:40:19.700Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1771644786132-136676-1771645085394",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/384579/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-03-01T21:40:19.901Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69a4b95761f63a67288873fe",
+      "storifymeSnapId": 391041,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-03-01T22:10:31.787Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-03-01T22:09:58.710Z",
+          "_id": "69a4b957dea700eec98c9608",
+          "endDate": "2026-03-11T17:56:53.907Z"
+        },
+        {
+          "startDate": "2026-03-11T17:57:09.904Z",
+          "_id": "69b1acf633b87caa3fafe453",
+          "endDate": "2026-03-11T18:00:49.766Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1772403002762-603036-1772403030833",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/391041/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-03-11T18:00:49.992Z",
+      "updatedBy": "69151b47fa4c785f1ce87049"
+    },
+    {
+      "_id": "69b345c861f63a67288b3a14",
+      "storifymeSnapId": 399070,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-03-12T23:01:28.575Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-03-12T23:00:24.390Z",
+          "_id": "69b345c8214fb9022dd4f277",
+          "endDate": "2026-03-13T19:10:49.193Z"
+        },
+        {
+          "startDate": "2026-03-15T18:39:00.716Z",
+          "_id": "69b6fcc5012faf48af93527e",
+          "endDate": "2026-03-18T18:02:01.552Z"
+        },
+        {
+          "startDate": "2026-03-18T19:02:49.562Z",
+          "_id": "69baf6da53cce21727ef78da",
+          "endDate": "2026-03-24T22:17:51.358Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1773356427457-183366-1773356487592",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/399070/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-03-24T22:17:51.452Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69c30283ea4f3e9670148bc8",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 403107,
+      "__v": 0,
+      "createdAt": "2026-03-24T21:30:43.526Z",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1773862751584-1048979-1773863017689",
+      "markets": null,
+      "name": "SparkPlug 11",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/403107/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-03-24T21:30:43.526Z"
+    },
+    {
+      "_id": "69c30dc2ea4f3e9670148eca",
+      "storifymeSnapId": 407108,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-03-24T22:18:42.510Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-03-24T22:18:05.877Z",
+          "_id": "69c30dc2e0a33372f0a8e6c3",
+          "endDate": "2026-03-27T01:40:45.021Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1774390688786-379753-1774390721615",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/407108/poster.png",
+      "totalPages": 2,
+      "updatedAt": "2026-03-27T01:40:45.343Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69c5ed25ea4f3e9670152995",
+      "storifymeSnapId": 408691,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-03-27T02:36:21.939Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-03-27T02:24:51.311Z",
+          "_id": "69c5ed2583476557d2ff4f3a",
+          "endDate": "2026-03-28T01:45:09.545Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1774578293369-282066-1774578980676",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/408691/poster.png",
+      "totalPages": 2,
+      "updatedAt": "2026-03-28T01:45:09.709Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69c73390ea4f3e9670157a74",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 409384,
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-03-28T01:49:04.867Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-03-28T01:48:09.629Z",
+          "_id": "69c733901873dfb29f5675c9",
+          "endDate": "2026-03-31T23:19:05.835Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1774662493753-241069-1774662543907",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/409384/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-03-31T23:19:07.158Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69cc5743ea4f3e9670164017",
+      "storifymeSnapId": 411429,
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-03-31T23:22:43.296Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-03-31T23:19:47.654Z",
+          "_id": "69cc57431f01c6ab34890c58",
+          "endDate": "2026-04-06T01:15:33.864Z"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1774999191484-821484-1774999361795",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/411429/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-04-06T01:15:34.119Z",
+      "updatedBy": "691ff2f2b72c567153858787"
+    },
+    {
+      "_id": "69d3097e5c1f3630e541fb1b",
+      "storifymeAccountId": "g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902",
+      "storifymeSnapId": 414178,
+      "__v": 0,
+      "accountId": "691270b4e489475b3f933902",
+      "brandId": "69151542fa4c785f1ce28943",
+      "createdAt": "2026-04-06T01:16:46.480Z",
+      "createdBy": "691ff2f2b72c567153858787",
+      "deletedAt": null,
+      "deletedBy": null,
+      "featuredPeriods": [
+        {
+          "startDate": "2026-04-06T01:15:44.478Z",
+          "_id": "69d3097e1ee97d8248e274bf"
+        }
+      ],
+      "iframeUrl": "https://stories.storifyme.com/stories/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/snap-shared-user-1775438148037-611863-1775438205201",
+      "markets": [
+        "MA"
+      ],
+      "name": "Atomic Fungi",
+      "thumbnailUrl": "https://cdn.storifyme.com/accounts/g-jake-levin-62273-atomic-fungi-691270b4e489475b3f933902/images/414178/poster.png",
+      "totalPages": 3,
+      "updatedAt": "2026-04-06T01:16:46.480Z"
+    }
+  ]
+}

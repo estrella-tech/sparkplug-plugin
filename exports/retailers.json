@@ -1,0 +1,138 @@
+{
+  "exported_at": "2026-04-09T16:18:01.801863+00:00",
+  "data": [
+    {
+      "accountId": "64c7bccf2ce7de0012bd8022",
+      "accountType": "retailer",
+      "accountName": "Ideal Craft Cannabis",
+      "sharedMarkets": [
+        "MA"
+      ],
+      "markets": [
+        "MA"
+      ],
+      "photo": "https://d3gwxv4u3b25r6.cloudfront.net/64c7bccf2ce7de0012bd8022/account-photos/706ade1a-a975-4a7f-b2b0-e1add073f176",
+      "brandLinks": [
+        {
+          "name": "Atomic Fungi",
+          "photo": "https://d3gwxv4u3b25r6.cloudfront.net/691270b4e489475b3f933902/spark-brands/762d1bc2-b35b-44a4-9cbe-cb47980a2957",
+          "brandId": "69151542fa4c785f1ce28943",
+          "excludedProductIds": [],
+          "predictedExcludedProductIds": [],
+          "posBrandIds": [],
+          "posBrands": []
+        }
+      ],
+      "locations": [
+        {
+          "_id": "64c7c15e857bcd484b8cb2a1",
+          "createdAt": "2023-07-31T14:12:46.806Z",
+          "disabled": false,
+          "displayName": "Ideal Craft Cannabis",
+          "externalId": "Ideal Craft Cannabis-0",
+          "groupId": "64c7bccf2ce7de0012bd8022",
+          "isMedical": false,
+          "isRecreational": false,
+          "managerUserIds": [
+            "64d14257057e360012fda9ee"
+          ],
+          "metaData": {
+            "apiKey": "c934d55b6c1f4aaa94410045bf273425",
+            "outTheDoorPricing": false,
+            "funnelPreOrders": false,
+            "preOrderPosEmployeeProfileId": null,
+            "responsibleForSale": false,
+            "useInventoryPipeline": true,
+            "useProductPipeline": false,
+            "isFullProductSync": false,
+            "aggregateRoomInventory": false
+          },
+          "name": "Ideal Craft Cannabis",
+          "parentId": "64c7bd82b26dbd00129bd67d",
+          "timeZone": "US/Eastern",
+          "updatedAt": "2026-04-09T16:12:48.635Z",
+          "licenseNumber": "MR281779"
+        }
+      ],
+      "status": "pending",
+      "accountStatus": "active",
+      "createdAt": "2026-03-25T22:14:01.852Z",
+      "reminderSentAt": "2026-04-08T00:02:35.300Z",
+      "shareSalesData": true,
+      "shareInventoryData": true
+    },
+    {
+      "accountId": "65aedee5ae79f200127e9754",
+      "accountType": "retailer",
+      "accountName": "Major Bloom",
+      "sharedMarkets": [
+        "MA"
+      ],
+      "markets": [
+        "MA"
+      ],
+      "photo": "https://d3gwxv4u3b25r6.cloudfront.net/65aedee5ae79f200127e9754/account-photos/ee1252b6-20d6-455c-b08f-aadd21d9512d",
+      "brandLinks": [
+        {
+          "_id": "69b44d4aed4060145eda48e4",
+          "name": "Atomic Fungi",
+          "photo": "https://d3gwxv4u3b25r6.cloudfront.net/691270b4e489475b3f933902/spark-brands/762d1bc2-b35b-44a4-9cbe-cb47980a2957",
+          "brandId": "69151542fa4c785f1ce28943",
+          "excludedProductIds": [],
+          "predictedExcludedProductIds": [],
+          "posBrandIds": [
+            "69b44c58377811d8b5dc1f27"
+          ],
+          "posBrands": [
+            {
+              "_id": "69b44c58377811d8b5dc1f27",
+              "createdAt": "2026-03-13T17:41:44.890Z",
+              "groupId": "65aedee5ae79f200127e9754",
+              "name": "Atomic Fungi",
+              "posConfigIds": [
+                "65aedf4a47657600123d23c7"
+              ],
+              "searchName": "atomic fungi",
+              "updatedAt": "2026-04-07T07:18:39.866Z"
+            }
+          ],
+          "lastTransactionDate": "2026-04-05T03:03:27.750Z"
+        }
+      ],
+      "locations": [
+        {
+          "_id": "65aee5bef39e919d8dcb1181",
+          "createdAt": "2024-01-22T22:01:34.687Z",
+          "disabled": false,
+          "externalId": "Major Bloom -0",
+          "groupId": "65aedee5ae79f200127e9754",
+          "isMedical": false,
+          "isRecreational": false,
+          "managerUserIds": [],
+          "metaData": {
+            "apiKey": "554c603906314ae3b2bb60c4f35b6da6",
+            "outTheDoorPricing": false,
+            "funnelPreOrders": false,
+            "preOrderPosEmployeeProfileId": null,
+            "responsibleForSale": false,
+            "useInventoryPipeline": true,
+            "useProductPipeline": false,
+            "isFullProductSync": false,
+            "aggregateRoomInventory": false
+          },
+          "name": "Major Bloom ",
+          "parentId": "65aedf4a47657600123d23c7",
+          "timeZone": "America/New_York",
+          "updatedAt": "2026-04-09T16:13:02.071Z",
+          "licenseNumber": "MR283033"
+        }
+      ],
+      "status": "enabled",
+      "accountStatus": "onboarding",
+      "createdAt": "2026-03-13T17:45:46.297Z",
+      "reminderSentAt": null,
+      "shareSalesData": true,
+      "shareInventoryData": true
+    }
+  ]
+}
