@@ -24,6 +24,8 @@ SCOPES = [
     "https://www.googleapis.com/auth/gmail.send",
     "https://www.googleapis.com/auth/gmail.readonly",
     "https://www.googleapis.com/auth/gmail.compose",
+    "https://www.googleapis.com/auth/chat.spaces.readonly",
+    "https://www.googleapis.com/auth/chat.messages.readonly",
 ]
 
 
@@ -49,22 +51,24 @@ def get_gmail_service():
     return build("gmail", "v1", credentials=creds)
 
 
-def generate_with_gemini(prompt: str, max_tokens: int = 2048) -> str:
-    """Call Gemini Flash API. Free tier: 15 RPM."""
-    from google import genai
+def generate_with_llm(prompt: str, max_tokens: int = 2048) -> str:
+    """Call Anthropic Claude API (Sonnet). ~$0.01 per email rewrite."""
+    import anthropic
 
-    api_key = os.environ.get("GEMINI_API_KEY") or ""
-    if not api_key and GEMINI_KEY_PATH.exists():
-        api_key = GEMINI_KEY_PATH.read_text().strip()
+    api_key = os.environ.get("ANTHROPIC_API_KEY") or ""
+    anthropic_key_path = CONFIG_DIR / "anthropic_key.txt"
+    if not api_key and anthropic_key_path.exists():
+        api_key = anthropic_key_path.read_text().strip()
     if not api_key:
-        raise RuntimeError(f"No Gemini API key. Set GEMINI_API_KEY or save to {GEMINI_KEY_PATH}")
+        raise RuntimeError(f"No Anthropic API key. Set ANTHROPIC_API_KEY or save to {anthropic_key_path}")
 
-    client = genai.Client(api_key=api_key)
-    response = client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents=prompt,
+    client = anthropic.Anthropic(api_key=api_key)
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=max_tokens,
+        messages=[{"role": "user", "content": prompt}],
     )
-    return response.text.strip()
+    return response.content[0].text.strip()
 
 
 def load_enrichment_data() -> dict:

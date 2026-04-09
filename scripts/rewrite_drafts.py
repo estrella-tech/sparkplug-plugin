@@ -19,7 +19,7 @@ from email.utils import parseaddr
 
 sys.path.insert(0, str(Path(__file__).parent))
 from email_utils import (
-    get_gmail_service, generate_with_gemini, load_enrichment_data,
+    get_gmail_service, generate_with_llm, load_enrichment_data,
     match_company, create_gmail_draft, load_prompt_template, EXPORTS_DIR,
 )
 
@@ -79,6 +79,7 @@ def build_rewrite_prompt(draft: dict, context: dict, system_prompt: str, gold_st
 
     # Add enrichment context
     parts.append("\n\n--- CONTEXT FOR THIS EMAIL ---\n")
+    parts.append(f"EMAIL CATEGORY: {draft.get('category', 'GENERAL')}")
     parts.append(f"Recipient: {draft['to_name'] or draft['to_email']}")
     parts.append(f"Their email: {draft['to_email']}")
     parts.append(f"Original subject: {draft['subject']}")
@@ -142,30 +143,58 @@ def main():
     service = get_gmail_service()
     drafts = fetch_all_drafts(service, limit=limit)
 
-    # Filter out non-outreach drafts (skip internal emails, daily intel drafts, etc.)
-    outreach_drafts = []
+    # Categorize and filter drafts
     skip_subjects = ["af daily intel", "daily intel", "test"]
-    skip_domains = ["atomicfungi.com", "gmail.com"]  # skip internal
+    skip_domains = ["atomicfungi.com", "gmail.com", "mass.gov"]  # skip internal + govt
+    budtender_keywords = ["requesting our samples", "connected us", "budtender", "engaging", "your team", "engaged with"]
+
+    outreach_drafts = []
+    skipped = {"internal": 0, "govt": 0, "already_done": 0, "daily_intel": 0}
+
     for d in drafts:
         subj_lower = d["subject"].lower()
+        body_lower = d["body"][:500].lower()
         domain = d["to_email"].split("@")[-1].lower() if "@" in d["to_email"] else ""
+
+        # Skip non-outreach
         if any(s in subj_lower for s in skip_subjects):
+            skipped["daily_intel"] += 1
             continue
-        if domain in skip_domains:
+        if domain in ("atomicfungi.com", "gmail.com"):
+            skipped["internal"] += 1
+            continue
+        if domain.endswith(".gov"):
+            skipped["govt"] += 1
             continue
         if skip_existing and d["draft_id"] in rewritten_ids:
+            skipped["already_done"] += 1
             continue
+
+        # Categorize
+        if any(kw in subj_lower or kw in body_lower for kw in budtender_keywords):
+            d["category"] = "BUDTENDER_OUTREACH"
+        elif subj_lower.startswith("re:"):
+            d["category"] = "FOLLOW_UP"
+        else:
+            d["category"] = "GENERAL"
+
         outreach_drafts.append(d)
 
     print(f"  Total drafts: {len(drafts)}")
+    print(f"  Skipped: {skipped}")
     print(f"  Outreach drafts to rewrite: {len(outreach_drafts)}")
+    cats = {}
+    for d in outreach_drafts:
+        cats[d["category"]] = cats.get(d["category"], 0) + 1
+    print(f"  By category: {cats}")
     print()
 
     # Rewrite each
     print("[3/4] Rewriting drafts...")
     results = []
     for i, draft in enumerate(outreach_drafts):
-        print(f"\n  [{i+1}/{len(outreach_drafts)}] {draft['subject'][:60]}")
+        category = draft.get("category", "GENERAL")
+        print(f"\n  [{i+1}/{len(outreach_drafts)}] [{category}] {draft['subject'][:55]}")
         print(f"    To: {draft['to_email']}")
 
         # Match to enrichment data
@@ -195,7 +224,7 @@ def main():
             continue
 
         try:
-            rewritten = generate_with_gemini(prompt)
+            rewritten = generate_with_llm(prompt)
             print(f"    Generated {len(rewritten)} chars")
 
             # Create new draft
@@ -213,7 +242,7 @@ def main():
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             })
 
-            time.sleep(4.5)  # Stay under 15 RPM free tier limit
+            time.sleep(1)  # Brief pause between API calls
 
         except Exception as e:
             print(f"    ERROR: {e}")

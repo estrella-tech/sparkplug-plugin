@@ -16,7 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from email_utils import (
-    get_gmail_service, generate_with_gemini, load_enrichment_data,
+    get_gmail_service, generate_with_llm, load_enrichment_data,
     fuzzy_match, create_gmail_draft, load_prompt_template, EXPORTS_DIR,
 )
 
@@ -160,7 +160,7 @@ def main():
             continue
 
         try:
-            body = generate_with_gemini(prompt)
+            body = generate_with_llm(prompt)
             print(f"  Generated {len(body)} chars")
 
             to = context["to_email"] or f"info@{store_name.lower().replace(' ', '')}.com"
@@ -177,7 +177,7 @@ def main():
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             })
 
-            time.sleep(4.5)  # Rate limit
+            time.sleep(1)  # Brief pause between API calls
 
         except Exception as e:
             print(f"  ERROR: {e}")

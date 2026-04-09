@@ -58,6 +58,7 @@ def analyze_data() -> dict:
     companies_export = load_export("hubspot_companies")
     drafts_export = load_export("gmail_drafts")
     leaderboard_export = load_export("budtender_leaderboard")
+    chat_export = load_export("chat_messages")
 
     retailers = retailers_export.get("data", [])
     sales_data = sales_export.get("data", [])
@@ -168,6 +169,19 @@ def analyze_data() -> dict:
         rname = r.get("accountName", "unknown")
         action_items.append({"priority": "low", "text": f"Push latest Snap content to {rname} budtenders.", "category": "marketing"})
 
+    # --- Chat insights ---
+    chat_data = chat_export.get("data", {}) if isinstance(chat_export.get("data"), dict) else {}
+    store_visits = chat_data.get("store_visits", [])
+    recent_chat_messages = chat_data.get("messages", [])[-20:]  # last 20 messages
+
+    if store_visits:
+        for sv in store_visits[:3]:
+            action_items.append({
+                "priority": "high",
+                "text": f"Store visit mentioned in {sv.get('space', 'chat')}: \"{sv.get('text', '')[:80]}...\" — generate follow-up emails",
+                "category": "crm",
+            })
+
     # --- Budtender Leaderboard (from Snap engagement) ---
     leaderboard = leaderboard_export.get("data", []) if isinstance(leaderboard_export.get("data"), list) else []
 
@@ -187,6 +201,8 @@ def analyze_data() -> dict:
         "stale_companies": stale_companies,
         "total_drafts": total_drafts,
         "recent_drafts": recent_drafts,
+        "store_visits": store_visits,
+        "recent_chat": recent_chat_messages,
         "action_items": action_items,
     }
 

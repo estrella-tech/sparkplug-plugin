@@ -302,6 +302,77 @@ def export_gmail_drafts():
         print(f"[Gmail] Draft export failed: {e}")
 
 
+def export_chat_messages():
+    """Read recent messages from all AF Google Chat spaces."""
+    token_path = CONFIG_DIR / "gmail_token.json"
+    creds_path = CONFIG_DIR / "gmail_credentials.json"
+    if not token_path.exists() or not creds_path.exists():
+        print("[Chat] No OAuth2 token found, skipping.")
+        return
+
+    try:
+        from google.oauth2.credentials import Credentials
+        from google.auth.transport.requests import Request
+        from googleapiclient.discovery import build
+
+        SCOPES = [
+            "https://www.googleapis.com/auth/gmail.send",
+            "https://www.googleapis.com/auth/gmail.readonly",
+            "https://www.googleapis.com/auth/gmail.compose",
+            "https://www.googleapis.com/auth/chat.spaces.readonly",
+            "https://www.googleapis.com/auth/chat.messages.readonly",
+        ]
+        creds = Credentials.from_authorized_user_file(str(token_path), SCOPES)
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+
+        chat = build("chat", "v1", credentials=creds)
+
+        spaces_map = {
+            "AAQAp0pxBP8": "AF - Team Chat",
+            "AAQAO26pLzI": "AF - CRM",
+            "AAQAuAbDFSQ": "AF - Digital Marketing",
+            "AAQAo3Jic_4": "AF - Sample Requests",
+        }
+
+        all_messages = []
+        for space_id, space_name in spaces_map.items():
+            try:
+                msgs = chat.spaces().messages().list(
+                    parent=f"spaces/{space_id}", pageSize=50
+                ).execute()
+                for m in msgs.get("messages", []):
+                    sender = m.get("sender", {}).get("displayName", "Unknown")
+                    text = m.get("text", "") or ""
+                    created = m.get("createTime", "")
+                    all_messages.append({
+                        "space": space_name,
+                        "space_id": space_id,
+                        "sender": sender,
+                        "text": text,
+                        "created": created,
+                    })
+            except Exception as e:
+                print(f"  Warning: failed to read {space_name}: {e}")
+
+        # Extract store visit mentions
+        visit_keywords = ["visited", "stopped by", "went to", "dropped off", "sampling event", "tasting"]
+        store_visits = []
+        for msg in all_messages:
+            text_lower = msg["text"].lower()
+            if any(kw in text_lower for kw in visit_keywords):
+                store_visits.append(msg)
+
+        export_json("chat_messages", {
+            "total_messages": len(all_messages),
+            "messages": all_messages,
+            "store_visits": store_visits,
+        })
+        print(f"  Exported chat_messages.json ({len(all_messages)} messages, {len(store_visits)} store visits)")
+    except Exception as e:
+        print(f"[Chat] Export failed: {e}")
+
+
 def run_export():
     now = datetime.now(timezone.utc)
     print(f"=== Data Export — {now.strftime('%Y-%m-%d %H:%M UTC')} ===\n")
@@ -311,6 +382,8 @@ def run_export():
     export_hubspot()
     print()
     export_gmail_drafts()
+    print()
+    export_chat_messages()
 
     # Write manifest
     export_json("_manifest", {
