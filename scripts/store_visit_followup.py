@@ -161,6 +161,11 @@ def main():
 
         try:
             body = generate_with_llm(prompt)
+            body = body.replace("\u2014", ",")
+            en_count = body.count("\u2013")
+            if en_count > 1:
+                first = body.index("\u2013")
+                body = body[:first+1] + body[first+1:].replace("\u2013", ",")
             print(f"  Generated {len(body)} chars")
 
             to = context["to_email"] or f"info@{store_name.lower().replace(' ', '')}.com"

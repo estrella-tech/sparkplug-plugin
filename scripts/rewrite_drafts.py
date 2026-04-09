@@ -73,9 +73,12 @@ def fetch_all_drafts(service, limit: int = None) -> list[dict]:
     return drafts
 
 
-def build_rewrite_prompt(draft: dict, context: dict, system_prompt: str, gold_standard: str) -> str:
-    """Build the full prompt for Gemini."""
-    parts = [system_prompt, "\n\n--- GOLD STANDARD EMAIL (match this tone) ---\n", gold_standard]
+def build_rewrite_prompt(draft: dict, context: dict, system_prompt: str, gold_standard: str, sent_examples: str = "") -> str:
+    """Build the full prompt for the LLM."""
+    parts = [system_prompt]
+    if sent_examples:
+        parts.append("\n\n--- SENT EMAILS THAT GOT REPLIES (match this exact voice) ---\n")
+        parts.append(sent_examples)
 
     # Add enrichment context
     parts.append("\n\n--- CONTEXT FOR THIS EMAIL ---\n")
@@ -130,6 +133,7 @@ def main():
     # Load templates
     system_prompt = load_prompt_template("rewrite_prompt.txt")
     gold_standard = load_prompt_template("gold_standard_email.txt")
+    sent_examples = load_prompt_template("sent_examples.txt")
 
     # Load enrichment data
     print("[1/4] Loading enrichment data...")
@@ -227,7 +231,7 @@ def main():
             print(f"    Deal stage: {context['deal_stage']}")
 
         # Build prompt and generate
-        prompt = build_rewrite_prompt(draft, context, system_prompt, gold_standard)
+        prompt = build_rewrite_prompt(draft, context, system_prompt, gold_standard, sent_examples)
 
         if dry_run:
             print(f"    [DRY RUN] Would call Gemini with {len(prompt)} char prompt")
@@ -244,6 +248,12 @@ def main():
 
         try:
             rewritten = generate_with_llm(prompt)
+            # Strip em dashes, enforce max 1 en dash
+            rewritten = rewritten.replace("\u2014", ",")
+            en_count = rewritten.count("\u2013")
+            if en_count > 1:
+                first = rewritten.index("\u2013")
+                rewritten = rewritten[:first+1] + rewritten[first+1:].replace("\u2013", ",")
             print(f"    Generated {len(rewritten)} chars")
 
             # Create new draft
