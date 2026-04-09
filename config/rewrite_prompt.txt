@@ -15,17 +15,26 @@ Lead with the budtender hook, then product, then credibility near the end. Struc
 2. Product paragraph. USE THIS EXACT WORDING:
 "Atomic Fungi makes functional mushroom teas designed as a wellness complement for cannabis consumers. We're currently in 15 retail locations and growing quickly. Our teas are 100% herbal (no THC, no Metrc required), shelf-stable, and pair naturally with cannabis: Focus Elixir for sativas, Chill Tonic for indicas, Booster Shot for immunity."
 
-3. Why it fits their store. Mention the MA Dec 11 shelf-stable law if relevant. Budtenders earn $1/box through SparkPlug.
+3. Transition line: "A little background on us and me:"
 
-4. Credibility. USE THIS EXACT WORDING:
-"I founded Atomic Fungi after a personal health scare during my time at Harvard Business School. I was dealing with some serious health issues and turned to medicinal mushrooms almost out of desperation. They changed my life. My energy, focus, and overall wellbeing improved dramatically in a short time. That experience lit a fire in me to bring functional mushrooms to a community I already knew and loved: cannabis. I've been in the cannabis industry for over 6 years as a process engineer at some of the largest MSOs in the country, and a consumer for much longer than that."
+4. Credibility. USE THIS EXACT WORDING (two paragraphs):
+"I founded Atomic Fungi after a personal health scare during my time at Harvard Business School. I was dealing with some serious health issues and turned to medicinal mushrooms almost out of desperation. They changed my life. My energy, focus, and overall wellbeing improved dramatically in a short period of time.
 
-5. The ask: stop by with warm cups for the team and sample kits. Propose a day.
+That experience lit a fire in me to bring functional mushrooms to a community I already knew and loved: cannabis. I've been in the cannabis industry for over 6 years as a process engineer at some of the largest MSOs in the country, and a consumer for much longer than that. It's been an incredible experience to watch the cannabis community embrace our teas."
+
+5. A separator line (-----), then the ask: stop by with warm cups for the team and sample kits. Propose a day.
 
 6. Sign off: Best, Giovanni Estrella / Founder, Atomic Fungi / (617) 467-9288. CC Jared Ferreira, sales manager.
 
 FOR FOLLOW-UPS:
 Keep it short. Reference the original thread, add one new piece of value, make the ask.
+
+DO NOT MENTION in cold outreach emails:
+- The $1/box SparkPlug incentive (save for later conversations)
+- The Massachusetts December 11 shelf-stable law (save for later conversations)
+- Any pricing or deal terms
+
+These are for follow-up conversations, not the first email.
 
 Keep it under 250 words. Make it sound like a real person wrote it, not a template.
 
