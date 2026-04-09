@@ -89,7 +89,10 @@ def build_rewrite_prompt(draft: dict, context: dict, system_prompt: str, gold_st
 
     # Add enrichment context
     parts.append("\n\n--- CONTEXT FOR THIS EMAIL ---\n")
-    parts.append(f"EMAIL CATEGORY: {draft.get('category', 'GENERAL')}")
+    category = draft.get('category', 'GENERAL')
+    parts.append(f"EMAIL CATEGORY: {category}")
+    if draft.get("prior_contact"):
+        parts.append(f"IMPORTANT: We have already emailed this person/company ({draft.get('prior_count', '?')} prior sent emails found). This is NOT a cold intro. Write a follow-up that references our existing relationship. Do NOT use the full founder story. Keep it short and reference new engagement or updates since last contact.")
     parts.append(f"Recipient: {draft['to_name'] or draft['to_email']}")
     parts.append(f"Their email: {draft['to_email']}")
     parts.append(f"Original subject: {draft['subject']}")
@@ -212,6 +215,29 @@ def main():
 
     print(f"  Total drafts: {len(drafts)}")
     print(f"  Skipped: {skipped}")
+
+    # Check prior contact for each draft — switch to FOLLOW_UP if we already emailed them
+    print("  Checking prior contact history...")
+    prior_upgraded = 0
+    for d in outreach_drafts:
+        domain = d["to_email"].split("@")[-1].lower() if "@" in d["to_email"] else ""
+        if not domain:
+            continue
+        try:
+            sent = service.users().messages().list(
+                userId="me", q=f"from:me to:{domain} is:sent", maxResults=3
+            ).execute()
+            sent_msgs = sent.get("messages", [])
+            if sent_msgs:
+                d["category"] = "FOLLOW_UP"
+                d["prior_contact"] = True
+                d["prior_count"] = len(sent_msgs)
+                prior_upgraded += 1
+        except Exception:
+            pass
+    if prior_upgraded:
+        print(f"  Upgraded {prior_upgraded} drafts to FOLLOW_UP (prior sent mail found)")
+
     print(f"  Outreach drafts to rewrite: {len(outreach_drafts)}")
     cats = {}
     for d in outreach_drafts:
