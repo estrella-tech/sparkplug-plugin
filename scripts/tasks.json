@@ -1,0 +1,95 @@
+{
+  "projects": {
+    "label_redesign": {
+      "name": "Label Redesign for Wholesale Certificate",
+      "priority": "critical",
+      "blocking": "wholesale distribution, Craft Collective deal, Faire orders"
+    }
+  },
+  "tasks": [
+    {
+      "id": "label-01",
+      "project": "label_redesign",
+      "title": "Read D'Avon's inspection report (page 8 violations)",
+      "priority": "critical",
+      "status": "open",
+      "due": "2026-04-10",
+      "created": "2026-04-09",
+      "last_nagged": null,
+      "nag_count": 0,
+      "notes": "Attachment: Atomic Fungi NL GMP 2026.pdf. Plan of Correction was due Mar 27 — OVERDUE."
+    },
+    {
+      "id": "label-02",
+      "project": "label_redesign",
+      "title": "Review FDA Food Labeling Guide for structure/function claim rules",
+      "priority": "high",
+      "status": "open",
+      "due": "2026-04-11",
+      "created": "2026-04-09",
+      "last_nagged": null,
+      "nag_count": 0,
+      "notes": "Kristie flagged: implied health claims and nutrient content claims. Attachment: Food Labeling Guide 2014.pdf"
+    },
+    {
+      "id": "label-03",
+      "project": "label_redesign",
+      "title": "Identify which label claims need to change or need disclaimers",
+      "priority": "high",
+      "status": "open",
+      "due": "2026-04-12",
+      "created": "2026-04-09",
+      "last_nagged": null,
+      "nag_count": 0,
+      "notes": "Focus, immunity, gut soothing, cough relief — which can stay with disclaimers vs which must be removed?"
+    },
+    {
+      "id": "label-04",
+      "project": "label_redesign",
+      "title": "Redesign labels in Adobe Illustrator",
+      "priority": "high",
+      "status": "open",
+      "due": "2026-04-14",
+      "created": "2026-04-09",
+      "last_nagged": null,
+      "nag_count": 0,
+      "notes": "Claude can help with FDA-compliant wording. Need to update all 3 SKUs: Focus Elixir, Chill Tonic, Booster Shot."
+    },
+    {
+      "id": "label-05",
+      "project": "label_redesign",
+      "title": "Send updated artwork to printer in China",
+      "priority": "medium",
+      "status": "open",
+      "due": "2026-04-15",
+      "created": "2026-04-09",
+      "last_nagged": null,
+      "nag_count": 0,
+      "notes": "Already contacted printer. Need final files."
+    },
+    {
+      "id": "label-06",
+      "project": "label_redesign",
+      "title": "Submit Plan of Correction form to D'Avon with before/after photos",
+      "priority": "critical",
+      "status": "open",
+      "due": "2026-04-15",
+      "created": "2026-04-09",
+      "last_nagged": null,
+      "nag_count": 0,
+      "notes": "Use the Plan of Correction (Rev 3-15-17).docx template D'Avon attached. ALREADY OVERDUE from Mar 27."
+    },
+    {
+      "id": "label-07",
+      "project": "label_redesign",
+      "title": "Schedule reinspection with D'Avon once labels are reprinted",
+      "priority": "medium",
+      "status": "blocked",
+      "due": null,
+      "created": "2026-04-09",
+      "last_nagged": null,
+      "nag_count": 0,
+      "notes": "Blocked until new labels arrive from printer and are applied to products."
+    }
+  ]
+}

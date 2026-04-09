@@ -41,6 +41,27 @@ def post_to_chat(webhook_url: str, message: str) -> int:
     return resp.status_code
 
 
+def load_tasks() -> list[dict]:
+    """Load persistent task tracker."""
+    tasks_path = PROJECT_ROOT / "scripts" / "tasks.json"
+    if not tasks_path.exists():
+        return []
+    import json as _json
+    data = _json.loads(tasks_path.read_text())
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    tasks = data.get("tasks", [])
+    # Calculate overdue status
+    for t in tasks:
+        if t["status"] in ("open", "in_progress") and t.get("due"):
+            t["overdue"] = t["due"] < today
+            days = (datetime.strptime(today, "%Y-%m-%d") - datetime.strptime(t["due"], "%Y-%m-%d")).days
+            t["days_overdue"] = max(0, days)
+        else:
+            t["overdue"] = False
+            t["days_overdue"] = 0
+    return tasks
+
+
 def analyze_data() -> dict:
     now = datetime.now(timezone.utc)
     today = now.strftime("%B %d, %Y")
@@ -204,6 +225,7 @@ def analyze_data() -> dict:
         "store_visits": store_visits,
         "recent_chat": recent_chat_messages,
         "action_items": action_items,
+        "tasks": load_tasks(),
     }
 
 
@@ -309,6 +331,34 @@ def format_email_html(insights: dict) -> str:
             <b>{insights["total_drafts"]} unsent email drafts</b> sitting in Gmail. Review and send or discard to keep the pipeline moving.
         </div>'''
 
+    # Task nagging section
+    tasks = insights.get("tasks", [])
+    open_tasks = [t for t in tasks if t["status"] in ("open", "in_progress")]
+    overdue_tasks = [t for t in open_tasks if t.get("overdue")]
+    task_nag_html = ""
+    if open_tasks:
+        task_rows = ""
+        for t in sorted(open_tasks, key=lambda x: (not x.get("overdue"), x.get("due") or "9999")):
+            if t.get("overdue"):
+                bg = "background:#fde8e8;"
+                badge = f'<span style="color:#e74c3c;font-weight:bold">OVERDUE ({t["days_overdue"]}d)</span>'
+            elif t["priority"] == "critical":
+                bg = "background:#fff3cd;"
+                badge = '<span style="color:#e67e22;font-weight:bold">CRITICAL</span>'
+            else:
+                bg = ""
+                badge = t["priority"].upper()
+            task_rows += f'<tr style="{bg}"><td style="padding:6px 10px;border-bottom:1px solid #eee">{badge}</td><td style="padding:6px 10px;border-bottom:1px solid #eee">{t["title"]}</td><td style="padding:6px 10px;border-bottom:1px solid #eee">{t.get("due","")}</td></tr>'
+
+        overdue_count = len(overdue_tasks)
+        header_color = "#e74c3c" if overdue_count else "#1a3c2e"
+        task_nag_html = f'''
+        <h2 style="color:{header_color};border-bottom:2px solid {"#e74c3c" if overdue_count else "#c8a45a"};padding-bottom:8px">Open Tasks ({len(open_tasks)}{f" / {overdue_count} OVERDUE" if overdue_count else ""})</h2>
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:#f8f8f8"><th style="padding:6px 10px;text-align:left">Priority</th><th style="padding:6px 10px;text-align:left">Task</th><th style="padding:6px 10px">Due</th></tr>
+            {task_rows}
+        </table>'''
+
     ss = insights["snap_stats"]
     stale_warning = '<div style="background:#fff3cd;padding:10px;margin-bottom:20px;border-radius:4px">Data may be stale (exported >2 days ago)</div>' if insights["stale_data"] else ""
 
@@ -329,6 +379,8 @@ def format_email_html(insights: dict) -> str:
         <table style="width:100%;border-collapse:collapse">{action_html}</table>
 
         {draft_alert}
+
+        {task_nag_html}
 
         <!-- DEAL PIPELINE -->
         <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Deal Pipeline</h2>
@@ -398,8 +450,46 @@ def main():
     print(f"=== Atomic Fungi Daily Intel Pipeline ===")
     print(f"Time: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n")
 
+    # Step 0: Inbox cleanup
+    print("[0/7] Cleaning inbox...")
+    if not dry_run:
+        try:
+            from email_utils import get_gmail_service
+            svc = get_gmail_service()
+
+            # Trash promotions + social
+            for q in ["category:promotions", "category:social"]:
+                ids = []
+                pt = None
+                while True:
+                    r = svc.users().messages().list(userId="me", q=q, maxResults=500, pageToken=pt).execute()
+                    ids.extend([m["id"] for m in r.get("messages", [])])
+                    pt = r.get("nextPageToken")
+                    if not pt:
+                        break
+                if ids:
+                    for i in range(0, len(ids), 100):
+                        svc.users().messages().batchModify(userId="me", body={"ids": ids[i:i+100], "addLabelIds": ["TRASH"], "removeLabelIds": ["INBOX", "UNREAD"]}).execute()
+                    print(f"  Trashed {len(ids)} {q.split(':')[1]} emails")
+
+            # Trash known junk domains
+            junk_domains = ["redditmail.com", "protect.mcafee.com", "filterkingf.co", "goproqpilot.co",
+                            "tuliprivergroup.info", "radiinomy.org", "admetricks.com", "reorderflows.com",
+                            "asknutramarketers.com", "adaptwithspring.com", "saasaccountingpro.co",
+                            "marketing.base44.com", "newquestex.com"]
+            for domain in junk_domains:
+                r = svc.users().messages().list(userId="me", q=f"from:{domain} in:inbox", maxResults=100).execute()
+                ids = [m["id"] for m in r.get("messages", [])]
+                if ids:
+                    svc.users().messages().batchModify(userId="me", body={"ids": ids, "addLabelIds": ["TRASH"], "removeLabelIds": ["INBOX", "UNREAD"]}).execute()
+        except Exception as e:
+            print(f"  Cleanup error: {e}")
+    else:
+        print("  [DRY RUN] skipped")
+    print()
+
     # Step 1: Export
-    print("[1/4] Exporting fresh data...")
+    print("[1/7] Exporting fresh data...")
     try:
         from export_data import run_export
         run_export()
@@ -409,7 +499,7 @@ def main():
     print()
 
     # Step 2: Analyze
-    print("[2/4] Analyzing data...")
+    print("[2/7] Analyzing data...")
     insights = analyze_data()
     print(f"  Retailers: {len(insights['retailers'])}")
     print(f"  Deals: {insights['hs_total_deals']} (${insights['hs_closed_won']:,.0f} closed won)")
@@ -418,7 +508,7 @@ def main():
     print()
 
     # Step 3: Google Chat
-    print("[3/4] Posting to Google Chat...")
+    print("[3/7] Posting to Google Chat...")
     webhooks = load_webhooks()
     chat_messages = {
         "crm": format_crm_chat(insights),
@@ -436,7 +526,7 @@ def main():
     print()
 
     # Step 4: Calendar events for high-priority action items
-    print("[4/5] Creating calendar follow-ups...")
+    print("[4/7] Creating calendar follow-ups...")
     high_priority = [a for a in insights["action_items"] if a["priority"] == "high" and a["category"] == "crm"]
     if high_priority:
         try:
@@ -464,12 +554,12 @@ def main():
 
     # Step 5: Email
     if not chat_only:
-        print("[5/5] Sending email...")
+        print("[5/7] Sending email...")
         subject = f"AF Daily Intel — {insights['date']} | ${insights['hs_closed_won']:,.0f} Closed Won | {insights['total_drafts']} Unsent Drafts"
         html = format_email_html(insights)
         send_email_func(subject, html, RECIPIENTS, dry_run=dry_run)
     else:
-        print("[5/5] Email skipped (--chat-only)")
+        print("[5/7] Email skipped (--chat-only)")
 
     print("\n=== Pipeline complete ===")
 
