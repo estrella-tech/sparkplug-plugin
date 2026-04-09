@@ -1,0 +1,24 @@
+{
+  "google_chat_webhooks": {
+    "team_chat": {
+      "name": "AF - Team Chat",
+      "purpose": "General team updates, daily action items, announcements",
+      "url": "https://chat.googleapis.com/v1/spaces/AAQAp0pxBP8/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=k20dzOjomnNZVFqLZC8IiTRa0kk6BgGfScUJCTSpYRg"
+    },
+    "crm": {
+      "name": "AF - CRM",
+      "purpose": "Retailer pipeline updates, store visit logs, follow-up reminders, HubSpot alerts",
+      "url": "https://chat.googleapis.com/v1/spaces/AAQAO26pLzI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=PU81If_9mKwpLrUuCz3wnelBYBbGzWcr9bidOhRXuQI"
+    },
+    "digital_marketing": {
+      "name": "AF - Digital Marketing",
+      "purpose": "Snap engagement, content performance, marketing metrics, campaign results",
+      "url": "https://chat.googleapis.com/v1/spaces/AAQAuAbDFSQ/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Yrq_ZGdIpwyRSS4qPf2JpmSMLdHMHSIJ0sAThdH0A_4"
+    },
+    "sample_requests": {
+      "name": "AF - Sample Requests",
+      "purpose": "Sample drop-off requests, tasting coordination, product sampling logistics",
+      "url": "https://chat.googleapis.com/v1/spaces/AAQAo3Jic_4/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=I333o6SbUfVmY7E24G8t8xsIDsqwA3oiUH97JjUd5eQ"
+    }
+  }
+}
