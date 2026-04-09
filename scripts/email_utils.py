@@ -52,7 +52,7 @@ def get_gmail_service():
     return build("gmail", "v1", credentials=creds)
 
 
-def generate_with_llm(prompt: str, max_tokens: int = 2048) -> str:
+def generate_with_llm(prompt: str, system: str = None, max_tokens: int = 2048) -> str:
     """Call Anthropic Claude API (Sonnet). ~$0.01 per email rewrite."""
     import anthropic
 
@@ -64,11 +64,14 @@ def generate_with_llm(prompt: str, max_tokens: int = 2048) -> str:
         raise RuntimeError(f"No Anthropic API key. Set ANTHROPIC_API_KEY or save to {anthropic_key_path}")
 
     client = anthropic.Anthropic(api_key=api_key)
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=max_tokens,
-        messages=[{"role": "user", "content": prompt}],
-    )
+    kwargs = {
+        "model": "claude-sonnet-4-6",
+        "max_tokens": max_tokens,
+        "messages": [{"role": "user", "content": prompt}],
+    }
+    if system:
+        kwargs["system"] = system
+    response = client.messages.create(**kwargs)
     return response.content[0].text.strip()
 
 

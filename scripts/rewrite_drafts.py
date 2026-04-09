@@ -73,12 +73,19 @@ def fetch_all_drafts(service, limit: int = None) -> list[dict]:
     return drafts
 
 
-def build_rewrite_prompt(draft: dict, context: dict, system_prompt: str, gold_standard: str, sent_examples: str = "") -> str:
-    """Build the full prompt for the LLM."""
-    parts = [system_prompt]
+def build_rewrite_prompt(draft: dict, context: dict, system_prompt: str, gold_standard: str, sent_examples: str = "") -> tuple:
+    """Build system prompt and user prompt for the LLM. Returns (system, user)."""
+    # System prompt = voice + rules + examples
+    system_parts = [system_prompt]
+    system_parts.append("\n\n--- THIS IS GIOVANNI'S BEST EMAIL (match this voice and flow exactly) ---\n")
+    system_parts.append(gold_standard)
     if sent_examples:
-        parts.append("\n\n--- SENT EMAILS THAT GOT REPLIES (match this exact voice) ---\n")
-        parts.append(sent_examples)
+        system_parts.append("\n\n--- MORE EMAILS GIOVANNI SENT THAT GOT REPLIES ---\n")
+        system_parts.append(sent_examples)
+    system_msg = "\n".join(system_parts)
+
+    # User prompt = the specific email to rewrite
+    parts = []
 
     # Add enrichment context
     parts.append("\n\n--- CONTEXT FOR THIS EMAIL ---\n")
@@ -104,9 +111,9 @@ def build_rewrite_prompt(draft: dict, context: dict, system_prompt: str, gold_st
             parts.append(f"  - {bt['name']}: {bt['views']} views, {bt['completions']} completions, {bt['ctas']} quiz answers")
 
     parts.append(f"\n\n--- ORIGINAL DRAFT TO REWRITE ---\n{draft['body'][:2000]}")
-    parts.append("\n\n--- YOUR REWRITE ---")
+    parts.append("\n\nRewrite this email in Giovanni's voice. Follow the structure and tone from the examples above.")
 
-    return "\n".join(parts)
+    return system_msg, "\n".join(parts)
 
 
 def main():
@@ -231,10 +238,10 @@ def main():
             print(f"    Deal stage: {context['deal_stage']}")
 
         # Build prompt and generate
-        prompt = build_rewrite_prompt(draft, context, system_prompt, gold_standard, sent_examples)
+        sys_prompt, user_prompt = build_rewrite_prompt(draft, context, system_prompt, gold_standard, sent_examples)
 
         if dry_run:
-            print(f"    [DRY RUN] Would call Gemini with {len(prompt)} char prompt")
+            print(f"    [DRY RUN] Would call LLM with {len(sys_prompt)+len(user_prompt)} char prompt")
             results.append({
                 "original_draft_id": draft["draft_id"],
                 "to": draft["to_email"],
@@ -247,7 +254,7 @@ def main():
             continue
 
         try:
-            rewritten = generate_with_llm(prompt)
+            rewritten = generate_with_llm(user_prompt, system=sys_prompt)
             # Strip em dashes, enforce max 1 en dash
             rewritten = rewritten.replace("\u2014", ",")
             en_count = rewritten.count("\u2013")
