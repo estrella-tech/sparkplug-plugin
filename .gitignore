@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Secrets — never commit
+sparkplug.json
+*.env
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Plugin build artifacts
+*.plugin
+config/sparkplug.json

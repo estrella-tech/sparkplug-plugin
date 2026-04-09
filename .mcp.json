@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "sparkplug": {
+      "command": "bash",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/servers/start.sh"],
+      "env": {
+        "SPARKPLUG_GROUP_ID": "691270b4e489475b3f933902",
+        "GOOGLE_CREDENTIALS_PATH": "${GOOGLE_CREDENTIALS_PATH}",
+        "HUBSPOT_ACCESS_TOKEN": "${HUBSPOT_ACCESS_TOKEN}"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "sparkplug",
+  "version": "0.1.0",
+  "description": "Atomic Fungi Sparkplug integration — query sales, budtender performance, Snaps, and retailers. Sync data to Google Sheets and HubSpot.",
+  "author": {
+    "name": "Giovanni Estrella / Atomic Fungi"
+  },
+  "keywords": ["sparkplug", "cannabis", "sales", "budtender", "wholesale", "atomic-fungi"],
+  "mcpServers": "./.mcp.json"
+}
