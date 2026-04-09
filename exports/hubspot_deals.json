@@ -1,0 +1,565 @@
+{
+  "exported_at": "2026-04-09T17:59:32.324878+00:00",
+  "data": [
+    {
+      "id": "272715753182",
+      "name": "Coastal Healing #1",
+      "amount": 225.0,
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
+      "closedate": null,
+      "createdate": "2026-01-24T04:36:00.448Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "273479448308",
+      "name": "DDM #1",
+      "amount": 90.0,
+      "stage": "closedwon",
+      "stage_label": "Closed Won",
+      "closedate": "2026-02-21T19:32:58.174Z",
+      "createdate": "2026-01-24T04:33:33.513Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "297117528796",
+      "name": "WellB #1",
+      "amount": 112.5,
+      "stage": "3335917290",
+      "stage_label": "First Order Placed",
+      "closedate": null,
+      "createdate": "2026-02-14T19:56:36.935Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "310585590480",
+      "name": "Green Choice #2 Reorder",
+      "amount": 90.0,
+      "stage": "closedwon",
+      "stage_label": "Closed Won",
+      "closedate": "2026-03-03T00:00:00Z",
+      "createdate": "2026-03-04T13:12:46.458Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "310628275913",
+      "name": "Green Heart #1",
+      "amount": 337.5,
+      "stage": "3335917290",
+      "stage_label": "First Order Placed",
+      "closedate": "2026-03-03T00:00:00Z",
+      "createdate": "2026-03-04T13:12:46.689Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "311049925333",
+      "name": "Cosmopolitan #1",
+      "amount": 337.5,
+      "stage": "3335917290",
+      "stage_label": "First Order Placed",
+      "closedate": "2026-03-03T00:00:00Z",
+      "createdate": "2026-03-04T13:12:46.913Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "311334495931",
+      "name": "DDM #2 Reorder",
+      "amount": 105.0,
+      "stage": "closedwon",
+      "stage_label": "Closed Won",
+      "closedate": "2026-03-01T00:00:00Z",
+      "createdate": "2026-03-04T13:12:46.169Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "311646820048",
+      "name": "The Holistic Concepts \u2014 Polina Intro",
+      "amount": 337.5,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-03-05T04:14:00.007Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "311666640577",
+      "name": "The Healthy Way \u2014 First Order",
+      "amount": 90.0,
+      "stage": "closedwon",
+      "stage_label": "Closed Won",
+      "closedate": "2026-02-13T00:00:00Z",
+      "createdate": "2026-03-05T03:31:25.034Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "311666683599",
+      "name": "Chelsea Bud \u2014 Polina Intro",
+      "amount": 337.5,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-03-05T04:14:01.108Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "311693517508",
+      "name": "Leaf Relief Brockton \u2014 Polina Intro",
+      "amount": 337.5,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-03-05T04:13:58.626Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "311712239350",
+      "name": "Native Sun Cannabis #1",
+      "amount": 450.0,
+      "stage": "3335917290",
+      "stage_label": "First Order Placed",
+      "closedate": "2026-03-04T00:00:00Z",
+      "createdate": "2026-03-04T21:29:30.841Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "311712462548",
+      "name": "Amba Caf\u00e9 #1",
+      "amount": 90.0,
+      "stage": "3335917290",
+      "stage_label": "First Order Placed",
+      "closedate": "2026-01-28T00:00:00Z",
+      "createdate": "2026-03-05T03:33:40.522Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "311732078298",
+      "name": "HadLeaf \u2014 Polina Intro",
+      "amount": 337.5,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-03-05T04:14:01.442Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "311771791063",
+      "name": "Castle Leaf \u2014 Polina Intro",
+      "amount": 337.5,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-03-05T04:14:00.742Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "311832616666",
+      "name": "Sublime #1",
+      "amount": 337.5,
+      "stage": "closedwon",
+      "stage_label": "Closed Won",
+      "closedate": "2026-02-28T00:00:00Z",
+      "createdate": "2026-03-05T03:28:22.673Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "312010522341",
+      "name": "Leaf Lux \u2014 Polina Intro",
+      "amount": 337.5,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-03-05T04:14:00.369Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "312014109398",
+      "name": "Baked \u2014 Polina Intro",
+      "amount": 337.5,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-03-05T04:13:59.159Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "312017701624",
+      "name": "Green City \u2014 Polina Intro",
+      "amount": 337.5,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-03-05T04:13:59.585Z",
+      "owner_id": "82411190"
+    },
+    {
+      "id": "316048025337",
+      "name": "Sublime Cannabis \u2014 First Wholesale Order",
+      "amount": 359.85,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": "2026-03-21T00:00:00Z",
+      "createdate": "2026-03-11T20:46:04.741Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316049834697",
+      "name": "Fine Fettle \u2014 [M1]",
+      "amount": 359.85,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": "2026-04-15T00:00:00Z",
+      "createdate": "2026-03-11T20:46:05.372Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316049915606",
+      "name": "Rolling Js \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:52.743Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316053502654",
+      "name": "Kush Groove \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:52.290Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316053502689",
+      "name": "Pettals Cannabis Charlton \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:45:02.203Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316057026262",
+      "name": "BASK \u2014 AF Tea Samples + Wholesale",
+      "amount": 359.85,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": "2026-04-01T00:00:00Z",
+      "createdate": "2026-03-11T20:46:06.270Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316057099987",
+      "name": "Local Cannabis \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:42.560Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316057099988",
+      "name": "Embr \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:52.567Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316057099991",
+      "name": "High Hawk \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:45:02.269Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316060707543",
+      "name": "Northeast Alternatives \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:41.568Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316064315090",
+      "name": "6 Bricks \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:52.941Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316067807954",
+      "name": "East Boston Cannabis \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:42.347Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316067807956",
+      "name": "House Premium Cannabis \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:52.445Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316067807957",
+      "name": "CANA Craft Cannabis \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:53.051Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316067807968",
+      "name": "Comm Ave Canna \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:45:02.400Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316069598969",
+      "name": "Redi \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:42.237Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316069599945",
+      "name": "Botera \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:45:02.017Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316071370444",
+      "name": "Good Chemistry \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:52.625Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316105215734",
+      "name": "High Profile \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:41.901Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316105216698",
+      "name": "Nova Farms \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:52.872Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316106933990",
+      "name": "Pure Oasis \u2014 [M1]",
+      "amount": 359.85,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": "2026-04-15T00:00:00Z",
+      "createdate": "2026-03-11T20:46:06.023Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316106938042",
+      "name": "Cosmopolitan Dispensary \u2014 AF First Wholesale Order",
+      "amount": 359.85,
+      "stage": "closedwon",
+      "stage_label": "Closed Won",
+      "closedate": "2026-03-11T00:00:00Z",
+      "createdate": "2026-03-11T20:53:11.593Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316107013858",
+      "name": "Mayflower \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:42.463Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316107013859",
+      "name": "Y Cannabis \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:42.659Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316108736248",
+      "name": "Ideal Craft Cannabis \u2014 AF Tea Samples + First Order",
+      "amount": 119.81,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": "2026-04-15T00:00:00Z",
+      "createdate": "2026-03-11T20:46:06.670Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316108825315",
+      "name": "Collective Cannabis \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:42.138Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316110530293",
+      "name": "Apotho Therapeutics \u2014 [M1]",
+      "amount": 119.81,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": "2026-04-15T00:00:00Z",
+      "createdate": "2026-03-11T20:46:06.492Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316112419566",
+      "name": "The Green Lady Dispensary \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:45:02.089Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316115920612",
+      "name": "Bud's Goods \u2014 [M1]",
+      "amount": 359.85,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": "2026-04-15T00:00:00Z",
+      "createdate": "2026-03-11T20:46:05.764Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316115995347",
+      "name": "Pettals Cannabis Attleboro \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:53.110Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316115995371",
+      "name": "ZAZA Green \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:45:02.336Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316130305769",
+      "name": "Garden Remedies \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:42.036Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316130305772",
+      "name": "Greatest Hits \u2014 [M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:52.508Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316132110050",
+      "name": "Diem Cannabis \u2014 [Non-M1]",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-11T22:44:41.760Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316253584080",
+      "name": "Bud's Goods \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "qualifiedtobuy",
+      "stage_label": "Contacted",
+      "closedate": null,
+      "createdate": "2026-03-14T02:01:06.252Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316279666385",
+      "name": "Redi Natick \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-14T02:01:06.613Z",
+      "owner_id": "160994448"
+    },
+    {
+      "id": "316313658087",
+      "name": "Fine Fettle Rowley \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-03-14T02:01:05.868Z",
+      "owner_id": "160994448"
+    }
+  ]
+}

@@ -1,15 +1,12 @@
 {
-  "exported_at": "2026-04-09T17:23:08.599637+00:00",
+  "exported_at": "2026-04-09T17:59:28.632741+00:00",
   "data": [
     {
       "retailer_id": "64c7bccf2ce7de0012bd8022",
       "retailer_name": "Ideal Craft Cannabis",
       "date_start": "2026-03-10",
       "date_end": "2026-04-09",
-      "data": {
-        "keys": [],
-        "rows": []
-      }
+      "data": {}
     },
     {
       "retailer_id": "65aedee5ae79f200127e9754",

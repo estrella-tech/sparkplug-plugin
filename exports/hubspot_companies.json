@@ -1,0 +1,3866 @@
+{
+  "exported_at": "2026-04-09T17:59:34.033663+00:00",
+  "data": [
+    {
+      "id": "137886332665",
+      "name": "HubSpot",
+      "domain": "hubspot.com",
+      "last_contacted": "2025-08-16T16:37:54.131Z",
+      "last_updated": "2025-12-19T16:45:09Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "153490565847",
+      "name": "Natural Grocers",
+      "domain": "naturalgrocers.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "153526816459",
+      "name": "Natural Life",
+      "domain": "naturallife.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "153526832887",
+      "name": "Earth Fare",
+      "domain": "earthfare.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "153526833868",
+      "name": "Hy-Vee",
+      "domain": "hy-vee.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "153635422919",
+      "name": "Fresh Thyme Market",
+      "domain": "freshthyme.com",
+      "last_contacted": "2025-09-26T19:47:51.326Z",
+      "last_updated": "2025-09-26T19:47:59Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "153718906593",
+      "name": "Sprouts",
+      "domain": "www.sprouts.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "153749094087",
+      "name": "GNC",
+      "domain": "gnc.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "153763567334",
+      "name": "Whole Foods Market",
+      "domain": "wholefoods.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "154068261589",
+      "name": "The Roof Crop",
+      "domain": "theroofcrop.com",
+      "last_contacted": null,
+      "last_updated": "2025-09-09T16:54:25.927Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "154077404912",
+      "name": "woo-woo",
+      "domain": "thisiswoowoo.com",
+      "last_contacted": null,
+      "last_updated": "2025-09-09T16:44:33.437Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "154077429451",
+      "name": "Roots & Crowns",
+      "domain": "rootsandcrowns.com",
+      "last_contacted": null,
+      "last_updated": "2025-09-09T17:22:10.742Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "157819446986",
+      "name": "Tallulah",
+      "domain": "https://tallulahsmokes.com/",
+      "last_contacted": "2025-10-17T20:48:47Z",
+      "last_updated": "2025-10-17T21:31:36Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "158901812982",
+      "name": "Inner-City Muslim Action Network",
+      "domain": "imancentral.org",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "191349266161",
+      "name": "Cookbook Market LA",
+      "domain": "cookbookla.com",
+      "last_contacted": "2025-10-21T20:11:16.661Z",
+      "last_updated": "2025-10-21T20:11:16.661Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "191352792769",
+      "name": "The Silver Fern",
+      "domain": "thesilverfernshop.com",
+      "last_contacted": "2025-10-24T17:28:28Z",
+      "last_updated": "2025-10-24T17:28:28Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "200824110782",
+      "name": "Fresco Community Market",
+      "domain": "frescomarkets.com",
+      "last_contacted": "2025-10-30T18:38:50.230Z",
+      "last_updated": "2025-10-30T18:38:50.230Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "228940205780",
+      "name": "Northeast Nutrition",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "228940921538",
+      "name": "Supplements plus",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "228940922610",
+      "name": "Start my Diet",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "228942366416",
+      "name": "Innovation Fitness",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "228985018055",
+      "name": "Ocean State Nutrition",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "228985018105",
+      "name": "Nutrition lab",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "228985019088",
+      "name": "It's My Health",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "228985020109",
+      "name": "Sweet Willow Naturals",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "229603442368",
+      "name": "Swansea Nutrition Corner",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230427581136",
+      "name": "Fresh Monkee",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": "2025-12-05T21:27:12.150Z",
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230429021894",
+      "name": "Farmacy Herbs",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230431181498",
+      "name": "The Honey Shop",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230431181502",
+      "name": "Mass Apothecary",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230431181514",
+      "name": "Puffins Smoke Shop",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230431181529",
+      "name": "TK Plus",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230677858012",
+      "name": "Samaritan Smoke",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230678577892",
+      "name": "Joint on 6",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230679297766",
+      "name": "CBD Re-Leif center",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230679298783",
+      "name": "Bellingham Smoke Plus",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230680017638",
+      "name": "Cape Cod Nutrition",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230680018635",
+      "name": "Rooted Serenity",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230680737519",
+      "name": "Mass Nutrition Center",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230680738520",
+      "name": "Apothica Cafe",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230680738547",
+      "name": "AcuPUNKture's Whimsical Wellness Botique",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230680739514",
+      "name": "Watch your Head",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230681457394",
+      "name": "AZ smoke shop",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230681458382",
+      "name": "Atlas Smoke Shop",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230681458387",
+      "name": "Euphoria Smoke Shop",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "230682178235",
+      "name": "Queens Smoke Shop",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232302060245",
+      "name": "New England Harvest",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232302060246",
+      "name": "DDM Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232302060248",
+      "name": "Pioneer Valley Trading Co",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232302060251",
+      "name": "Clear Sky Cannabis (Evergreen Strategies LLC)",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232302060253",
+      "name": "Leaf Lux",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 1
+    },
+    {
+      "id": "232302060254",
+      "name": "BoomX/Thrive Cultivation & Dispensary, LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232302060255",
+      "name": "Full Harvest Moonz",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081769",
+      "name": "Nova Farms",
+      "domain": "novafarms.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081771",
+      "name": "CannaBarn",
+      "domain": "cannabarnma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081772",
+      "name": "BB Botanics",
+      "domain": "bbbotanics.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081773",
+      "name": null,
+      "domain": "mellowfellowsco.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 12,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081774",
+      "name": "The Haven Center",
+      "domain": "havencenter.me",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081778",
+      "name": "Hostetter Homes",
+      "domain": "hostetter-homes.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081781",
+      "name": null,
+      "domain": "cowboykush.com",
+      "last_contacted": "2025-12-12T15:57:58.035Z",
+      "last_updated": "2025-12-12T15:57:58.035Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081782",
+      "name": "Leaf Relief Brockton",
+      "domain": "leafreliefbrockton.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 1
+    },
+    {
+      "id": "232302081783",
+      "name": "CannaVana",
+      "domain": "cannavana.org",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232302081784",
+      "name": null,
+      "domain": "berkley-botanicals.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232365038312",
+      "name": "Great Barrington Dispensary (Costal Cult.)",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232365038314",
+      "name": "Blossom Flower LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232365038316",
+      "name": "RollingJs",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232365038318",
+      "name": "Joint Operations",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232365038319",
+      "name": "Canna Retreat",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232365060802",
+      "name": "High Plains Farm",
+      "domain": "highplainsfarmma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232365060807",
+      "name": null,
+      "domain": "missioncan.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232365060808",
+      "name": "Southwest Alternative Care",
+      "domain": "southwestalternativecare.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232365060811",
+      "name": "The Piping Plover Cannabis Dispensary",
+      "domain": "pipingplover.co",
+      "last_contacted": "2025-12-12T19:29:43.296Z",
+      "last_updated": "2025-12-12T19:29:43.296Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232365060812",
+      "name": "Cape Ann Cannabis",
+      "domain": "capeanncannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232365060813",
+      "name": "The Heritage Club",
+      "domain": "heritageclubthc.com",
+      "last_contacted": "2025-12-12T16:52:08.989Z",
+      "last_updated": "2025-12-12T16:52:08.989Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232365060814",
+      "name": "Green Heart",
+      "domain": "brocktongreenheart.com",
+      "last_contacted": null,
+      "last_updated": "2026-03-11T20:00:00Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232365060815",
+      "name": "Boston Bud Factory",
+      "domain": "bostonbudfactory.com",
+      "last_contacted": "2025-12-12T18:29:02.622Z",
+      "last_updated": "2026-02-04T15:29:52.487Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232368737994",
+      "name": "Green Adventure LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232368737995",
+      "name": "The Spot Dispensary",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232368737998",
+      "name": "Verilife",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232368737999",
+      "name": "Flower & Soul",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232368738000",
+      "name": "Witch City Gardens LLC - Starbird Salem",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232368760543",
+      "name": "Olde World Remedies",
+      "domain": "oldeworldremedies.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232368760544",
+      "name": "HadLeaf Cannabis",
+      "domain": "hadleafdispensary.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 1
+    },
+    {
+      "id": "232368760545",
+      "name": "Capeway Cannabis",
+      "domain": "capewaycannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232368760547",
+      "name": "Reverie73",
+      "domain": "reverie73.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232368760548",
+      "name": "C3 Industries",
+      "domain": "c3industries.com",
+      "last_contacted": "2025-12-12T16:08:20.214Z",
+      "last_updated": "2025-12-12T16:08:20.214Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232368760549",
+      "name": "Bud Barn",
+      "domain": "budbarnma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232418044624",
+      "name": "LeafLux",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232418044627",
+      "name": "Seaside Joint Ventures Inc",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071270",
+      "name": "Apotho Therapeutics",
+      "domain": "apothotherapeutics.com",
+      "last_contacted": "2026-03-19T01:22:51.638Z",
+      "last_updated": "2026-03-19T01:22:51.638Z",
+      "num_contacts": 5,
+      "num_deals": 1
+    },
+    {
+      "id": "232418071273",
+      "name": "Ascend Wellness Holdings",
+      "domain": "awholdings.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071274",
+      "name": "Bask",
+      "domain": "cometobask.com",
+      "last_contacted": null,
+      "last_updated": "2026-02-20T18:04:18Z",
+      "num_contacts": 7,
+      "num_deals": 1
+    },
+    {
+      "id": "232418071275",
+      "name": "Ayr Wellness",
+      "domain": "ayrwellness.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071277",
+      "name": "Heal Cannabis",
+      "domain": "healmj.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071280",
+      "name": "In Good Health",
+      "domain": "ingoodhealthma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071281",
+      "name": "Calyx Peak",
+      "domain": "calyxpeak.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071282",
+      "name": "The Vault",
+      "domain": "thevaultma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 6,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071284",
+      "name": "Elevated Roots",
+      "domain": "elevatedrootsma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071285",
+      "name": "CANA Retail",
+      "domain": "canacraftcannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 6,
+      "num_deals": 0
+    },
+    {
+      "id": "232418071287",
+      "name": null,
+      "domain": "mrmxtract.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 5,
+      "num_deals": 0
+    },
+    {
+      "id": "232418072250",
+      "name": "Campfire Cannabis",
+      "domain": "campfirecannabis.com",
+      "last_contacted": "2026-03-12T15:36:19.757Z",
+      "last_updated": "2026-03-12T15:36:19.757Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232418072251",
+      "name": "Starbird Cannabis",
+      "domain": "starbirdsalem.com",
+      "last_contacted": "2025-12-12T18:57:44.855Z",
+      "last_updated": "2026-02-04T15:31:07.529Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232609071832",
+      "name": "East Boston Cannabis Co",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232609071833",
+      "name": "ARL",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232609071834",
+      "name": "High Hopes",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232609071835",
+      "name": "Cady Brook Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232609071836",
+      "name": "East Coast Pharms",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232609071844",
+      "name": "C3 - High Profile",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232609071845",
+      "name": "Enlite Cannabis Dispensary LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232609071846",
+      "name": "In Good Health",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232609100481",
+      "name": "INSA",
+      "domain": "myinsa.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 7,
+      "num_deals": 0
+    },
+    {
+      "id": "232609100482",
+      "name": "Cape Cod Cannabis",
+      "domain": "capecodcannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 5,
+      "num_deals": 0
+    },
+    {
+      "id": "232609100483",
+      "name": "Castle Leaf",
+      "domain": "castleleaf.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 1
+    },
+    {
+      "id": "232609100484",
+      "name": "Bud's Goods & Services",
+      "domain": "buds.services",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232609100490",
+      "name": "TERPS",
+      "domain": "terps.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232609100491",
+      "name": "CNA Stores",
+      "domain": "cnastores.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232609100496",
+      "name": "Gail",
+      "domain": "gail.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232642811620",
+      "name": "Agricultural Healing Inc. dba The Agriculturalist",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232642811621",
+      "name": "Four Trees Holyoke LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232642811624",
+      "name": "Mint Retail Facilities LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232642811625",
+      "name": "Harbor House Collective",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232642811627",
+      "name": "Ideal Craft Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232642811629",
+      "name": "Sublime Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": "2026-03-20T19:12:00Z",
+      "num_contacts": 1,
+      "num_deals": 1
+    },
+    {
+      "id": "232642811631",
+      "name": "Erva",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232642811633",
+      "name": "SIRA / AYR WELLNESS",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644668115",
+      "name": "Cowboy Kush",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644668116",
+      "name": "Kapha Cannabis Dispensary",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644668119",
+      "name": "Elevated Roots",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644668121",
+      "name": "Quincy Cannabis Co.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644668122",
+      "name": "Stone's Throw Cannabis LLC d/b/a Firebrand Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644668125",
+      "name": "Green Choice Dispensary",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644668126",
+      "name": "BASK",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692669",
+      "name": "Aura",
+      "domain": "auraofma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692671",
+      "name": "New England Craft Cultivators",
+      "domain": "necraftcultivators.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692672",
+      "name": "Seaside Cannabis Co.",
+      "domain": "seasidecannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692674",
+      "name": "Misty Mountain",
+      "domain": "mistymtnshop.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692675",
+      "name": "Eastern Cannabis",
+      "domain": "easterncannabisco.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692676",
+      "name": null,
+      "domain": "localcanco.com",
+      "last_contacted": "2025-12-12T15:01:01.957Z",
+      "last_updated": "2025-12-12T15:01:01.957Z",
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692677",
+      "name": "Solar Cannabis Co.",
+      "domain": "solarthera.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692678",
+      "name": null,
+      "domain": "253organic.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692679",
+      "name": "Zahara Cannabis",
+      "domain": "zaharacannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232644692680",
+      "name": null,
+      "domain": "mythcdispensary.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232644716221",
+      "name": "KCCS",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644716222",
+      "name": "Ethos Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644716223",
+      "name": "Cannabis Culture",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644716224",
+      "name": "JMK Gardening, LLC  DBA Wonderland-Cannabis Co",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644716225",
+      "name": "Canna Barn",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644716228",
+      "name": "Smokey Leaf",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644716231",
+      "name": "reLeaf",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644716232",
+      "name": "The Holistic Concepts - Brockton",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 1
+    },
+    {
+      "id": "232644716233",
+      "name": "Renew Cannabis Co.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232644741844",
+      "name": "Bud's Goods",
+      "domain": "budsgoods.com",
+      "last_contacted": "2026-03-12T15:06:09Z",
+      "last_updated": "2026-03-12T15:06:09Z",
+      "num_contacts": 10,
+      "num_deals": 2
+    },
+    {
+      "id": "232644741845",
+      "name": "Blackstone Valley Cannabis",
+      "domain": "bvcannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232644741846",
+      "name": null,
+      "domain": "budmarys.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 6,
+      "num_deals": 0
+    },
+    {
+      "id": "232644741847",
+      "name": null,
+      "domain": "sweetgrassbotanicalslee.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232644741854",
+      "name": "1 Connection",
+      "domain": "1connectionllc.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232644741856",
+      "name": "Kapha Cannabis",
+      "domain": "kaphacannabis.com",
+      "last_contacted": "2025-12-12T17:23:11.384Z",
+      "last_updated": "2025-12-12T17:23:11.384Z",
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232644741857",
+      "name": null,
+      "domain": "packs.la",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232644741859",
+      "name": "Supergalactic Brands",
+      "domain": "supergalacticbrands.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 5,
+      "num_deals": 0
+    },
+    {
+      "id": "232646604527",
+      "name": "Good Chemistry",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630103",
+      "name": "Renew Cannabis Co.",
+      "domain": "renew-ma.com",
+      "last_contacted": "2025-12-12T15:53:24.168Z",
+      "last_updated": "2025-12-12T15:53:24.168Z",
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630104",
+      "name": "Stem Haverhill",
+      "domain": "stemhaverhill.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630106",
+      "name": "Terpene Journey",
+      "domain": "terpenejourney.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630107",
+      "name": null,
+      "domain": "gbdma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630110",
+      "name": "High Hopes",
+      "domain": "high-hopes.biz",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630113",
+      "name": "ErvaHerb",
+      "domain": "ervaherb.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630114",
+      "name": "Sunnyside",
+      "domain": "sunnyside.shop",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T17:25:52.443Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630115",
+      "name": "GreenRock Cannabis",
+      "domain": "greenrockcannabis.net",
+      "last_contacted": "2025-12-12T18:02:01.849Z",
+      "last_updated": "2025-12-12T18:02:01.849Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630117",
+      "name": "617 THC",
+      "domain": "617thc.com",
+      "last_contacted": "2025-12-12T16:19:37.488Z",
+      "last_updated": "2025-12-12T16:19:37.488Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232646630118",
+      "name": "Emerald Grove",
+      "domain": "emeraldgrove.cc",
+      "last_contacted": "2025-12-12T18:25:57.292Z",
+      "last_updated": "2025-12-12T18:25:57.292Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232646671087",
+      "name": "Completely Natural Alternative (CNA)",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232646671088",
+      "name": "UC Retail, LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232646671090",
+      "name": "Green City",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 1
+    },
+    {
+      "id": "232646671092",
+      "name": "Holistic Industries",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232646671093",
+      "name": "JO Gardner, Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232646671096",
+      "name": "Boston Garden",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232646672059",
+      "name": "Local Cannabis Company*",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232723874510",
+      "name": "Euphorium LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232723874513",
+      "name": "Leaf Relief, Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232723874519",
+      "name": "KAPHA",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232723874521",
+      "name": "Mass Yield Cultivation LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232723874522",
+      "name": "Fine Fettle",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232723874523",
+      "name": "Gage Cannabis Co",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017894",
+      "name": "Caroline's Cannabis",
+      "domain": "carolinescannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 5,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017895",
+      "name": "The Verb is Herb",
+      "domain": "theverbisherb.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017896",
+      "name": null,
+      "domain": "newenglandharvest.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017897",
+      "name": "LowKey Dispensary",
+      "domain": "lowkeydispensary.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 6,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017900",
+      "name": "Himalayan High",
+      "domain": "himalayanhighllc.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017901",
+      "name": "Toy Town Health Care",
+      "domain": "toytownthc.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T17:12:08.313Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017902",
+      "name": "Cannabis Connection",
+      "domain": "ccofwestfield.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017903",
+      "name": null,
+      "domain": "cerbereangroup.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017905",
+      "name": "Hennep",
+      "domain": "hennep.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232724017906",
+      "name": null,
+      "domain": "thriveofma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232743880438",
+      "name": "Health Circle",
+      "domain": "healthcirclema.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232743880439",
+      "name": "Zyp Run",
+      "domain": "zyprun.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232743881402",
+      "name": "Green Era",
+      "domain": "greeneracannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232743881405",
+      "name": "Devine",
+      "domain": "devineberkshires.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232743881406",
+      "name": "The Healing Center",
+      "domain": "thehealingcenterma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232754157246",
+      "name": "FFD Enterprises MA, Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232754157247",
+      "name": "Pure Oasis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232754157253",
+      "name": "Fine Fettle (Ipswich Pharmaceutical Assoc.)",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232754157257",
+      "name": "Sweet Grass Botanicals",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180814",
+      "name": "Gage Cannabis Co.",
+      "domain": "gagecannabisco.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180815",
+      "name": "New Leaf",
+      "domain": "newleafcanna.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180818",
+      "name": "reLeaf Alternative",
+      "domain": "releafma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180819",
+      "name": "Natural Agricultural Products",
+      "domain": "naturalagriculturalproducts.org",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180820",
+      "name": "FitzCanna",
+      "domain": "fitzcanna.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180821",
+      "name": "DDM Cannabis",
+      "domain": "ddmcannabis.com",
+      "last_contacted": null,
+      "last_updated": "2026-02-19T20:10:00Z",
+      "num_contacts": 4,
+      "num_deals": 2
+    },
+    {
+      "id": "232754180822",
+      "name": "Kosa Cannabis",
+      "domain": "kosa.co",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180823",
+      "name": "Greatest Hits Cannabis",
+      "domain": "greatesthitscc.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T16:18:56.697Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180824",
+      "name": "The Hempest",
+      "domain": "hempest.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180825",
+      "name": "The Mensing Group",
+      "domain": "mensinggroup.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180826",
+      "name": "Harbor House Collective",
+      "domain": "harborhousecollective.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T16:52:20.012Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232754180827",
+      "name": "The Agriculturalist",
+      "domain": "agriculturalist.group",
+      "last_contacted": "2025-12-12T15:22:36.221Z",
+      "last_updated": "2025-12-12T15:22:36.221Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232759655106",
+      "name": "Sira Naturals LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232759655107",
+      "name": "Calyx",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680737",
+      "name": "Western Massachusetts Dispensaries",
+      "domain": "massaltcare.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680738",
+      "name": "PERPETUAL BRANDS",
+      "domain": "perpetualbrands.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680739",
+      "name": "Trade Roots",
+      "domain": "traderoots.buzz",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 5,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680740",
+      "name": null,
+      "domain": "cadellaquincy.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680742",
+      "name": "Temescal Wellness",
+      "domain": "temescalwellness.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680743",
+      "name": "Local Roots Cannabis Crafted",
+      "domain": "localroots.cc",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680745",
+      "name": "Blue Fox",
+      "domain": "bluefoxbrands.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680746",
+      "name": "Cannapi",
+      "domain": "cannapidispensary.com",
+      "last_contacted": "2025-12-12T14:53:12.816Z",
+      "last_updated": "2025-12-12T14:53:12.816Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232759680747",
+      "name": "Massachusetts Green Retail",
+      "domain": "massgreenretail.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232763205318",
+      "name": "The Green Lady Dispensary II, Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763205322",
+      "name": "Red Cardinal",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763205323",
+      "name": "INDICA, LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763205324",
+      "name": "Diem",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763205325",
+      "name": "Baked Beans Farm",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763205326",
+      "name": "Bud's Goods & Provisions",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763205327",
+      "name": "ELEVATION RETAIL LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763205330",
+      "name": "Greenrock Cannabis  Rockland Old Exit 14, Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763274982",
+      "name": "Vedi Naturals LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763274983",
+      "name": "MRM Industries",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763274984",
+      "name": "Green Soul Organics",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763274986",
+      "name": "Dris",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763274988",
+      "name": "Fairway Botanicals Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763274995",
+      "name": "Green Heart",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": "2025-03-06T17:00:00Z",
+      "num_contacts": 0,
+      "num_deals": 1
+    },
+    {
+      "id": "232763274997",
+      "name": "Emerald Grove",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352802",
+      "name": "NETA (Parallel)",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352803",
+      "name": "INSA",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352804",
+      "name": "Green RIver",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352805",
+      "name": "Gage Cannabis Company",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352806",
+      "name": "JDM Sales inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352807",
+      "name": "CatDogg LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352808",
+      "name": "Mellow Fellows (Retail)",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352810",
+      "name": "The Haven Center",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763352812",
+      "name": "220 ONEIL LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232763376373",
+      "name": "Aura Cannabis",
+      "domain": "auracannaco.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232763376374",
+      "name": "Bloom Brothers",
+      "domain": "bloombrothers.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232763376375",
+      "name": null,
+      "domain": "tmcbookkeeping.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232763376377",
+      "name": "Welcome to Leaflux! take a minute to scroll through our deals below!",
+      "domain": "leafluxma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377338",
+      "name": "Eagle Eyes Transport",
+      "domain": "eagleeyestransport.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377339",
+      "name": "Pioneer Cannabis Co.",
+      "domain": "pioneercannabiscompany.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377340",
+      "name": "Redi",
+      "domain": "tryredi.com",
+      "last_contacted": "2026-03-19T01:04:24.415Z",
+      "last_updated": "2026-03-20T16:34:09Z",
+      "num_contacts": 4,
+      "num_deals": 1
+    },
+    {
+      "id": "232763377341",
+      "name": "Lazy River Products",
+      "domain": "lazyriverproducts.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377342",
+      "name": "Pettals Cannabis",
+      "domain": "pettalscannabis.com",
+      "last_contacted": "2025-12-12T15:15:30.860Z",
+      "last_updated": "2025-12-12T15:15:30.860Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377343",
+      "name": "Major Bloom",
+      "domain": "themajorbloom.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377344",
+      "name": null,
+      "domain": "getblossomflower.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377345",
+      "name": "Collective Premium Cannabis",
+      "domain": "collective-cannabis.com",
+      "last_contacted": "2025-12-12T16:38:58.704Z",
+      "last_updated": "2025-12-12T16:38:58.704Z",
+      "num_contacts": 7,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377347",
+      "name": "Yamba Market",
+      "domain": "yambamarket.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232763377349",
+      "name": null,
+      "domain": "rollingjsworldwide.com",
+      "last_contacted": "2025-12-12T18:19:26.830Z",
+      "last_updated": "2025-12-12T18:19:26.830Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232766997221",
+      "name": "Himalayan High LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232766997222",
+      "name": "Lazy River Dispensary",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232766997223",
+      "name": "253 Organic, LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232766997228",
+      "name": "kosa",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232767019750",
+      "name": "Supporting Strategies",
+      "domain": "supportingstrategies.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232767019751",
+      "name": null,
+      "domain": "clearskycannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232767019752",
+      "name": "Comm Ave Canna",
+      "domain": "commavecanna.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232767019753",
+      "name": null,
+      "domain": "arlhealthcare.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232767019756",
+      "name": "Jeeter",
+      "domain": "jeeter.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232767019762",
+      "name": "Native Sun Cannabis",
+      "domain": "nativesuncannabis.com",
+      "last_contacted": null,
+      "last_updated": "2026-03-28T23:59:22Z",
+      "num_contacts": 5,
+      "num_deals": 1
+    },
+    {
+      "id": "232767019765",
+      "name": "Joint Operations",
+      "domain": "jointoperations.com",
+      "last_contacted": "2025-12-12T16:01:31.290Z",
+      "last_updated": "2025-12-12T16:01:31.290Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232767019766",
+      "name": "Green Path Cannabis",
+      "domain": "greenpathcannabis.com",
+      "last_contacted": "2025-12-12T17:11:06.714Z",
+      "last_updated": "2025-12-12T17:11:06.714Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232768885438",
+      "name": "Get Blossom",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232768885445",
+      "name": "Mission",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232768885447",
+      "name": "Curaleaf",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232777685726",
+      "name": "Eskar",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232777685727",
+      "name": "Kur Retailers, LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232777685728",
+      "name": "South Shore Buds - (Frozen 4 Corp)",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232777685729",
+      "name": "HadLeaf Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232777685731",
+      "name": "NashMac LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232777685732",
+      "name": "Mass Green Retail",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232777685733",
+      "name": "High Plains Farms (27 Broom St)",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232777685735",
+      "name": "Cosmopolitan Dispensary Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": "2026-03-11T20:00:00Z",
+      "num_contacts": 0,
+      "num_deals": 1
+    },
+    {
+      "id": "232777710269",
+      "name": "MariMed",
+      "domain": "marimedinc.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232777710270",
+      "name": "Biszko Companies",
+      "domain": "biszkocorp.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232777710271",
+      "name": "Diem Cannabis",
+      "domain": "hellodiem.com",
+      "last_contacted": "2026-03-12T15:40:21.275Z",
+      "last_updated": "2026-03-12T15:40:21.275Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232777710272",
+      "name": "Northeast Alternatives",
+      "domain": "nealternatives.com",
+      "last_contacted": "2026-03-12T15:49:08.307Z",
+      "last_updated": "2026-03-12T15:49:08.307Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232777710273",
+      "name": "The Botanist",
+      "domain": "shopbotanist.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232777710274",
+      "name": "Capital Cannabis",
+      "domain": "capital-cannabis.co",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232777710275",
+      "name": "Havn Extracts",
+      "domain": "havnextracts.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232777710281",
+      "name": "DMC Cannabis",
+      "domain": "dmccannabis.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-12T16:54:52.155Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232779472595",
+      "name": "Fresh Fields Gloucester LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232779472596",
+      "name": "Metro Harvest, Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232779472598",
+      "name": "Castle Leaf",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232779472599",
+      "name": "Elysian",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232779472600",
+      "name": "Up Top",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232779472601",
+      "name": "1 Connection",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232779472602",
+      "name": "Mass Alternative Care",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232779472605",
+      "name": "Devine",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232779498223",
+      "name": "Coastal Cultivars",
+      "domain": "coastalcultivars.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 7,
+      "num_deals": 0
+    },
+    {
+      "id": "232779498224",
+      "name": "Holistic Health Group",
+      "domain": "hhgma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232779498225",
+      "name": "NETA",
+      "domain": "netacare.org",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232779498226",
+      "name": "Central Ave Care",
+      "domain": "centralavecare.org",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232779498228",
+      "name": "Baked Beans Farm",
+      "domain": "bakedbeansfarm.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 8,
+      "num_deals": 1
+    },
+    {
+      "id": "232779498230",
+      "name": "Kush Groove",
+      "domain": "kushgroove.com",
+      "last_contacted": "2026-03-12T15:41:54.987Z",
+      "last_updated": "2026-03-12T15:41:54.987Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232779498233",
+      "name": "East Boston Cannabis",
+      "domain": "eastbostoncannabis.com",
+      "last_contacted": "2026-03-12T15:44:58.564Z",
+      "last_updated": "2026-03-12T15:44:58.564Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232779499194",
+      "name": "Pure Oasis",
+      "domain": "mypureoasis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 1
+    },
+    {
+      "id": "232779499195",
+      "name": "Root & Bloom",
+      "domain": "rootandbloominc.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T16:14:43.429Z",
+      "num_contacts": 19,
+      "num_deals": 0
+    },
+    {
+      "id": "232779499196",
+      "name": "OMG CANNABIS DISPENSARY",
+      "domain": "omgdispensary.com",
+      "last_contacted": "2025-12-12T18:39:18.350Z",
+      "last_updated": "2025-12-13T19:57:41Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232779499198",
+      "name": "Fine Fettle",
+      "domain": "finefettle.com",
+      "last_contacted": "2026-03-12T15:55:26Z",
+      "last_updated": "2026-03-12T16:00:45Z",
+      "num_contacts": 7,
+      "num_deals": 2
+    },
+    {
+      "id": "232779499199",
+      "name": "United Cult",
+      "domain": "unitedcult.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232779499200",
+      "name": "Riverside",
+      "domain": "riversidemass.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232779499201",
+      "name": "East Coast",
+      "domain": "eastcoastpharms.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232779499202",
+      "name": "Ideal Craft Cannabis",
+      "domain": "idealcraftcannabis.com",
+      "last_contacted": "2026-04-01T23:07:47.799Z",
+      "last_updated": "2026-04-01T23:07:47.799Z",
+      "num_contacts": 4,
+      "num_deals": 1
+    },
+    {
+      "id": "232781439698",
+      "name": "Legal Greens",
+      "domain": "legalgreens.net",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232781439701",
+      "name": "JimBuddy's",
+      "domain": "jimbuddys.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232781439702",
+      "name": "Cady Brook Cannabis",
+      "domain": "cadybrookcannabis.com",
+      "last_contacted": "2025-12-12T19:10:12.741Z",
+      "last_updated": "2025-12-12T19:10:12.741Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232781439705",
+      "name": "Ocean Breeze Cultivators",
+      "domain": "oceanbreezecultivators.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T16:48:03.399Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232781439706",
+      "name": "Elysian Massage",
+      "domain": "elysianma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817196763",
+      "name": "Ganesh Wellness, Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232817222346",
+      "name": "Suncrafted Cannabis",
+      "domain": "suncraftedma.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817222349",
+      "name": "Native Sun Wellness",
+      "domain": "nativesunwellness.com",
+      "last_contacted": null,
+      "last_updated": "2026-04-04T18:08:08Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232817222350",
+      "name": "Wonderland Cannabis",
+      "domain": "wonderlandcannabisco.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817270506",
+      "name": "Silver Therapeutics, Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232817270507",
+      "name": "Canna Vana",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232817270508",
+      "name": "Union Leaf Inc.",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232817270509",
+      "name": "Chelsea Bud",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 1
+    },
+    {
+      "id": "232817270513",
+      "name": "DMC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232817270515",
+      "name": "Apotho Therapeutics, LLC",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232817270517",
+      "name": "Great Barrington Dispensary",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296083",
+      "name": "Green Meadows",
+      "domain": "greenmeadows.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 7,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296084",
+      "name": "RedCardinal",
+      "domain": "red-cardinal.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296086",
+      "name": "Bonfire Cannabis Company Recreational and Medical Marijuana",
+      "domain": "bonfirecannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296087",
+      "name": "AMP",
+      "domain": "ampma.org",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296088",
+      "name": "Verano",
+      "domain": "verano.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296089",
+      "name": "The Green Lady Dispensary",
+      "domain": "thegreenladydispensary.com",
+      "last_contacted": "2025-12-12T19:49:40.848Z",
+      "last_updated": "2026-02-04T15:26:49.978Z",
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296091",
+      "name": "New Dia Cannabis",
+      "domain": "newdiafenway.co",
+      "last_contacted": "2025-12-12T19:16:04.926Z",
+      "last_updated": "2025-12-19T15:34:20.377Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296092",
+      "name": "The Boston Garden",
+      "domain": "boston.garden",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296093",
+      "name": "Dris",
+      "domain": "drisbrands.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296094",
+      "name": "Full Harvest Moonz",
+      "domain": "fullharvestmoonz.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817296095",
+      "name": "Flower & Soul",
+      "domain": "myflowersoul.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T15:43:31.634Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817359566",
+      "name": "Ack Natural",
+      "domain": "acknat.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817359567",
+      "name": null,
+      "domain": "highhopesma.com",
+      "last_contacted": null,
+      "last_updated": "2026-02-04T15:42:07.603Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232817359568",
+      "name": "Nectr Infusions",
+      "domain": "tastethehigh.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817359569",
+      "name": "AltMass",
+      "domain": "aggalt.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817359572",
+      "name": null,
+      "domain": "pioneervalleytradingco.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817419997",
+      "name": "Curaleaf",
+      "domain": "curaleaf.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817419998",
+      "name": "Turning Leaf Cannabis",
+      "domain": "turningleafcannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232817419999",
+      "name": "Enlite Cannabis",
+      "domain": "enlitecannabis.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T16:23:33.496Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817420000",
+      "name": "Cresco Labs",
+      "domain": "crescolabs.com",
+      "last_contacted": "2026-01-07T17:38:18.796Z",
+      "last_updated": "2026-01-07T17:38:18.796Z",
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "232817420002",
+      "name": "Bostica",
+      "domain": "bostica.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817420003",
+      "name": "opca",
+      "domain": "oldplantersofcapeann.org",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817420004",
+      "name": "Theory Wellness",
+      "domain": "theorywellness.org",
+      "last_contacted": "2025-12-12T18:21:43.297Z",
+      "last_updated": "2025-12-12T18:21:43.297Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817420005",
+      "name": null,
+      "domain": "four20companies.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-12T17:43:26.987Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817420006",
+      "name": "BoomX Cannabis Co",
+      "domain": "boomxcannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817493741",
+      "name": "Tree House Craft Cannabis",
+      "domain": "visittreehousema.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817493742",
+      "name": "Holistic Industries",
+      "domain": "holisticindustries.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232817493743",
+      "name": "Cannabis Cured",
+      "domain": "cannabiscured.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817493744",
+      "name": "Botera",
+      "domain": "boterama.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232817493747",
+      "name": null,
+      "domain": "quincycannabisco.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232817493750",
+      "name": "Sublime",
+      "domain": "sublimecannabis.co",
+      "last_contacted": null,
+      "last_updated": "2026-03-20T16:54:19Z",
+      "num_contacts": 2,
+      "num_deals": 1
+    },
+    {
+      "id": "232817493752",
+      "name": "Supergalactic Brands",
+      "domain": "supergbrands.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817493753",
+      "name": "Cannapreneur Partners",
+      "domain": "cannapreneurpartners.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817494715",
+      "name": "MJL Design",
+      "domain": "mjldesign.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817494716",
+      "name": "Eskar",
+      "domain": "eskarma.com",
+      "last_contacted": "2025-12-12T15:09:14.789Z",
+      "last_updated": "2025-12-12T15:09:14.789Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817494717",
+      "name": null,
+      "domain": "agtherapeutics.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817494720",
+      "name": "Calyx Berkshire",
+      "domain": "calyxberkshire.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578727",
+      "name": "Resinate",
+      "domain": "iresinate.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578728",
+      "name": "Battlegreen",
+      "domain": "battle-green.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578731",
+      "name": "Lucky Green Ladies",
+      "domain": "luckygreenladies.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 5,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578732",
+      "name": "Ethos Cannabis",
+      "domain": "ethoscannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578733",
+      "name": "PharmaCann",
+      "domain": "pharmacann.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578735",
+      "name": "Zaza Green",
+      "domain": "zazagreen.com",
+      "last_contacted": "2025-12-12T19:40:55.709Z",
+      "last_updated": "2026-02-04T15:28:03.519Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578736",
+      "name": "Canna Provisions",
+      "domain": "cannaprovisions.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578737",
+      "name": "Wemelco",
+      "domain": "wemelco.net",
+      "last_contacted": null,
+      "last_updated": "2025-12-12T18:00:02.744Z",
+      "num_contacts": 9,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578738",
+      "name": "Potency",
+      "domain": "getpotency.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T16:37:51.379Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578739",
+      "name": "Four Trees Management",
+      "domain": "fourtreesma.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T17:02:59.944Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578741",
+      "name": "Seagrass Salem",
+      "domain": "seagrasssalem.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578742",
+      "name": "Major Bloom Cannabis Dispensary",
+      "domain": "majorbloom.com",
+      "last_contacted": "2025-12-12T16:45:27.972Z",
+      "last_updated": "2026-02-04T15:25:05.432Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "232817578743",
+      "name": null,
+      "domain": "frfields.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "234209173200",
+      "name": "Mixmax",
+      "domain": "mixmax.com",
+      "last_contacted": null,
+      "last_updated": "2025-12-10T16:34:00Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "239438203609",
+      "name": "Thrive Dispensary",
+      "domain": "thrivedispensaries.com",
+      "last_contacted": "2025-12-17T17:31:42.526Z",
+      "last_updated": "2025-12-17T17:33:21Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "241308618466",
+      "name": "Gong",
+      "domain": "gong.io",
+      "last_contacted": null,
+      "last_updated": "2025-12-19T17:30:19Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "248532434659",
+      "name": "Coastal Healing",
+      "domain": "coastalh.net",
+      "last_contacted": null,
+      "last_updated": "2026-03-11T20:00:00Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "250022786799",
+      "name": "Adobe",
+      "domain": "adobe.com",
+      "last_contacted": null,
+      "last_updated": "2026-01-03T20:28:15Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "252674639560",
+      "name": "Atomic Fungi",
+      "domain": "atomicfungi.com",
+      "last_contacted": "2026-04-07T19:09:12.156Z",
+      "last_updated": "2026-04-09T17:57:41Z",
+      "num_contacts": 3,
+      "num_deals": 0
+    },
+    {
+      "id": "256329070319",
+      "name": null,
+      "domain": "firststreetmkt.com",
+      "last_contacted": null,
+      "last_updated": "2026-01-18T18:26:45Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "264741574377",
+      "name": null,
+      "domain": "adobesign.com",
+      "last_contacted": null,
+      "last_updated": "2026-01-20T19:00:51Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "266141032178",
+      "name": "SparkPlug",
+      "domain": "sparkplug.app",
+      "last_contacted": "2026-02-19T19:30:00Z",
+      "last_updated": "2026-03-26T20:25:18Z",
+      "num_contacts": 4,
+      "num_deals": 0
+    },
+    {
+      "id": "274073592524",
+      "name": null,
+      "domain": "highhopes.biz",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "274084389575",
+      "name": "Garden Wonders Cannabis",
+      "domain": "gardenwonderscannabis.com",
+      "last_contacted": "2026-01-29T15:39:50.593Z",
+      "last_updated": "2026-01-29T15:39:50.593Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "274150784742",
+      "name": null,
+      "domain": "highhopes.biz.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "274525461239",
+      "name": null,
+      "domain": "highhopesbiz.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "276684455647",
+      "name": "Green N' Go",
+      "domain": "greenngo.co",
+      "last_contacted": null,
+      "last_updated": "2026-02-04T15:39:26.162Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "284125711059",
+      "name": "EarthLink",
+      "domain": "earthlink.com",
+      "last_contacted": "2026-01-14T22:20:27.428Z",
+      "last_updated": "2026-02-04T15:55:45.215Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "290757130955",
+      "name": null,
+      "domain": "cffgri.com",
+      "last_contacted": "2026-02-11T16:21:41.890Z",
+      "last_updated": "2026-02-11T16:21:41.890Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "291524150980",
+      "name": "TheFarmacist",
+      "domain": "thefarmacist.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "291581157062",
+      "name": "Fleur",
+      "domain": "fleurprovidence.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "293928252150",
+      "name": "The Healthy Way",
+      "domain": null,
+      "last_contacted": "2026-01-16T16:16:09.978Z",
+      "last_updated": "2026-02-20T16:34:41Z",
+      "num_contacts": 1,
+      "num_deals": 1
+    },
+    {
+      "id": "294565724875",
+      "name": "The Green Choice",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 1
+    },
+    {
+      "id": "303879521008",
+      "name": "Google",
+      "domain": "google.com",
+      "last_contacted": null,
+      "last_updated": "2026-03-05T01:47:51Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "308095641290",
+      "name": "Cosmopolitan Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 1
+    },
+    {
+      "id": "309045947118",
+      "name": null,
+      "domain": "notification.intuit.com",
+      "last_contacted": null,
+      "last_updated": "2026-03-16T19:05:25Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "309435185908",
+      "name": "Green & Go",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": "2025-03-11T23:59:59Z",
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313503108829",
+      "name": "Native Sun \u2014 Hudson",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": "2026-03-20T19:12:00Z",
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313533726453",
+      "name": "Pettals Cannabis",
+      "domain": "pettalscannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313537328845",
+      "name": "Pettals \u2014 Charlton",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313546978035",
+      "name": "Simplicity Cannabis",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313547880179",
+      "name": "Acquisitions Direct",
+      "domain": "acquisitionsdirect.com",
+      "last_contacted": "2026-03-12T15:34:38.673Z",
+      "last_updated": "2026-03-12T15:34:38.673Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "313557744360",
+      "name": "Underground Legacy",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313557753566",
+      "name": "Native Sun \u2014 North Attleboro",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": "2026-03-20T19:12:00Z",
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313559577324",
+      "name": "Greatest Hits \u2014 Taunton",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313570127582",
+      "name": "Pettals \u2014 Attleboro",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313570127583",
+      "name": "Fine Fettle \u2014 Springfield",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313581156041",
+      "name": "Garden Remedies",
+      "domain": "gardenremedies.com",
+      "last_contacted": "2026-03-19T01:15:08.312Z",
+      "last_updated": "2026-03-19T01:15:08.312Z",
+      "num_contacts": 2,
+      "num_deals": 0
+    },
+    {
+      "id": "313583834812",
+      "name": null,
+      "domain": "mba2026.hbs.edu",
+      "last_contacted": "2026-04-08T22:00:00Z",
+      "last_updated": "2026-04-08T22:00:00Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "313584772823",
+      "name": "High Profile Cannabis",
+      "domain": "highprofilecannabis.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313584783072",
+      "name": "Greatest Hits Cannabis",
+      "domain": "greatesthitscc.com",
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313586358000",
+      "name": "Greatest Hits \u2014 Dudley",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313591214830",
+      "name": "The Good Seed",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "313680560859",
+      "name": null,
+      "domain": "pureoasis.com",
+      "last_contacted": "2026-03-12T15:39:14.388Z",
+      "last_updated": "2026-03-12T15:39:14.388Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "314299186888",
+      "name": "Mass.gov",
+      "domain": "mass.gov",
+      "last_contacted": "2026-03-20T13:59:34.812Z",
+      "last_updated": "2026-03-20T14:02:37Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "314310082282",
+      "name": "Worcester Regional Food Hub",
+      "domain": "worcesterfoodhub.org",
+      "last_contacted": "2026-03-20T13:26:57Z",
+      "last_updated": "2026-03-20T13:26:57Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "314315373283",
+      "name": "City of Worcester",
+      "domain": "worcesterma.gov",
+      "last_contacted": "2026-03-20T13:26:57Z",
+      "last_updated": "2026-03-20T13:26:57Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "314374598342",
+      "name": "Temascal",
+      "domain": null,
+      "last_contacted": null,
+      "last_updated": null,
+      "num_contacts": 0,
+      "num_deals": 0
+    },
+    {
+      "id": "316462316232",
+      "name": null,
+      "domain": "larsendigitalexperts.com",
+      "last_contacted": null,
+      "last_updated": "2026-04-09T17:27:42Z",
+      "num_contacts": 1,
+      "num_deals": 0
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-04-09T17:23:01.188058+00:00",
+  "exported_at": "2026-04-09T17:59:27.690836+00:00",
   "data": [
     {
       "accountId": "64c7bccf2ce7de0012bd8022",
@@ -14,13 +14,29 @@
       "photo": "https://d3gwxv4u3b25r6.cloudfront.net/64c7bccf2ce7de0012bd8022/account-photos/706ade1a-a975-4a7f-b2b0-e1add073f176",
       "brandLinks": [
         {
+          "_id": "69d7e45eddcd3d934e3b3bde",
           "name": "Atomic Fungi",
           "photo": "https://d3gwxv4u3b25r6.cloudfront.net/691270b4e489475b3f933902/spark-brands/762d1bc2-b35b-44a4-9cbe-cb47980a2957",
           "brandId": "69151542fa4c785f1ce28943",
           "excludedProductIds": [],
           "predictedExcludedProductIds": [],
-          "posBrandIds": [],
-          "posBrands": []
+          "posBrandIds": [
+            "69d7e42e5c1f3630e542dd66"
+          ],
+          "posBrands": [
+            {
+              "_id": "69d7e42e5c1f3630e542dd66",
+              "createdAt": "2026-04-09T17:38:54.013Z",
+              "groupId": "64c7bccf2ce7de0012bd8022",
+              "name": "Atomic Fungi",
+              "posConfigIds": [
+                "64c7bd82b26dbd00129bd67d"
+              ],
+              "searchName": "atomic fungi",
+              "updatedAt": "2026-04-09T17:55:29.945Z"
+            }
+          ],
+          "lastTransactionDate": "2026-04-09T17:10:45.580Z"
         }
       ],
       "locations": [
@@ -44,16 +60,17 @@
             "responsibleForSale": false,
             "useInventoryPipeline": true,
             "useProductPipeline": false,
-            "isFullProductSync": false
+            "isFullProductSync": false,
+            "aggregateRoomInventory": false
           },
           "name": "Ideal Craft Cannabis",
           "parentId": "64c7bd82b26dbd00129bd67d",
           "timeZone": "US/Eastern",
-          "updatedAt": "2026-04-09T17:19:26.539Z",
+          "updatedAt": "2026-04-09T17:55:30.400Z",
           "licenseNumber": "MR281779"
         }
       ],
-      "status": "pending",
+      "status": "enabled",
       "accountStatus": "active",
       "createdAt": "2026-03-25T22:14:01.852Z",
       "reminderSentAt": "2026-04-08T00:02:35.300Z",
@@ -122,7 +139,7 @@
           "name": "Major Bloom ",
           "parentId": "65aedf4a47657600123d23c7",
           "timeZone": "America/New_York",
-          "updatedAt": "2026-04-09T17:08:31.098Z",
+          "updatedAt": "2026-04-09T17:40:48.306Z",
           "licenseNumber": "MR283033"
         }
       ],

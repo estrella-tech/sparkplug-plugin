@@ -1,0 +1,44 @@
+{
+  "exported_at": "2026-04-09T17:59:32.326661+00:00",
+  "data": {
+    "total_deals": 56,
+    "total_value": 7363.720000000003,
+    "closed_won_value": 1072.35,
+    "by_stage": {
+      "Verbal Commitment": {
+        "count": 1,
+        "value": 225.0
+      },
+      "Closed Won": {
+        "count": 6,
+        "value": 1072.35
+      },
+      "First Order Placed": {
+        "count": 5,
+        "value": 1327.5
+      },
+      "Tasting Done": {
+        "count": 9,
+        "value": 3059.85
+      },
+      "Hot Lead": {
+        "count": 34,
+        "value": 1679.02
+      },
+      "Contacted": {
+        "count": 1,
+        "value": 0.0
+      }
+    },
+    "stage_order": [
+      "Hot Lead",
+      "Contacted",
+      "Sampled",
+      "Tasting Done",
+      "Verbal Commitment",
+      "First Order Placed",
+      "Closed Won",
+      "Closed Lost"
+    ]
+  }
+}

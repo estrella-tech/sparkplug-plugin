@@ -73,7 +73,7 @@ def _send_via_oauth2(to: list[str], subject: str, html_body: str, sender: str) -
     from google_auth_oauthlib.flow import InstalledAppFlow
     from googleapiclient.discovery import build
 
-    SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
+    SCOPES = ["https://www.googleapis.com/auth/gmail.send", "https://www.googleapis.com/auth/gmail.readonly"]
 
     creds = None
     if OAUTH_TOKEN_PATH.exists():
@@ -119,7 +119,7 @@ def setup_oauth():
         return
 
     from google_auth_oauthlib.flow import InstalledAppFlow
-    SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
+    SCOPES = ["https://www.googleapis.com/auth/gmail.send", "https://www.googleapis.com/auth/gmail.readonly"]
 
     print("Opening browser for authorization...")
     flow = InstalledAppFlow.from_client_secrets_file(str(OAUTH_CREDS_PATH), SCOPES)
