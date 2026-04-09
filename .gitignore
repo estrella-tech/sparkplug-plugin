@@ -16,3 +16,7 @@ Thumbs.db
 # Plugin build artifacts
 *.plugin
 config/sparkplug.json
+
+# Log files from outreach scripts
+exports/rewrite_log.json
+exports/followup_log.json

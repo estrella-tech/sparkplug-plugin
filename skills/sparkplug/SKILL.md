@@ -33,7 +33,7 @@ This skill guides Claude in using the `sparkplug` MCP server to query and sync A
 | `sparkplug_list_snaps` | List all Snaps with their storifymeSnapId, name, markets, page count |
 | `sparkplug_get_snap_engagement` | Per-employee engagement rows for a specific Snap (views, slide progress, actions) |
 | `sparkplug_export_all_snap_analytics` | Export engagement data for ALL Snaps to a single CSV |
-| `sparkplug_get_snaps` | List Snaps with featured/status info |
+| `sparkplug_list_snaps` | List Snaps with optional featured filter |
 | `sparkplug_get_reach` | Snap reach and engagement breakdown |
 | `sparkplug_get_brands` | Sub-brands configured under Atomic Fungi |
 | `sparkplug_export_csv` | Export any data to a local CSV file |

@@ -57,6 +57,7 @@ def analyze_data() -> dict:
     deals_export = load_export("hubspot_deals")
     companies_export = load_export("hubspot_companies")
     drafts_export = load_export("gmail_drafts")
+    leaderboard_export = load_export("budtender_leaderboard")
 
     retailers = retailers_export.get("data", [])
     sales_data = sales_export.get("data", [])
@@ -167,6 +168,9 @@ def analyze_data() -> dict:
         rname = r.get("accountName", "unknown")
         action_items.append({"priority": "low", "text": f"Push latest Snap content to {rname} budtenders.", "category": "marketing"})
 
+    # --- Budtender Leaderboard (from Snap engagement) ---
+    leaderboard = leaderboard_export.get("data", []) if isinstance(leaderboard_export.get("data"), list) else []
+
     return {
         "date": today,
         "date_short": today_short,
@@ -174,6 +178,7 @@ def analyze_data() -> dict:
         "retailers": retailers,
         "sales_by_retailer": sales_by_retailer,
         "budtender_rankings": budtender_rankings,
+        "budtender_leaderboard": leaderboard[:15],
         "snap_stats": snap_stats,
         "hs_pipeline": by_stage,
         "hs_total_deals": total_deals,
@@ -256,11 +261,17 @@ def format_email_html(insights: dict) -> str:
         flag = ' style="color:#e74c3c;font-weight:bold"' if s7 == 0 else ""
         sales_rows += f'<tr><td style="padding:6px 10px;border-bottom:1px solid #eee">{rname}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:center"{flag}>{s7}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:center">{s30}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:center">{s90}</td></tr>'
 
-    # Budtender rows
-    budtender_rows = ""
-    for rname, ranked in insights["budtender_rankings"].items():
-        for i, (emp_id, units) in enumerate(ranked[:3]):
-            budtender_rows += f'<tr><td style="padding:4px 10px;border-bottom:1px solid #eee">{rname}</td><td style="padding:4px 10px;border-bottom:1px solid #eee">#{i+1}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-family:monospace;font-size:11px">{emp_id[:12]}...</td><td style="padding:4px 10px;border-bottom:1px solid #eee;text-align:center;font-weight:bold">{units}</td></tr>'
+    # Budtender leaderboard rows (from Snap engagement)
+    leaderboard_rows = ""
+    for i, bt in enumerate(insights.get("budtender_leaderboard", [])[:15]):
+        total = bt.get("total", 0)
+        views = bt.get("views", 0)
+        completions = bt.get("completions", 0)
+        ctas = bt.get("ctas", 0)
+        rate = f"{completions/views*100:.0f}%" if views > 0 else "—"
+        bg = "background:#f0f7f4;" if i < 3 else ""
+        rank_style = "font-weight:bold;color:#c8a45a;" if i < 3 else ""
+        leaderboard_rows += f'<tr style="{bg}"><td style="padding:5px 10px;border-bottom:1px solid #eee;{rank_style}">#{i+1}</td><td style="padding:5px 10px;border-bottom:1px solid #eee">{bt.get("name", "?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;font-size:12px">{bt.get("retailer", "?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{views}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{completions}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{ctas}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{rate}</td></tr>'
 
     # Action items
     action_html = ""
@@ -326,11 +337,12 @@ def format_email_html(insights: dict) -> str:
         </table>
 
         <!-- BUDTENDER PERFORMANCE -->
-        {"" if not budtender_rows else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Top Budtenders (30d)</h2>
-        <table style="width:100%;border-collapse:collapse">
-            <tr style="background:#f8f8f8"><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px">Rank</th><th style="padding:6px 10px">ID</th><th style="padding:6px 10px;text-align:center">Units</th></tr>
-            {budtender_rows}
+        {"" if not leaderboard_rows else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Budtender Leaderboard (Snap Engagement)</h2>
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px">Rank</th><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px;text-align:center">Views</th><th style="padding:6px 10px;text-align:center">Completions</th><th style="padding:6px 10px;text-align:center">CTAs</th><th style="padding:6px 10px;text-align:center">Rate</th></tr>
+            {leaderboard_rows}
         </table>'''}
+
 
         <!-- SNAP ENGAGEMENT -->
         <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Snap Engagement</h2>

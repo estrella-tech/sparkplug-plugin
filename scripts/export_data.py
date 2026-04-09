@@ -125,12 +125,34 @@ def export_sparkplug():
             pass
     export_csv_file("snap_engagement", engagement_rows,
                      ["snap_name", "snap_id", "Employee", "Retailer", "Location", "Action", "Slide", "Total Slides"])
+    # Aggregate per-budtender leaderboard
+    bt_stats = {}
+    for row in engagement_rows:
+        emp = row.get("Employee", "").strip()
+        retailer = row.get("Retailer", "").strip()
+        action = row.get("Action", "").strip()
+        if not emp:
+            continue
+        key = f"{emp}||{retailer}"
+        if key not in bt_stats:
+            bt_stats[key] = {"name": emp, "retailer": retailer, "views": 0, "completions": 0, "ctas": 0, "total": 0}
+        if action == "Story Started":
+            bt_stats[key]["views"] += 1
+        elif action == "Story Complete":
+            bt_stats[key]["completions"] += 1
+        elif action == "Story Text Question Answer":
+            bt_stats[key]["ctas"] += 1
+        bt_stats[key]["total"] = bt_stats[key]["views"] + bt_stats[key]["completions"] + bt_stats[key]["ctas"]
+
+    leaderboard = sorted(bt_stats.values(), key=lambda x: x["total"], reverse=True)
+
     export_json("snap_engagement_summary", {
         "total_interactions": len(engagement_rows),
         "unique_employees": len({r["Employee"] for r in engagement_rows if r["Employee"]}),
         "unique_retailers": len({r["Retailer"] for r in engagement_rows if r["Retailer"]}),
         "snaps_with_data": len({r["snap_name"] for r in engagement_rows}),
     })
+    export_json("budtender_leaderboard", leaderboard[:50])
 
 
 def export_hubspot():
@@ -244,7 +266,7 @@ def export_gmail_drafts():
         from google.auth.transport.requests import Request
         from googleapiclient.discovery import build
 
-        SCOPES = ["https://www.googleapis.com/auth/gmail.send", "https://www.googleapis.com/auth/gmail.readonly"]
+        SCOPES = ["https://www.googleapis.com/auth/gmail.send", "https://www.googleapis.com/auth/gmail.readonly", "https://www.googleapis.com/auth/gmail.compose"]
         creds = Credentials.from_authorized_user_file(str(token_path), SCOPES)
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())

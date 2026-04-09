@@ -1,0 +1,405 @@
+{
+  "exported_at": "2026-04-09T18:28:04.959212+00:00",
+  "data": [
+    {
+      "name": "Shannon Colter",
+      "retailer": "Fine Fettle (MA)",
+      "views": 20,
+      "completions": 17,
+      "ctas": 1,
+      "total": 38
+    },
+    {
+      "name": "Johnathan Anderson",
+      "retailer": "Northeast Alternatives (Retail)",
+      "views": 18,
+      "completions": 16,
+      "ctas": 3,
+      "total": 37
+    },
+    {
+      "name": "Yona Browne",
+      "retailer": "Diem Cannabis (MA)",
+      "views": 19,
+      "completions": 10,
+      "ctas": 1,
+      "total": 30
+    },
+    {
+      "name": "Nick OBrien",
+      "retailer": "Mayflower",
+      "views": 13,
+      "completions": 10,
+      "ctas": 0,
+      "total": 23
+    },
+    {
+      "name": "Marylou B.",
+      "retailer": "Bud's Goods",
+      "views": 13,
+      "completions": 8,
+      "ctas": 2,
+      "total": 23
+    },
+    {
+      "name": "Jaime Kelly",
+      "retailer": "Honey Northampton",
+      "views": 12,
+      "completions": 7,
+      "ctas": 2,
+      "total": 21
+    },
+    {
+      "name": "Austin Edwards",
+      "retailer": "Collective Cannabis",
+      "views": 10,
+      "completions": 9,
+      "ctas": 1,
+      "total": 20
+    },
+    {
+      "name": "Amy White",
+      "retailer": "Diem Cannabis (MA)",
+      "views": 11,
+      "completions": 6,
+      "ctas": 3,
+      "total": 20
+    },
+    {
+      "name": "Veronica Wylie",
+      "retailer": "Bud's Goods",
+      "views": 10,
+      "completions": 8,
+      "ctas": 0,
+      "total": 18
+    },
+    {
+      "name": "Steven Misitano",
+      "retailer": "Mayflower",
+      "views": 13,
+      "completions": 5,
+      "ctas": 0,
+      "total": 18
+    },
+    {
+      "name": "Samantha Nieves",
+      "retailer": "Diem Cannabis (MA)",
+      "views": 9,
+      "completions": 6,
+      "ctas": 2,
+      "total": 17
+    },
+    {
+      "name": "Nicole Gomes",
+      "retailer": "East Boston Cannabis",
+      "views": 9,
+      "completions": 6,
+      "ctas": 1,
+      "total": 16
+    },
+    {
+      "name": "Tyler Schaff",
+      "retailer": "Collective Cannabis",
+      "views": 11,
+      "completions": 5,
+      "ctas": 0,
+      "total": 16
+    },
+    {
+      "name": "Rebecca Heroux",
+      "retailer": "Apotho Therapeutics",
+      "views": 10,
+      "completions": 6,
+      "ctas": 0,
+      "total": 16
+    },
+    {
+      "name": "Andrew Racine",
+      "retailer": "Kapha",
+      "views": 9,
+      "completions": 5,
+      "ctas": 2,
+      "total": 16
+    },
+    {
+      "name": "Kevin Tessier",
+      "retailer": "Northeast Alternatives (Retail)",
+      "views": 7,
+      "completions": 7,
+      "ctas": 1,
+      "total": 15
+    },
+    {
+      "name": "Paul Kenney",
+      "retailer": "Garden Remedies (Retail)",
+      "views": 11,
+      "completions": 4,
+      "ctas": 0,
+      "total": 15
+    },
+    {
+      "name": "Justin Candeias",
+      "retailer": "Zahara Cannabis",
+      "views": 9,
+      "completions": 5,
+      "ctas": 1,
+      "total": 15
+    },
+    {
+      "name": "Jonah Nemeth",
+      "retailer": "Garden Remedies (Retail)",
+      "views": 10,
+      "completions": 4,
+      "ctas": 0,
+      "total": 14
+    },
+    {
+      "name": "Ariana Rivera",
+      "retailer": "Fine Fettle - West Springfield",
+      "views": 8,
+      "completions": 5,
+      "ctas": 1,
+      "total": 14
+    },
+    {
+      "name": "Jose Dejesus",
+      "retailer": "Redi",
+      "views": 7,
+      "completions": 6,
+      "ctas": 1,
+      "total": 14
+    },
+    {
+      "name": "Sean Magarian",
+      "retailer": "Mello",
+      "views": 13,
+      "completions": 1,
+      "ctas": 0,
+      "total": 14
+    },
+    {
+      "name": "Brittany Hicks",
+      "retailer": "Pure Oasis",
+      "views": 7,
+      "completions": 5,
+      "ctas": 1,
+      "total": 13
+    },
+    {
+      "name": "Megan McCann",
+      "retailer": "Green Meadows (Retail)",
+      "views": 7,
+      "completions": 4,
+      "ctas": 2,
+      "total": 13
+    },
+    {
+      "name": "Gabi Whitman",
+      "retailer": "Honey Northampton",
+      "views": 6,
+      "completions": 5,
+      "ctas": 0,
+      "total": 11
+    },
+    {
+      "name": "Kimberly Portillo Rodriguez",
+      "retailer": "",
+      "views": 6,
+      "completions": 4,
+      "ctas": 1,
+      "total": 11
+    },
+    {
+      "name": "Yves Bellame",
+      "retailer": "Kush Groove",
+      "views": 5,
+      "completions": 4,
+      "ctas": 2,
+      "total": 11
+    },
+    {
+      "name": "Javier Rivera",
+      "retailer": "Local Cannabis",
+      "views": 6,
+      "completions": 4,
+      "ctas": 0,
+      "total": 10
+    },
+    {
+      "name": "Anastasia Penta",
+      "retailer": "Garden Remedies (Retail)",
+      "views": 5,
+      "completions": 5,
+      "ctas": 0,
+      "total": 10
+    },
+    {
+      "name": "Kyle Hewes",
+      "retailer": "Rolling Js",
+      "views": 5,
+      "completions": 4,
+      "ctas": 1,
+      "total": 10
+    },
+    {
+      "name": "Nicole Torres",
+      "retailer": "High Profile (MA)",
+      "views": 6,
+      "completions": 4,
+      "ctas": 0,
+      "total": 10
+    },
+    {
+      "name": "Molly McNulty",
+      "retailer": "Garden Remedies (Retail)",
+      "views": 7,
+      "completions": 2,
+      "ctas": 0,
+      "total": 9
+    },
+    {
+      "name": "Zack Varner",
+      "retailer": "Enlite",
+      "views": 4,
+      "completions": 4,
+      "ctas": 1,
+      "total": 9
+    },
+    {
+      "name": "Johnny Mahan",
+      "retailer": "Bud's Goods",
+      "views": 4,
+      "completions": 4,
+      "ctas": 1,
+      "total": 9
+    },
+    {
+      "name": "Jake Guillotte",
+      "retailer": "Cannabis Connection",
+      "views": 4,
+      "completions": 3,
+      "ctas": 1,
+      "total": 8
+    },
+    {
+      "name": "Melissa Flores",
+      "retailer": "CommCan",
+      "views": 3,
+      "completions": 3,
+      "ctas": 2,
+      "total": 8
+    },
+    {
+      "name": "Brianna Bowlby",
+      "retailer": "NETA",
+      "views": 5,
+      "completions": 2,
+      "ctas": 0,
+      "total": 7
+    },
+    {
+      "name": "Genesis Mae Stevens",
+      "retailer": "Smokey Leaf",
+      "views": 4,
+      "completions": 3,
+      "ctas": 0,
+      "total": 7
+    },
+    {
+      "name": "Edwin Vega",
+      "retailer": "Embr - MA",
+      "views": 3,
+      "completions": 3,
+      "ctas": 1,
+      "total": 7
+    },
+    {
+      "name": "Justin Gabriel",
+      "retailer": "ZAZA Green",
+      "views": 3,
+      "completions": 3,
+      "ctas": 1,
+      "total": 7
+    },
+    {
+      "name": "joanne cardone",
+      "retailer": "Kush Groove",
+      "views": 3,
+      "completions": 2,
+      "ctas": 2,
+      "total": 7
+    },
+    {
+      "name": "Jacob Swenson",
+      "retailer": "Northeast Alternatives (Retail)",
+      "views": 4,
+      "completions": 2,
+      "ctas": 1,
+      "total": 7
+    },
+    {
+      "name": "Karina Perez",
+      "retailer": "House Premium Cannabis",
+      "views": 5,
+      "completions": 2,
+      "ctas": 0,
+      "total": 7
+    },
+    {
+      "name": "Geovanny Sanchez",
+      "retailer": "Joint Operations - Wick",
+      "views": 3,
+      "completions": 3,
+      "ctas": 0,
+      "total": 6
+    },
+    {
+      "name": "DREW CRONIN",
+      "retailer": "Fine Fettle - West Springfield",
+      "views": 3,
+      "completions": 2,
+      "ctas": 1,
+      "total": 6
+    },
+    {
+      "name": "Darrell Edwards",
+      "retailer": "Lowkey Dispensary",
+      "views": 4,
+      "completions": 2,
+      "ctas": 0,
+      "total": 6
+    },
+    {
+      "name": "Lucas De Campos",
+      "retailer": "Greensoul",
+      "views": 4,
+      "completions": 2,
+      "ctas": 0,
+      "total": 6
+    },
+    {
+      "name": "Miguel Cabrera",
+      "retailer": "6 Bricks",
+      "views": 4,
+      "completions": 2,
+      "ctas": 0,
+      "total": 6
+    },
+    {
+      "name": "Michael Safo-Agyare",
+      "retailer": "The Botanist (MA) - Retail",
+      "views": 4,
+      "completions": 2,
+      "ctas": 0,
+      "total": 6
+    },
+    {
+      "name": "Lisamarie Wakem",
+      "retailer": "The Green Lady Dispensary",
+      "views": 4,
+      "completions": 2,
+      "ctas": 0,
+      "total": 6
+    }
+  ]
+}
