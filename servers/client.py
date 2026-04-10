@@ -172,3 +172,50 @@ class SparkplugClient:
     def get_config(self) -> dict:
         """Sparkplug app config for this vendor."""
         return self._get(f"/sparkplug/config", params={"group_id": self.group_id})
+
+    def get_learning_resources(self) -> list[dict]:
+        """Return all training courses for this vendor."""
+        data = self._get("/learning-resource", params={
+            "limit": 100, "offset": 0, "order": "desc",
+            "sort": "createdAt", "accountId": self.group_id,
+        })
+        if isinstance(data, dict):
+            return data.get("data", [])
+        return data
+
+    def get_course_responses(self, learning_resource_id: str) -> list[dict]:
+        """Return all employee responses/completions for a training course."""
+        data = self._get(f"/learning-resource/{learning_resource_id}/response")
+        if isinstance(data, dict):
+            return data.get("data", [])
+        return data
+
+    def get_course_response_count(self, learning_resource_id: str) -> int:
+        """Return count of responses for a training course."""
+        data = self._get(f"/learning-resource/{learning_resource_id}/response/count")
+        return data.get("count", 0)
+
+    def get_all_cta_responses(self) -> list[dict]:
+        """Pull all CTA/question responses across all Snaps. Returns list of response dicts."""
+        snaps = self.get_snaps_list()
+        responses = []
+        for s in snaps:
+            sid = s.get("storifymeSnapId", "")
+            if not sid:
+                continue
+            try:
+                rows = self.get_snap_engagement(str(sid))
+                for r in rows:
+                    if r.get("Response"):
+                        responses.append({
+                            "snap_name": s.get("name", ""),
+                            "snap_id": sid,
+                            "employee": r.get("Employee", ""),
+                            "retailer": r.get("Retailer", ""),
+                            "action": r.get("Action", ""),
+                            "slide": r.get("Slide", ""),
+                            "response": r.get("Response", ""),
+                        })
+            except Exception:
+                pass
+        return responses

@@ -154,6 +154,51 @@ def export_sparkplug():
     })
     export_json("budtender_leaderboard", leaderboard[:50])
 
+    export_courses(client)
+
+    print("[Sparkplug] Fetching CTA responses...")
+    try:
+        cta_responses = client.get_all_cta_responses()
+        export_json("cta_responses", cta_responses)
+        print(f"  Exported cta_responses.json ({len(cta_responses)} responses)")
+    except Exception as e:
+        print(f"  CTA export failed: {e}")
+
+
+def export_courses(client):
+    """Export training course data and completions."""
+    print("[Sparkplug] Fetching training courses...")
+    try:
+        courses = client.get_learning_resources()
+        course_data = []
+        for course in courses:
+            rid = course.get("learningResourceId", "")
+            responses = client.get_course_responses(rid) if rid else []
+            completed = [r for r in responses if r.get("data", {}).get("status") == "completed"]
+            in_progress = [r for r in responses if r.get("data", {}).get("status") == "in_progress"]
+            course_data.append({
+                "id": rid,
+                "total_responses": len(responses),
+                "completed": len(completed),
+                "in_progress": len(in_progress),
+                "responses": [{
+                    "name": f"{r.get('firstName', '')} {r.get('lastName', '')}".strip(),
+                    "retailer": r.get("retailerName", ""),
+                    "location": r.get("locationName", ""),
+                    "status": r.get("data", {}).get("status", ""),
+                    "page": r.get("data", {}).get("pageNo", 0),
+                    "created": r.get("createdAt", ""),
+                    "updated": r.get("updatedAt", ""),
+                    "incentive_status": r.get("employeeDeposit", {}).get("status", ""),
+                } for r in responses],
+            })
+        export_json("course_completions", course_data)
+        total_completed = sum(c["completed"] for c in course_data)
+        total_in_progress = sum(c["in_progress"] for c in course_data)
+        print(f"  Exported course_completions.json ({total_completed} completed, {total_in_progress} in progress)")
+    except Exception as e:
+        print(f"  Course export failed: {e}")
+
 
 def export_hubspot():
     """Export HubSpot deals, companies, contacts."""

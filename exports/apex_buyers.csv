@@ -1,0 +1,304 @@
+buyer_id,name,state_license,address,city,state,zip,industry,type,buyer_group,buyer_type,disabled
+130585,Stem,MR281327,124 Washington Street,Haverhill,39,01832,Recreational,Dispensary,Stem,Multi,False
+229000,Apotho Therapeutics - Athol,MC281370,1 Exchange Street,Athol,39,01331,Recreational,Cultivator,"Apotho Therapeutics, LLC",Multi,False
+130582,Apotho Therapeutics - Plainville,MR282388,119 Washington St,Plainville,39,02762,Recreational,Dispensary,"Apotho Therapeutics, LLC",Multi,False
+130583,Seaside Joint Ventures Inc,MR284549,14 Lots Hollow,Orleans,39,02537,Recreational,Dispensary,Seaside Joint Ventures Inc,Multi,False
+130584,Bud's Goods - Abington,MR282410,1540 Bedford Street,Abington,39,02351,Recreational,Dispensary,Bud's Goods & Provisions Corp. - Production,Multi,False
+229004,Bud's Goods - Worcester,MR282319,62-68 West Boylston St.,Worcester,39,01606,Recreational,Dispensary,Bud's Goods & Provisions - Retail,Multi,False
+130586,Caroline's Cannabis - Manufacturing,MP282232,4 Charlesview Rd,Hopedale,39,01747,Recreational,Dispensary,Caroline's Cannabis,Multi,False
+229002,Bud's Goods - Lakeville,MP281507,475 Kenneth Welch Drive,Lakeville,39,02347,Recreational,Dispensary,Bud's Goods & Provisions - Retail,Multi,False
+229003,Bud's Goods - Watertown,MR281774,330-350 Pleasant Street,Watertown,39,02472,Recreational,Dispensary,Bud's Goods & Provisions - Retail,Multi,False
+130588,Cape Cod Cannabis,,1446 State Highway,Wellfleet,39,02667,Recreational,Dispensary,Cape Cod Cannabis,Multi,False
+229008,Nova Farms - Framingham,MR282516,1137 Worcester Road,Framingham,39,01701,Recreational,Dispensary,Nova Farms,Multi,False
+229005,Caroline's Cannabis - Hopedale,MR283694,4 Charlesview Road,Hopedale,39,01747,Recreational,Dispensary,Caroline's Cannabis,Multi,False
+130587,Nova Farms - Manufacturing,MP281325,34 Extension Street,Attleboro,39,02703,Recreational,Processor,Nova Farms,Multi,False
+130590,Green Meadows - Fitchburg,MR284280,50 Whalon Street,Fitchburg,39,01420,Recreational,Dispensary,Green Meadows -Retail,Multi,False
+130593,South Shore Buds - (Frozen 4 Corp),MP281749,985 Plain St,Marshfield,39,02050,Recreational,Processor,South Shore Buds - (Frozen 4 Corp),Multi,False
+229013,Tree House Cannabis (Groton),MRN284689,1 Forge Village Rd.,Groton,39,01450,Recreational,Dispensary,Tree House Cannabis,Multi,False
+130594,Tree House Cannabis (Dracut),MR283416,61 Silva Lane,Dracut,39,01826,Recreational,Dispensary,Tree House Cannabis,Multi,False
+130592,Aura Cannabis Company LLC,MR282487,320 Airport Road,Fall River,39,02720,Recreational,Dispensary,Aura Cannabis Company LLC,Multi,False
+229014,Tree House Cannabis (Pepperell),MR283367,112-114 Main Street,Pepperell,39,01463,Recreational,Dispensary,Tree House Cannabis,Multi,False
+130596,Blackstone Valley Cannabis,MR282267,79 River Road,Uxbridge,39,01569,Recreational,Dispensary,Blackstone Valley Cannabis,Multi,False
+130597,High Plains Farms (27 Broom St),MC281723,27 Broom Street,Plainfield,39,01070,Recreational,Dispensary,High Plains Farms (27 Broom St),Multi,False
+130598,Great Barrington Dispensary (Costal Cult.),MR282884,454 Main St.,Great Barrington,39,01230,Recreational,Dispensary,Great Barrington Dispensary (Costal Cult.),Multi,False
+130601,Sweet Grass Botanicals,,,,,,,,,Multi,False
+130599,Ascend (Mass Grow LLC),MC281488,134 Chestnut Hill Avenue,Athol,39,01331,Recreational,Cultivator,Ascend,Multi,False
+130602,Resinate - Worcester,MR282398,1191 Millbury St,Worcester,39,01607,Recreational,Dispensary,Resinate,Multi,False
+130603,Suncrafted - Middleboro,MR283126,477 Wareham st,Middleborough,39,02346,Recreational,Dispensary,Suncrafted,Multi,False
+130600,NETA (Parallel),RMD125-P,5 forge Pkwy,Franklin,39,01760,Recreational,Processor,NETA (Parallel),Multi,False
+130604,Duchess (Up Top),,,,,,,,,Multi,False
+130605,Old World Remedies,,953 Western Ave,Lynn,39,,,,Old World Remedies,Multi,False
+130606,INSA - Spring. Retail,RMD845-R,506 Cottage Street,Springfield,39,01104,Recreational,Dispensary,INSA,Multi,False
+130607,Comm Ave Canna,MR282314,1030 Commonwealth Ave,Brookline,39,02215,Recreational,Dispensary,Comm Ave Canna,Multi,False
+130608,BASK,RMD445-R,2 Pequod Rd,Fairhaven,39,02719,Recreational,Dispensary,BASK,Multi,False
+130609,Mass Alternative Care,RMD726-R,1247 East Main Street,Chicopee,39,01020,Recreational,Dispensary,Mass Alternative Care,Multi,False
+130611,ARL - Cultivation Facility,RMD1085-C,177 John Vertente Blvd,New Bedford,39,02745,Recreational,Distributor,ARL,Multi,False
+130610,New Leaf (360),MR283203,360 Second Street,Fall River,39,02721,Recreational,Dispensary,New Leaf,Multi,False
+130613,"ACK Natural, LLC - Nantucket",MR282038,17-19 Spearhead Drive,Nantucket,39,02554,Recreational,Dispensary,"ACK Natural, LLC",Multi,False
+229015,New Leaf (South Main),MR283204,2629 South Main Street,Fall River,39,02721,Recreational,Dispensary,New Leaf,Multi,False
+229017,Clear Sky Cannabis - Worcester,MR281834,143 SW Cutoff,Worcester,39,01604,Recreational,Dispensary,Clear Sky Cannabis (Evergreen Strategies LLC),Multi,False
+130614,Clear Sky Cannabis - Belchertown,MR283100,20 George Hannum Street,Belchertown,39,01007,Recreational,Dispensary,Clear Sky Cannabis (Evergreen Strategies LLC),Multi,False
+229016,Clear Sky Cannabis - North Adams,MR282032,221 State Road,North Adams,39,01247,Recreational,Dispensary,Clear Sky Cannabis (Evergreen Strategies LLC),Multi,False
+229018,SIRA / AYR - M3 Cultivation,MC283066,5-7 Industrial Road,Milford,39,01757,Recreational,Cultivator,SIRA / AYR WELLNESS,Multi,False
+229019,SIRA / AYR - Needham,RMD625-R,29 Franklin Street,Needham,39,02494,Medical,Dispensary,SIRA / AYR WELLNESS,Multi,False
+130615,SIRA / AYR - Back Bay,MR283946,827-829 Boylston Street,Boston,39,02116,Recreational,Dispensary,SIRA / AYR WELLNESS,Multi,False
+229020,SIRA / AYR - Somerville,MR282672,240 Elm Street,Somerville,39,02144,Recreational,Dispensary,SIRA / AYR WELLNESS,Multi,False
+229021,SIRA / AYR - Watertown,MR283886,48 North Beacon Street,Watertown,39,02472,Recreational,Dispensary,SIRA / AYR WELLNESS,Multi,False
+229023,NEA - New Bedford,MR282659,596 Tarkiln Hill Road,New Bedford,39,02745,Recreational,Dispensary,Northeast Alternatives,Multi,False
+130618,Terpene Journey,MR281612,430 Paradise Road,Swampscott,39,01907,Recreational,Dispensary,Terpene Journey,Multi,False
+130617,Jeeter's,MP282054,18 Progress Avenue,Tyngsborough,39,01879,Recreational,Processor,Jeeter's (Dreamfields MA One Inc.),Multi,False
+229022,NEA - Seekonk,MR282743,1903 Fall River Ave,Seekonk,39,02771,Recreational,Dispensary,Northeast Alternatives,Multi,False
+130616,NEA - Fall River (REC),MR281314,999 William S. Canning Boulevard,Fall River,39,02721,Recreational,Dispensary,Northeast Alternatives,Multi,False
+130619,Castle Leaf,MR284521,100 Leo M. Birmingham Parkway,Boston,39,02135,Recreational,Dispensary,Green Heart,Multi,False
+229026,Green City,MR284345,220 Oneil Blvd,Attleboro,39,02703,Recreational,Dispensary,Green Heart,Multi,False
+229027,Green Heart,MR281939,897 North Montello Street,Brockton,39,02301,Recreational,Dispensary,Green Heart,Multi,False
+130620,Redi - Natick,,321 Speen St Suite J,Natick,39,01760,Recreational,Dispensary,Redi,Multi,False
+130622,Kush Groove - Brockton,,912 Crescent Street,Brockton,39,02302,,,Kush Groove Dispensary,Multi,False
+130621,CannaBarn,MR281304,678 Adams St.,Abington,39,02351,Recreational,Dispensary,Canna Barn,Multi,False
+229028,The Holistic Concepts,MR283012,1915 Main St.,Brockton,39,02301,Recreational,Dispensary,Green Heart,Multi,False
+130624,Bloom Brothers,,,,,,,,,Multi,False
+130625,Campfire - West Boylston,,65 W Boylston St,West Boylston,39,01583,,Dispensary,Campfire,Multi,False
+130623,Botera,MR282766,1256 West Central St,Franklin,39,02038,Recreational,Dispensary,Botera,Multi,False
+130626,The Vault Cannabis - Webster,MR282814,70 Worcester Road,Webster,39,01570,,Dispensary,The Vault Cannabis,Multi,False
+130627,Diem - Worcester,,74 Grafton Street,Worcester,39,01604,,Dispensary,Diem,Multi,False
+130628,Perpetual,,12 Latti Farm Rd,Millbury,39,01527,,Dispensary,Perpetual,Multi,False
+130629,Verilife,,939 Boston Turnpike,Shrewsbury,39,01545,,Dispensary,Verilife,Multi,False
+130630,Good Chemistry - Worcester,,9 Harrison St,Worcester,39,01604,,Dispensary,Good Chemistry,Multi,False
+130631,Jim Buddy's,MR281301,1269 Memorial Drive,Chicopee,39,01020,Recreational,Dispensary,Jim Buddy's,Multi,False
+229032,Holistic Industries - Easthampton,MR282605,155 Northampton Street,Easthampton,39,01027,Recreational,Dispensary,Holistic Industries,Multi,False
+130632,Misty Mountain Shop,MR282634,323 Commercial Street,Malden,39,02148,Recreational,Dispensary,Misty Mountain Shop,Multi,False
+229034,Holistic Industries - Somerville (Rec),MR281787,304 Somerville Avenue,Somerville,39,02143,Recreational,Dispensary,Holistic Industries,Multi,False
+130633,Holistic Industries - Cultivation,MC282056,96 Palmer Road,Monson,39,01057,Recreational,Cultivator,Holistic Industries,Multi,False
+229033,Holistic Industries - Manufacturing (Rec),MP281630,96 Palmer Road,Monson,39,01057,Recreational,Processor,Holistic Industries,Multi,False
+130635,The Botanist - Worcester,,65 Pullman St.,Worcester,39,01606,Recreational,Dispensary,The Botanist,Multi,False
+130636,New England Harvest,,89 Parker St,Clinton,39,01510,Recreational,Dispensary,New England Harvest,Multi,False
+229035,Holistic Industries - Springfield,MR282667,1300 Boston Road,Springfield,39,01119,Recreational,Dispensary,Holistic Industries,Multi,False
+130634,High Hopes,MR282161,1 Menfi Way,Hopedale,39,01747,Recreational,Dispensary,High Hopes,Multi,False
+130637,Temescal Wellness - Framingham,RMD965-R,665 Cochituate Rd,Framingham,39,01701,Recreational,Dispensary,Temescal Wellness,Multi,False
+229038,Temescal Wellness - Pittsfield,MR281588,10 Callahan Dr,Pittsfield,39,01201,Recreational,Dispensary,Temescal Wellness,Multi,False
+130639,Lowkey,MR283332,571B Washington St,Dorchester,39,02124,Recreational,Dispensary,Lowkey,Multi,False
+130640,The Verb is Herb,MR281637,74 Cottage St,Easthampton,39,01027,Recreational,Dispensary,The Verb is Herb,Multi,False
+130642,Lucky Green Ladies,MD1282,394 Old Colony,Norton,39,02766,Recreational,Dispensary,Lucky Green Ladies,Multi,False
+130643,Red Cardinal - Amherst,MR282975,"328 College Street Amherst, MA 01002",Amherst,39,01002,Recreational,Dispensary,Red Cardinal,Multi,False
+130644,"Heal, Inc.",MR283323,660 Main Street,Sturbridge,39,01566,Recreational,Dispensary,"Heal, Inc.",Multi,False
+130646,Mello,MR281811,330 Amesbury Rd,Haverhill,39,01830,Recreational,Dispensary,Mellow Fellows (Retail),Multi,False
+229040,Red Cardinal - Princeton,MR283815,104 Main Street,Princeton,39,01541,Recreational,Dispensary,Red Cardinal,Multi,False
+229041,Red Cardinal - Westfield,MR283816,265 Union Street,Westfield,39,01085,Recreational,Dispensary,Red Cardinal,Multi,False
+130650,BB Botanics,MR282084,242 John Wise Ave,Essex,39,01929,Recreational,Dispensary,BB Botanics,Multi,False
+130652,Himalayan high LLC.,MRN284668,2727 Jacobs Ladder Rd,Becket,39,01223,Recreational,Dispensary,Himalayan High LLC,Multi,False
+130651,Natural Agricultural Products,MRN284177,1437 Bedford Street,Abington,39,02351,Recreational,Dispensary,Natural Agricultural Products,Multi,False
+130653,Trade Roots,,6 Thatcher Lane,Wareham,39,02571,Recreational,Dispensary,Trade Roots,Multi,False
+130654,Cannabis Culture,MR283970,26 Strong Ave,Northampton,39,01060,Recreational,Dispensary,Cannabis Culture,Multi,False
+130659,Baked Beans Farms,MP282045,150 Sam Fonzo Drive,Beverly,39,01915,Recreational,Processor,Baked Beans Farms,Multi,False
+130658,Coastal Healing,MR282206,248 State Rd,Westport,39,02790,Recreational,Distributor,Coastal Healing,Multi,False
+130656,AMP (Atlantic Medicinal Partners),RMD1506-C,774 Crawford St,Fitchburg,39,01453,Recreational,Dispensary,Ethos Cannabis,Multi,False
+130661,Curaleaf - Hanover,RMD385-R,2001 Washington Street,Hanover,39,02339,Recreational,Dispensary,Curaleaf,Multi,False
+130660,Solar Therapeutics - Cultivation,MC281592,1400 Brayton Point Road,Somerset,39,02725,Recreational,Cultivator,Solar Therapeutics,Multi,False
+229043,Solar Therapeutic - Manufacturing,MP281464,1400 Brayton Point Road,Somerset,39,02725,Recreational,Processor,Solar Therapeutics,Multi,False
+229045,Solar Therapeutics - Somerset,MR281817,1400 Brayton Point Road,Somerset,39,02725,Recreational,Dispensary,Solar Therapeutics,Multi,False
+229042,Solar Therapeutics - Dartmouth,MR282731,493 Faunce Corner Road,Dartmouth,39,02747,Recreational,Dispensary,Solar Therapeutics,Multi,False
+229044,Solar Therapeutics - Seekonk,MR282948,1735 Fall River Avenue,Seekonk,39,02771,Recreational,Dispensary,Solar Therapeutics,Multi,False
+229046,Curaleaf - Oxford,MR281263,425 Main Street,Oxford,39,01540,Recreational,Dispensary,Curaleaf,Multi,False
+229047,Curaleaf - Provincetown,MR282052,170 Commercial Street,Provincetown,39,02657,Recreational,Dispensary,Curaleaf,Multi,False
+229048,Curaleaf - Ware,MR282183,124 West Street Unit D,Ware,39,01082,Recreational,Dispensary,Curaleaf,Multi,False
+130664,Terps - Attelboro,,40 Forest St,Attleboro,39,02703,Recreational,Dispensary,Terps,Multi,False
+130665,Health Circle - Cultivation,MC281787,21 Commerce Rd,Rockland,39,02370,Recreational,Cultivator,Health Circle Cannabis Co.,Multi,False
+130663,Mission - Brookline,MR282028,1024B Commonwealth Avenue,Brookline,39,02215,Recreational,Dispensary,Mission,Multi,False
+229050,Mission - Worcester,MR281259,640 Lincoln Street,Worcester,39,01605,Recreational,Dispensary,Mission,Multi,False
+229051,Health Circle - Dispensary,MR281426,21 Commerce Rd,Rockland,39,02370,Recreational,Dispensary,Health Circle Cannabis Co.,Multi,False
+130666,Elevated Roots - Halifax,MR284547,319 Monponsett St,Halifax,39,02338,Recreational,Dispensary,Elevated Roots,Multi,False
+130667,In Good Health - Brockton,MR282468,1200 W Chestnut St,Brockton,39,02301,Recreational,Dispensary,In Good Health,Multi,False
+229053,Elevated Roots - Kingston,MR283092,44 William C Gould Jr Way,Kingston,39,02364,Recreational,Dispensary,Elevated Roots,Multi,False
+229054,In Good Health - Sandwich,MR284655,449 Route 130,Sandwich,39,02563,Recreational,Dispensary,In Good Health,Multi,False
+130668,Zyp Run,MD1260,1170 Morrissey Blvd,Boston,39,02122,Recreational,Distributor,Zyp Run,Multi,False
+130669,Capeway Cannabis,MR282446,307 Tremont Street,Carver,39,02330,Recreational,Dispensary,Capeway Cannabis,Multi,False
+130670,reLeaf - Mansfield,MR283153,321 School Street,Mansfield,39,02048,Recreational,Dispensary,reLeaf,Multi,False
+229055,reLeaf - Natick,MR284537,291 Worcester Street,Natick,39,01760,Recreational,Dispensary,reLeaf,Multi,False
+130671,CANA Craft - Fairhaven,MR283887,"240 Bridge St, Fairhaven, MA 02719",Fairhaven,39,02719,Recreational,Dispensary,CANA Craft Cannabis Dispensary,Multi,False
+130674,1 Connection,MR282401,200 Williams Street,Dighton,39,02764,Recreational,Dispensary,1 Connection,Multi,False
+229056,CANA Craft - Norton,MR283896,242 MANSFIELD AVENUE,Norton,39,02766,Recreational,Dispensary,CANA Craft Cannabis Dispensary,Multi,False
+130675,Quincy Cannabis Co.,MR284556,"Route 3A, 715 Washington St, Quincy, MA 02169",Quincy,39,02169,Recreational,Dispensary,Quincy Cannabis Co. dba Cadella LLC,Multi,False
+130676,Local Roots - Fitchburg,MR282131,371 Lunenburg St.,Fitchburg,39,01420,Recreational,Dispensary,Local Roots,Multi,False
+229059,Local Roots - Sturbridge,MR283231,365 Main St,Sturbridge,39,01566,Recreational,Dispensary,Local Roots,Multi,False
+130678,Haven Center - Brewster,,4019 Main Street,Brewster,39,02631,Recreational,Dispensary,The Haven Center,Multi,False
+130677,Capital Cannabis,,93 Davis Street,Douglas,39,01516,Recreational,Dispensary,Capital Cannabis,Multi,False
+130680,DDM Cannabis,MR281981,1 Lloyd St,Blackstone,39,01504,Recreational,Dispensary,DDM Cannabis,Multi,False
+130681,Zahara Cannabis,,"70 Frank Mossberg Dr, Attleboro, MA 02703",Attleboro,39,02703,,,Zahara Cannabis,Multi,False
+130682,Lazy River Dispensary,MR282562,"145 Broadway Rd,",Dracut,39,01826,Recreational,Dispensary,Lazy River Dispensary,Multi,True
+229060,253 Organic - MC Salisbury,MC282530,187 Lafayette Road,Salisbury,39,01952,Recreational,Cultivator,"253 Organic, LLC",Multi,False
+130683,253 Organic - MC Montague,MC281258,253 Millers Falls Road,Montague,39,01376,Recreational,Cultivator,"253 Organic, LLC",Multi,False
+130684,Completely Natural Alternative (CNA),,,,,,,,,Multi,False
+229062,253 Organic - MR Montague,MR281245,253 Millers Falls Road,Montague,39,01376,Recreational,Dispensary,"253 Organic, LLC",Multi,False
+130687,Eagle Eyes Warehouse,EET License,5 Robert J Way,Plymouth,39,02360,,,Erva,Multi,False
+229061,253 Organic - MP Montague,MP281302,253 Millers Falls Road,"253 Millers Falls Road P.O. Box 253 Montague, MA 01376",39,01376,Recreational,Processor,"253 Organic, LLC",Multi,False
+130685,Native Sun Wellness - Hudson,MR281800,37 Coolidge St.,Hudson,39,01749,Recreational,Dispensary,Native Sun,Retail,False
+130688,Root and Bloom,MP281819,187 Lafayette Road,Salisbury,39,01952,Recreational,Dispensary,Root and Bloom,Multi,False
+229063,Erva,MB281356,"660 Riverside Dr,",Florence,39,01062,Recreational,Dispensary,Erva,Multi,False
+130689,Toy town health care,MR281782,463 Maple St,Winchendon,39,01475,Recreational,Dispensary,Toy town health care,Multi,False
+130692,"Kur Retailers, LLC",MR284652,46 Moore St,E. Longmeadow,39,01028,Recreational,Dispensary,"Kur Retailers, LLC",Multi,False
+130690,MRM Industries,MP281798,160 Ayer Rd,Littleton,39,01460,Recreational,Dispensary,MRM Industries,Multi,False
+130691,Cape Ann Cannabis / Old Planters of Cape Ann,MR282588,300 Newburyport Turnpike,Rowley,39,01969,Recreational,Dispensary,Cape Ann Cannabis / Old Planters of Cape Ann,Multi,False
+130693,Mint Retail Facilities LLC,MR283295,768 Pleasant Street,Belmont,39,02478,Recreational,Dispensary,Mint Retail Facilities LLC,Multi,False
+130694,ELEVATION RETAIL LLC,MR283295,0 PHILLIPS RD.,New Bedford,39,02740,Recreational,Dispensary,ELEVATION RETAIL LLC,Multi,False
+130696,"UC Retail, LLC",MR284616,489 Main Street,Groton,39,01450,Recreational,Dispensary,"UC Retail, LLC",Multi,False
+130695,Fairway Botanicals Inc.,MR281755,882-884 South St,Roslindale,39,02131,Recreational,Dispensary,Fairway Botanicals Inc.,Multi,False
+130697,Four Trees Holyoke LLC,MR283237,1 Cabot Street,Holyoke,39,01040,Recreational,Dispensary,Four Trees Holyoke LLC,Multi,False
+130698,"Metro Harvest, Inc.",MR282659,292 Bedford St.,Bridgewater,39,02745,Recreational,Dispensary,"Metro Harvest, Inc.",Multi,False
+130700,"JMK Gardening, LLC  DBA Wonderland-Cannabis Co",MR284654,11 McCracken Road,Millbury,39,01527,Recreational,Dispensary,"JMK Gardening, LLC  DBA Wonderland-Cannabis Co",Multi,False
+130701,Ocean Breeze Cultivators LLC,MR283656,9 Whistle Stop Way,Gloucester,39,01930,Recreational,Dispensary,Ocean Breeze Cultivators LLC,Multi,False
+130704,"Silver Therapeutics, Inc. - Palmer",MR284328,1235 Thorndike St,Palmer,39,01069,Recreational,Dispensary,"Silver Therapeutics, Inc.",Multi,False
+130699,Euphorium LLC,MR284560,15 Main St,Holyoke,39,01040,Recreational,Dispensary,Euphorium LLC,Multi,False
+130705,Smokey Leaf,MR284276,45-49 Bank Row,Greenfield,39,,Recreational,Dispensary,Smokey Leaf,Multi,False
+130703,NashMac LLC,MR281304,654 Washington Street,Braintree,39,,Recreational,Dispensary,NashMac LLC,Multi,False
+130711,Stone's Throw Cannabis LLC d/b/a Firebrand Cannabis,MR284843,727 atlantic ave,boston,39,,Recreational,Dispensary,Stone's Throw Cannabis LLC d/b/a Firebrand Cannabis,Multi,False
+130706,Fresh Fields Gloucester LLC,MR282315,"1700 Shawsheen St, 2nd Floor",Tewksbury,39,,Recreational,Dispensary,Fresh Fields Gloucester LLC,Multi,False
+130708,Union Leaf Inc.,MR282570,71-72 Union Square,Somerville,39,,Recreational,Dispensary,Union Leaf Inc.,Multi,False
+130710,Enlite Cannabis Dispensary LLC,MR284651,459 Main Street,Indian Orchard,39,,Recreational,Dispensary,Enlite Cannabis Dispensary LLC,Multi,False
+130712,"Ganesh Wellness, Inc.",MR282740,47 High Street,Medford,39,,Recreational,Dispensary,"Ganesh Wellness, Inc.",Multi,False
+130713,Joint Operations - Westborough,MR284026,110 Turnpike Road,Westborough,39,,Recreational,Dispensary,Joint Operations dba Jo (Mendon/Rowley/Gardner/Worcester),Multi,False
+130714,Yamba,MR283511,31 Church Street,Cambridge,39,,Recreational,Dispensary,Yamba,Multi,False
+130716,Greatest Hits - Dudley,MR281597,9 Cape Rd,Taunton,39,02780,Recreational,Dispensary,"Greatest Hits (DMA Holidings (MA), LLC)",Multi,False
+229067,Greatest Hits - Lynn,MR282587,100 Ford St,Lynn,39,01904,Recreational,Dispensary,"Greatest Hits (DMA Holidings (MA), LLC)",Multi,False
+229066,Greatest Hits - Dudley,MR283264,35 Chase Ave,Dudley,39,01571,Recreational,Dispensary,"Greatest Hits (DMA Holidings (MA), LLC)",Multi,False
+130718,Gage Cannabis Company - Ayer,MR281248,38 Littleton Rd,Ayer,39,01432,Recreational,Dispensary,Gage Cannabis Company,Multi,False
+130715,Major Bloom - Attleboro,MR283033,20 John Williams Street,Attleboro,39,02703,Recreational,Dispensary,"Major Bloom, LLC",Multi,False
+130719,"Cannabis Connection, Inc - Westfield",MR281362,40 Westfield Industrial Park,Westfield,39,01085,Recreational,Dispensary,"Cannabis Connection, Inc",Multi,False
+130724,Harbor House Collective,RMD3737,80 Eastern Ave,Chelsea,39,02150,Medical,Dispensary,Harbor House Collective,Multi,False
+130720,kosa - Marlborough,MR283056,505 Boston Post Road West,Marlborough,39,01752,Recreational,Dispensary,kosa,Multi,False
+130722,Potency,MR281594,1450 East St,Pittsfield,39,01201,Recreational,Dispensary,Potency,Multi,False
+130723,Pioneer Valley Trading Co,MR284022,475 Southampton Road,Westfield,39,01085,Recreational,Dispensary,Pioneer Valley Trading Co,Multi,False
+130721,"INDICA, LLC",MR284431,127 Columbia St,Adams,39,01220,Recreational,Dispensary,"INDICA, LLC",Multi,False
+130725,East Boston Cannabis Co,MR284117,1006 Bennington St,East Boston,39,02128,Recreational,Dispensary,East Boston Cannabis Co,Multi,False
+130728,"Blue Fox Brands- Massachusetts, Inc",Massachusetts,1 Cabot Street,Holyoke,39,01040,,,"Blue Fox Brands- Massachusetts, Inc",Multi,False
+130727,Devine,MR282969,71 Main St,South Egremont,39,01258,Recreational,Dispensary,Devine,Multi,False
+130726,M1 Cannabis,MC281252,13 commercial Way,Milford,39,01757,Recreational,Cultivator,,Multi,False
+130729,Sunnyside,RMD686R,1 West st,Fall River,39,02720,,,Sunnyside,Multi,False
+130732,Get Blossom,MP282139,1 Cabot St,Holyoke,39,01040,Recreational,Distributor,Get Blossom,Multi,False
+130731,Mass Green Retail,,829 Boston St,Lynn,39,01905,Recreational,Dispensary,Mass Green Retail,Multi,False
+130734,Canna Provisions Inc - Holyoke,MR281778,380 Dwight Street,Holyoke,39,01040,Recreational,Dispensary,Canna Provisions Inc,Multi,False
+130735,Coastal Cultivar,MC282052,23 Patterson Brook Road,Wareham,39,02576,Recreational,Distributor,Coastal Cultivar,Multi,False
+130733,Bud Barn - Winchendon,MR281735,682 Spring Street,Winchendon,39,01475,Recreational,Dispensary,Bud Barn,Multi,False
+130737,Green Choice Dispensary,MR283234,114 Main St,Blackstone,39,01504,Recreational,Dispensary,Green Choice Dispensary,Multi,False
+130736,CatDogg LLC,MR284871,800 Falmouth Rd,Mashpee,39,02649,Recreational,Dispensary,CatDogg LLC,Multi,False
+130739,The Spot,,1 Cabot St,Holyoke,39,01040,Recreational,Dispensary,The Spot,Multi,False
+130738,"BoomX/Thrive Cultivation & Dispensary, LLC",MR283714,114 Lancaster Road,Shirley,39,01464,Recreational,Dispensary,"BoomX/Thrive Cultivation & Dispensary, LLC",Multi,False
+130740,"The Green Lady Dispensary II, Inc.",MR284161,740 Beacon Street,Newton,39,02461,Recreational,Dispensary,"The Green Lady Dispensary II, Inc.",Multi,False
+130741,Canna Retreat,MR284710,1240 Park St,Palmer,39,01069,Recreational,Dispensary,Canna Retreat,Multi,False
+130744,Sublime Cannabia,MR284871,800 Falmouth Rd,Mashpee,39,02649,Recreational,Dispensary,Sublime Cannabis,Multi,False
+130745,The Healing Center,MR283193,346 River St,Fitchburg,39,01420,Recreational,Dispensary,The Healing Center,Multi,False
+130742,ZaZa Green Cannabis,MR282714,311 Page Blvd,Springfield,39,01104,Recreational,Dispensary,ZaZa Green Cannabis,Multi,False
+130746,Reverie 73,,73 Essex Ave,Gloucester,39,01930,Recreational,Dispensary,Reverie 73,Multi,False
+130747,Flower & Soul,,894 Plymouth St,Halifax,39,02338,Recreational,Dispensary,Flower & Soul,Multi,False
+130750,East Coast Pharms,,630 Beaulieu St,Holyoke,39,01040,Medical,Dispensary,East Coast Pharms,Multi,False
+130751,Boston Garden,,946 Main St,Athol,39,01331,Recreational,Dispensary,Boston Garden,Multi,False
+130752,Green RIver,,398 Deerfield St.,Greenfield,39,01301,,Dispensary,Green RIver,Multi,False
+130753,Emerald Grove,,3 Main St,Eastham,39,02642,Recreational,Dispensary,Emerald Grove,Multi,False
+130754,Pure Oasis(Blue Hill Ave),MR281352,430 Blue Hill Ave,Boston,39,02121,Recreational,Dispensary,Pure Oasis,Multi,False
+130755,Calyx Berkshire Dispensary,MR281517,307 Main Street,Great Barrington,39,01230,Recreational,Dispensary,Calyx Berkshire (D2N2 LLC),Multi,False
+130756,OMG Cannabis,,223 Lunenburg St,Fitchburg,39,01420,Recreational,Dispensary,OMG Cannabis,Multi,False
+130757,Eskar,,400 Commerce Dr,Northbridge,39,01534,Recreational,Dispensary,Eskar,Multi,False
+130758,Full Harvest Moonz,,1201 Westford St,Lowell,39,01851,Recreational,Dispensary,Full Harvest Moonz,Multi,False
+130760,Boston Bud Factory,,73 Sargeant St,Holyoke,39,01040,Recreational,Dispensary,Boston Bud Factory,Multi,False
+130761,Ideal Craft Cannabis,MR281779,199 Main St,Blackstone,39,,Recreational,Dispensary,Ideal Craft Cannabis (Delta 420),Multi,False
+130759,New Dia Cannabis Co,MR284222,71 Lansdown St,Boston,39,02215,Recreational,Dispensary,New Dia Cannabis Co,Multi,False
+130762,The Heritage Club,,116R Cambridge St,Charlestown,39,02129,Recreational,Dispensary,The Heritage Club,Multi,False
+130763,Green Era Cannabis,,143 Water St,Fitchburg,39,01420,Recreational,Dispensary,Green Era Cannabis,Multi,False
+130764,Green Soul Organics,MR284855,759 Mass Ave,Cambridge,39,02139,Recreational,Dispensary,Green Soul Organics,Multi,False
+131249,Cady Brook Cannabis - Southbridge,MR283652,208 Worcester Street,Southbridge,39,01550,Recreational,Dispensary,Cady Brook Cannabis,Retail,False
+132690,Cresco Fall River Cultivation,MP281361,,Fall River,39,02720,Recreational,Processor,Cresco Labs,Retail,False
+229057,CANA Craft -  Beachgrass Wareham,MP281797,,Wareham,39,02538,Recreational,Processor,CANA Craft Cannabis Dispensary,Multi,False
+133086,TEST BUYER,TEST,123 Main st,TEST,39,TEST,,,TEST BUYER,Retail,False
+137533,Mass Yield Cultivation LLC,MC281392,8-12 Commercial Street,Pittsfield,39,01201,,,Mass Yield Cultivation LLC,Retail,False
+137532,CNA Stores (Billing Only),MP281691,57 S Hunt Road,Amesbury,39,01913,,,CNA Stores,Retail,False
+145187,C3 - Dorchester,MR284013,,Boston,39,02122,Recreational,Dispensary,C3 - High Profile,Retail,False
+238412,C3 - Roslindale,MR284097,,Roslindale,39,02131,Recreational,Dispensary,C3 - High Profile,Retail,False
+154573,Green Path,MR283743,345 Main Street,Southbridge,39,01550,,,Green Path (Cannabro),Retail,False
+152292,Major Bloom - Worcester,MR283033,76 Millbury Street,Worcester,39,01610,Recreational,,Major Bloom,Retail,False
+153911,Collective Retail - Littleton,MR283742,537 Great Rd,Littleton,39,01460,Recreational,,"Collective - Retail (Campfire) (Community Care Collective, inc)",Retail,False
+156003,Theory Wellness MA - Chicopee,RMD1567-R,672 Fuller Road,Chicopee,39,01020,Recreational,Dispensary,Theory Wellness MA,Retail,False
+156892,Fine Fettle - Rowley,MR281571,116 Newburyport Tpke,Rowley,39,01969,Recreational,,"Fine Fettle (FFD Enterprices MA, Inc - Ipswich Pharmaceutical Assoc.)",Retail,False
+157181,Wemelco Industries - Production,MP281787,19 Wemelco Way,Easthampton,39,01027,Recreational,Dispensary,"Wemelco Industries, Inc.",Retail,False
+157365,RollingJs,MR282225,604 Main street,Holyoke,39,01040,,,RollingJs,Retail,False
+157366,Renew Cannabis Co. - Cultivation,MC282081,44 County Street,Berkley,39,02779,,,Renew Cannabis Co.,Retail,False
+157414,Agricultural Healing Inc. dba The Agriculturalist,MR283027,1 Lewiston Street,Fall River,39,02721,,,Agricultural Healing Inc. dba The Agriculturalist,Retail,False
+229049,Turning Leaf Cannabis,MR283040,261 King St,Northampton,39,01060,Recreational,Dispensary,Turning Leaf,Multi,False
+243700,Wemelco Industries - Honey Dispensary,MR282926,41 Strong ave,Northampton,39,01060,Recreational,Dispensary,"Wemelco Industries, Inc.",Retail,False
+157867,JDM Sales inc.,MR283519,103 Uxbridge Rd,Mendon,39,,Recreational,Dispensary,JDM Sales inc.,Retail,False
+243701,Wemelco Industries -  Dreamer Dispensary,MR282925,15 College way,Southampton,39,01073,Recreational,Dispensary,"Wemelco Industries, Inc.",Retail,False
+243719,Renew Cannabis Co - Berkley,MR281458,44 County St,Berkley,39,02779,Recreational,Dispensary,Renew Cannabis Co.,Retail,False
+244679,The Vault- Worcester,MR282527,17 Mountain St. E.,Worcester,39,01610,,,The Vault,Retail,False
+166910,"Greenrock Cannabis  Rockland Old Exit 14, Inc.",MR284580,1015 Hingham St.,Rockland,39,02370,,,"Greenrock Cannabis  Rockland Old Exit 14, Inc.",Retail,False
+166336,DMC,MP282067,3 River Rd,Whately,39,01373,Recreational,,DMC,Retail,False
+229058,CANA Craft -  New Bedford,MR284765,2121 Phillips Rd,New Bedford,39,02745,Recreational,Dispensary,CANA Craft Cannabis Dispensary,Multi,False
+229029,Leaflux,MR284051,40 Lyman St,Holyoke,39,01040,Recreational,Dispensary,Green Heart,Multi,False
+229030,Chelsea Bud,MR284346,267 Broadway,Chelsea,39,02150,Recreational,Dispensary,Green Heart,Multi,False
+244968,Resinate - Douglas,RMD-1345,120 Gilboa st,Douglas,39,01516,Recreational,Distributor,Resinate,Multi,False
+229031,HadLeaf Cannabis,MR284228,251 Russel St.,Hadley,39,01035,Recreational,Dispensary,Green Heart,Multi,False
+244967,Resinate - Northampton,MR282398,110 Pleasant St,Northampton,39,01060,Recreational,,Resinate,Multi,False
+167716,Redi - Newton,MR282803,24 Elliot St.,Newton,39,02461,Recreational,,Redi,Retail,False
+243720,Renew Cannabis co - Whitman,MR284877,305 Bedford St,Whitman,39,,Recreational,Dispensary,Renew Cannabis Co.,Retail,False
+245242,Pettals Cannabis - Charlton,MR282757,144 Sturbridge Road,Charlton,39,01507,Recreational,Dispensary,Pettals Cannabis,Retail,False
+167954,Pettals Cannabis - Attleboro,MR283141,40 Forest Street,Attleboro,39,02886,Recreational,,Pettals Cannabis,Retail,False
+168356,Joint Operations - Rowley,MR283689,264 Newburyport Turnpike,Rowley,39,01969,Recreational,,Joint Operations dba Jo (Mendon/Rowley/Gardner/Worcester),Retail,False
+243102,Theory Wellness MA - Great Barrington,MR281549,394 Stockbridge Road,Great Barrington,39,01230,Recreational,Dispensary,Theory Wellness MA,Retail,False
+243103,Theory Wellness MA - Medford/Hi5,MR284150,162 Mystic Avenue,Medford,39,02155,Recreational,Dispensary,Theory Wellness MA,Retail,False
+243104,Theory Wellness MA - Bridgewater,RMD305,1050 Elm Street,Bridgewater,39,02324,Medical,Dispensary,Theory Wellness MA,Retail,False
+229052,Health Circle - Marshfield,MR282585,120 Enterprise Drive,Marshfield,39,02050,Recreational,Dispensary,Health Circle Cannabis Co.,Multi,False
+171257,Vedi Naturals LLC,MR283056,"505 Boston Post Road, West",Marlborough,39,01752,,,Vedi Naturals LLC,Retail,False
+171871,Dris Corporation,MD1321,16 Tech Circle,Natick,39,01760,,,Dris,Retail,False
+171878,Bostica,MC282139,71 Linden Street,Lynn,39,01905,,,Bostica LLC,Retail,False
+172604,Cannapi,MR282256,255 N. Pearl St.,Brockton,39,02301,,,Cannapi,Retail,False
+175311,Starbird Cannabis Co - Witch City Garden LLC,MR281663,2 Bridge Street,Salem,39,01970,,,Witch City Gardens LLC - Starbird Salem,Retail,False
+229039,Temescal Wellness - Worcester Production,MP281402,141 SW Cutoff,Worcester,39,01604,Recreational,,Temescal Wellness,Multi,False
+242164,Collective Retail - Billerica,MR282974,4 Republic Road,Billerica,39,01862,Recreational,Dispensary,"Collective - Retail (Campfire) (Community Care Collective, inc)",Retail,False
+242166,Collective - W.Boylston - Campfire,MR282519,65 West Boylston St,West Boylston,39,01583,Recreational,Dispensary,"Collective - Retail (Campfire) (Community Care Collective, inc)",Retail,False
+242165,Lowell Cannabis Company,MR283351,1201 Westford St,Lowell,39,01851,Recreational,Dispensary,"Collective - Retail (Campfire) (Community Care Collective, inc)",Retail,False
+176370,Cosmopolitan Dispensary Inc.,MR282961,82 Hartwell Street,Fall River,39,02720,Recreational,Dispensary,Green Heart,Retail,False
+176488,"Leaf Relief, Inc.",MR283784,165 Westgate Drive,Brockton,39,02301,Recreational,Dispensary,Green Heart,Retail,False
+176606,Cowboy Kush - MC,MC281723,27 Broom Street,Plainfield,39,01070,Recreational,,Cowboy Kush,Retail,False
+176628,The Spot Dispensary,MR283237,1 CABOT ST,HOLYOKE,39,01040,,,The Spot Dispensary,Retail,False
+177580,617THC Dorchester,MR283963,142-148 Bowdoin St,Dorchester,39,02122,,,617 THC,Retail,False
+177406,Local Cannabis Company,MR283842,16 New Ocean St,Swampscott,39,01907,,,Local Cannabis Company* (Calyx Peak),Retail,False
+245316,Joint Operations - Mendon,MR282984,47 Milford Street,Mendon,39,01756,Recreational,Dispensary,Joint Operations dba Jo (Mendon/Rowley/Gardner/Worcester),Retail,False
+245317,Joint Operations - Gardner,MR284026,320 West Broadway,Gardner,39,01440,Recreational,Dispensary,Joint Operations dba Jo (Mendon/Rowley/Gardner/Worcester),Retail,False
+229064,"Silver Therapeutics, Inc. - Orange",MR281910,5 South Main Street,Orange,39,01364,Recreational,Dispensary,"Silver Therapeutics, Inc.",Multi,False
+229065,"Silver Therapeutics, Inc. - Boston",MR283074,717-721 American Legion Highway,Boston,39,02121,Recreational,Dispensary,"Silver Therapeutics, Inc.",Multi,False
+229024,NEA - Fall River (Med),RMD745-R,,999 William S Canning Blvd,39,02721,Medical,Dispensary,Northeast Alternatives,Multi,False
+180982,Blossom Flower LLC,MD1271,1 Cabot Street,Holyoke,39,01040,,,Blossom Flower LLC,Retail,False
+181838,Green Meadows - Southbridge,MR282316,64 Mill St,Southbridge,39,01550,Recreational,,Green Meadows -Retail,Retail,False
+181865,Elysian,MR285090,505 Quincy Ave,Quincy,39,02169,,,Elysian,Retail,False
+249657,Green Meadows - Southbridge Manufacturing,MP281763,64 Mill Street,Southbridge,39,01550,Recreational,Processor,Green Meadows,Retail,False
+243702,Wemelco Industries - OZ Club,MR284574,17 East St.,Easthampton,39,01027,Recreational,Dispensary,"Wemelco Industries, Inc.",Retail,False
+183540,Kapha Cannabis Dispensary,MR283357,439 Pittsfield Road,Lenox,39,01240,,,Kapha Cannabis Dispensary,Retail,False
+185412,Canna Vana,MR282801,256 Weymouth Street,Rockland,39,02370,Recreational,Dispensary,Canna Vana,Retail,False
+229006,Caroline's Cannabis - Uxbridge,MR281274,640 Douglas Street,Uxbridge,39,01569,,,Caroline's Cannabis,Multi,False
+229036,Holistic Industries - Manufacturing (Med),RMD685-P,96 Palmer Rd,Monson,39,01057,Medical,Processor,Holistic Industries,Multi,False
+188989,Rebelle Boston,MR284256,591 Albany St,Boston,39,02118,Recreational,Dispensary,Rebelle Boston (Community Growth),Retail,False
+188876,Ember Gardens,MR284542,41 MA-6A,Orleans,39,02653,Recreational,,Ember Gardens,Retail,False
+188779,Piping Plover,MR282467,10 Main Street,Wellfleet,39,02667,,,Piping Plover,Retail,False
+189009,Charlies house,,13 commercial way,Milford,39,01757,Recreational,Dispensary,Charlies house,Retail,False
+190636,Undergorund Legacy,MR284914,1379 Blue Hill Ave,Boston,39,02126,Recreational,Dispensary,Underground Legacy,Retail,False
+229009,Nova Farms - Dracut,MR282853,1274 Merrimack Ave,Dracut,39,01826,Recreational,Dispensary,Nova Farms,Multi,False
+191143,Pioneer Cannabis Company,MR283559,275 STURBRIDGE RD,BRIMFIELD,39,01010-9515,,,Pioneer Cannabis Company (Webber Road ops),Retail,False
+190719,Baked,MR284312,879 Blue Hill Ave,Boston,39,02124,Recreational,Dispensary,Green Heart,Retail,False
+229010,Nova Farms - Attleboro,MR281379,1000 Washington Street,Attleboro,39,02703,Recreational,Dispensary,Nova Farms,Multi,False
+229001,"Apotho Therapeutics, LLC - Dartmouth",MR283521,747 State Rd,Dartmouth,39,02747,Recreational,Dispensary,"Apotho Therapeutics, LLC",Multi,False
+252036,Green Gold Group - Palmer,MR284703,1140 Thorndike St,Palmer,39,01069,Recreational,Dispensary,Green Gold Group,Retail,False
+252037,Green Gold Group- Marlborough,MR283723,910 Boston Post Rd E Suite 100,Marlborough,39,01527,Recreational,Dispensary,Green Gold Group,Retail,False
+192040,Green Gold Group- Charlton,MR281791,46 Worcester rd,charlton,39,01507,Medical,,Green Gold Group,Retail,False
+192283,Trinity Naturals,83-4484332,270 Second Street,Chelsea,39,02150,Recreational,Dispensary,Trinity Naturals,Retail,False
+192351,Embr - Classy Treats LLC,MR284652,461 Boston Rd / SS Boston Rd,Springfield,39,01109,Recreational,Dispensary,Classy Treats LLC,Retail,False
+192618,Seagrass,MR281844,3 Dodge Street,Salem,39,01970,,,"CTDW, LLC dba Seagrass",Retail,False
+252039,Leaf Joy,MR284606,1 Main Rd,Gill,39,01354,Recreational,Dispensary,Green Gold Group,Retail,False
+252038,Green Gold Group - Western Front Chelsea,MR281907,121 Webster ave,Chelsea,39,02150,Recreational,Dispensary,Green Gold Group,Retail,False
+243649,Fine Fettle - West Springfield,MR284920,175 Memorial Ave,Springfield,39,01089,Recreational,Dispensary,"Fine Fettle (FFD Enterprices MA, Inc - Ipswich Pharmaceutical Assoc.)",Retail,False
+193332,Legal Greens - Brockton,MR282937,75 Pleasant Street,Brockton,39,02301,Recreational,Dispensary,Legal Greens,Retail,False
+229037,Holistic Industries - Somerville (Med),RMD685-R,304 Somerville Ave,Somerville,39,02143,Recreational,Dispensary,Holistic Industries,Multi,False
+193739,"Simplicity (Haze of Grafton, LLC)",MR282399,135 Westboro rd,North Grafton,39,01536,Recreational,Dispensary,"Simplicity (Haze of Grafton, LLC)",Retail,False
+245318,Joint Operations - Worcester,MR285223,142 Southbridge St,Worcester,39,01608,Recreational,Dispensary,Joint Operations dba Jo (Mendon/Rowley/Gardner/Worcester),Retail,False
+194744,Garden Remedies,,,,,,,,,Retail,False
+252626,Green Meadows - Marlborough,MR285191,239 Boston Post Rd West,Marlborough,39,01752,Recreational,,Green Meadows -Retail,Retail,False
+255347,Hyecorp,MRN282460,327 North Pearl Street,Brockton,39,02301,Recreational,Dispensary,,Retail,False
+255371,Boston Smoke,MR284224,1589 Columbus Ave,Boston,39,02119,Recreational,Dispensary,Green Heart,Retail,False
+255346,Hidden Wonders,MRN285040,27 Robert J Way,Plymouth,39,02360,Recreational,Dispensary,,Retail,False
+255666,Green Gold RMD,RMD786-P,60 Prospect St,North Brookfield,39,01535,,Processor,,Multi,False

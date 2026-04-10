@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-04-09T21:56:39.965016+00:00",
+  "exported_at": "2026-04-10T01:58:08.383000+00:00",
   "data": [
     {
       "id": "272715753182",
@@ -75,8 +75,8 @@
       "id": "311646820048",
       "name": "The Holistic Concepts \u2014 Polina Intro",
       "amount": 337.5,
-      "stage": "decisionmakerboughtin",
-      "stage_label": "Tasting Done",
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
       "closedate": null,
       "createdate": "2026-03-05T04:14:00.007Z",
       "owner_id": "82411190"
@@ -95,8 +95,8 @@
       "id": "311666683599",
       "name": "Chelsea Bud \u2014 Polina Intro",
       "amount": 337.5,
-      "stage": "decisionmakerboughtin",
-      "stage_label": "Tasting Done",
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
       "closedate": null,
       "createdate": "2026-03-05T04:14:01.108Z",
       "owner_id": "82411190"
@@ -105,8 +105,8 @@
       "id": "311693517508",
       "name": "Leaf Relief Brockton \u2014 Polina Intro",
       "amount": 337.5,
-      "stage": "decisionmakerboughtin",
-      "stage_label": "Tasting Done",
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
       "closedate": null,
       "createdate": "2026-03-05T04:13:58.626Z",
       "owner_id": "82411190"
@@ -135,8 +135,8 @@
       "id": "311732078298",
       "name": "HadLeaf \u2014 Polina Intro",
       "amount": 337.5,
-      "stage": "decisionmakerboughtin",
-      "stage_label": "Tasting Done",
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
       "closedate": null,
       "createdate": "2026-03-05T04:14:01.442Z",
       "owner_id": "82411190"
@@ -145,8 +145,8 @@
       "id": "311771791063",
       "name": "Castle Leaf \u2014 Polina Intro",
       "amount": 337.5,
-      "stage": "decisionmakerboughtin",
-      "stage_label": "Tasting Done",
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
       "closedate": null,
       "createdate": "2026-03-05T04:14:00.742Z",
       "owner_id": "82411190"
@@ -165,8 +165,8 @@
       "id": "312010522341",
       "name": "Leaf Lux \u2014 Polina Intro",
       "amount": 337.5,
-      "stage": "decisionmakerboughtin",
-      "stage_label": "Tasting Done",
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
       "closedate": null,
       "createdate": "2026-03-05T04:14:00.369Z",
       "owner_id": "82411190"
@@ -175,8 +175,8 @@
       "id": "312014109398",
       "name": "Baked \u2014 Polina Intro",
       "amount": 337.5,
-      "stage": "decisionmakerboughtin",
-      "stage_label": "Tasting Done",
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
       "closedate": null,
       "createdate": "2026-03-05T04:13:59.159Z",
       "owner_id": "82411190"
@@ -185,8 +185,8 @@
       "id": "312017701624",
       "name": "Green City \u2014 Polina Intro",
       "amount": 337.5,
-      "stage": "decisionmakerboughtin",
-      "stage_label": "Tasting Done",
+      "stage": "contractsent",
+      "stage_label": "Verbal Commitment",
       "closedate": null,
       "createdate": "2026-03-05T04:13:59.585Z",
       "owner_id": "82411190"
@@ -265,8 +265,8 @@
       "id": "316057099988",
       "name": "Embr \u2014 [Non-M1]",
       "amount": 0.0,
-      "stage": "appointmentscheduled",
-      "stage_label": "Hot Lead",
+      "stage": "presentationscheduled",
+      "stage_label": "Sampled",
       "closedate": null,
       "createdate": "2026-03-11T22:44:52.567Z",
       "owner_id": "160994448"
@@ -345,8 +345,8 @@
       "id": "316069598969",
       "name": "Redi \u2014 [Non-M1]",
       "amount": 0.0,
-      "stage": "appointmentscheduled",
-      "stage_label": "Hot Lead",
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
       "closedate": null,
       "createdate": "2026-03-11T22:44:42.237Z",
       "owner_id": "160994448"
@@ -455,8 +455,8 @@
       "id": "316110530293",
       "name": "Apotho Therapeutics \u2014 [M1]",
       "amount": 119.81,
-      "stage": "appointmentscheduled",
-      "stage_label": "Hot Lead",
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
       "closedate": "2026-04-15T00:00:00Z",
       "createdate": "2026-03-11T20:46:06.492Z",
       "owner_id": "160994448"
@@ -505,8 +505,8 @@
       "id": "316130305769",
       "name": "Garden Remedies \u2014 [Non-M1]",
       "amount": 0.0,
-      "stage": "appointmentscheduled",
-      "stage_label": "Hot Lead",
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
       "closedate": null,
       "createdate": "2026-03-11T22:44:42.036Z",
       "owner_id": "160994448"
@@ -545,8 +545,8 @@
       "id": "316279666385",
       "name": "Redi Natick \u2014 AF Wholesale",
       "amount": 0.0,
-      "stage": "appointmentscheduled",
-      "stage_label": "Hot Lead",
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
       "closedate": null,
       "createdate": "2026-03-14T02:01:06.613Z",
       "owner_id": "160994448"
@@ -560,6 +560,636 @@
       "closedate": null,
       "createdate": "2026-03-14T02:01:05.868Z",
       "owner_id": "160994448"
+    },
+    {
+      "id": "320299446992",
+      "name": "Misty Mountain Shop \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:28.963Z",
+      "owner_id": null
+    },
+    {
+      "id": "320303163067",
+      "name": "Turning Leaf \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "presentationscheduled",
+      "stage_label": "Sampled",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:32.479Z",
+      "owner_id": null
+    },
+    {
+      "id": "320303164148",
+      "name": "Zahara Cannabis \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:19.581Z",
+      "owner_id": null
+    },
+    {
+      "id": "320303164149",
+      "name": "kosa \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:25.470Z",
+      "owner_id": null
+    },
+    {
+      "id": "320303164151",
+      "name": "Aura Cannabis \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:26.747Z",
+      "owner_id": null
+    },
+    {
+      "id": "320303164152",
+      "name": "Zen Leaf (MA) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:30.273Z",
+      "owner_id": null
+    },
+    {
+      "id": "320303164153",
+      "name": "Trinity Naturals \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:34.039Z",
+      "owner_id": null
+    },
+    {
+      "id": "320304883421",
+      "name": "Liberty \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:33.559Z",
+      "owner_id": null
+    },
+    {
+      "id": "320304886497",
+      "name": "Nature's Remedy (MA) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:26.133Z",
+      "owner_id": null
+    },
+    {
+      "id": "320304886501",
+      "name": "Cady Brook Cannabis \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:28.658Z",
+      "owner_id": null
+    },
+    {
+      "id": "320306667205",
+      "name": "Kapha \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:20.696Z",
+      "owner_id": null
+    },
+    {
+      "id": "320306667206",
+      "name": "Union Twist \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:25.167Z",
+      "owner_id": null
+    },
+    {
+      "id": "320306667208",
+      "name": "Hibrid \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:30.588Z",
+      "owner_id": null
+    },
+    {
+      "id": "320308468412",
+      "name": "Fyre Ants \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "presentationscheduled",
+      "stage_label": "Sampled",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:32.121Z",
+      "owner_id": null
+    },
+    {
+      "id": "320308468413",
+      "name": "Cheech and Chongs Dispensoria \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "presentationscheduled",
+      "stage_label": "Sampled",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:33.166Z",
+      "owner_id": null
+    },
+    {
+      "id": "320308470463",
+      "name": "Cape Cod Cannabis \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:26.453Z",
+      "owner_id": null
+    },
+    {
+      "id": "320310278904",
+      "name": "Resinate \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "presentationscheduled",
+      "stage_label": "Sampled",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:31.321Z",
+      "owner_id": null
+    },
+    {
+      "id": "320310286053",
+      "name": "The Botanist (MA) - Retail \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:19.241Z",
+      "owner_id": null
+    },
+    {
+      "id": "320310286057",
+      "name": "Green4All \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:34.641Z",
+      "owner_id": null
+    },
+    {
+      "id": "320313833186",
+      "name": "Firebrand Cannabis \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:23.840Z",
+      "owner_id": null
+    },
+    {
+      "id": "320313833187",
+      "name": "Mission (MA) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:25.803Z",
+      "owner_id": null
+    },
+    {
+      "id": "320313833189",
+      "name": "Primitiv \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:32.792Z",
+      "owner_id": null
+    },
+    {
+      "id": "320322815731",
+      "name": "Mello \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:18.880Z",
+      "owner_id": null
+    },
+    {
+      "id": "320322815732",
+      "name": "Potency \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:23.512Z",
+      "owner_id": null
+    },
+    {
+      "id": "320322815733",
+      "name": "RoadTrip Dispensary LLC. \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:24.538Z",
+      "owner_id": null
+    },
+    {
+      "id": "320322815737",
+      "name": "1 Connection Care \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:29.603Z",
+      "owner_id": null
+    },
+    {
+      "id": "320322816699",
+      "name": "Eastern Cannabis Co. (Retail) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:32.500Z",
+      "owner_id": null
+    },
+    {
+      "id": "320322816700",
+      "name": "Bloom Brothers \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:33.709Z",
+      "owner_id": null
+    },
+    {
+      "id": "320324616890",
+      "name": "CommCan \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:21.742Z",
+      "owner_id": null
+    },
+    {
+      "id": "320324616896",
+      "name": "Bud Barn \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:31.267Z",
+      "owner_id": null
+    },
+    {
+      "id": "320324616897",
+      "name": "Temescal Wellness \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:33.402Z",
+      "owner_id": null
+    },
+    {
+      "id": "320326470335",
+      "name": "Greensoul \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:22.093Z",
+      "owner_id": null
+    },
+    {
+      "id": "320326470337",
+      "name": "Smokey Leaf \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:24.852Z",
+      "owner_id": null
+    },
+    {
+      "id": "320326470339",
+      "name": "Hidden Wonders \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:28.342Z",
+      "owner_id": null
+    },
+    {
+      "id": "320326470340",
+      "name": "Primus Cannabis \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:29.312Z",
+      "owner_id": null
+    },
+    {
+      "id": "320326470343",
+      "name": "Happy Valley \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:31.873Z",
+      "owner_id": null
+    },
+    {
+      "id": "320328217316",
+      "name": "NETA \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:30.576Z",
+      "owner_id": null
+    },
+    {
+      "id": "320328221378",
+      "name": "The Heritage Club \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:30.910Z",
+      "owner_id": null
+    },
+    {
+      "id": "320330177257",
+      "name": "Garden Remedies (2nd location) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:34.274Z",
+      "owner_id": null
+    },
+    {
+      "id": "320330179305",
+      "name": "Greener Leaf \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:22.819Z",
+      "owner_id": null
+    },
+    {
+      "id": "320330179306",
+      "name": "ReLeaf Alternatives \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:27.744Z",
+      "owner_id": null
+    },
+    {
+      "id": "320330179307",
+      "name": "Toy Town THC \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:32.196Z",
+      "owner_id": null
+    },
+    {
+      "id": "320331811531",
+      "name": "New Leaf \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:24.182Z",
+      "owner_id": null
+    },
+    {
+      "id": "320331811533",
+      "name": "Apex Noire \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:31.564Z",
+      "owner_id": null
+    },
+    {
+      "id": "320348033762",
+      "name": "Enlite \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:20.287Z",
+      "owner_id": null
+    },
+    {
+      "id": "320348033763",
+      "name": "AYR Wellness (Retail - MA) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:21.379Z",
+      "owner_id": null
+    },
+    {
+      "id": "320349941466",
+      "name": "Joint Operations - Wick \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:22.454Z",
+      "owner_id": null
+    },
+    {
+      "id": "320349941479",
+      "name": "Underground Legacy \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:35.631Z",
+      "owner_id": null
+    },
+    {
+      "id": "320351773373",
+      "name": "Honey \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "decisionmakerboughtin",
+      "stage_label": "Tasting Done",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:32.814Z",
+      "owner_id": null
+    },
+    {
+      "id": "320351776452",
+      "name": "The Healing Center (MA) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:28.040Z",
+      "owner_id": null
+    },
+    {
+      "id": "320353454795",
+      "name": "Cannabis Culture \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "presentationscheduled",
+      "stage_label": "Sampled",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:30.989Z",
+      "owner_id": null
+    },
+    {
+      "id": "320355256001",
+      "name": "Dry Humor (Bottle Shop) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "presentationscheduled",
+      "stage_label": "Sampled",
+      "closedate": null,
+      "createdate": "2026-04-09T22:45:33.904Z",
+      "owner_id": null
+    },
+    {
+      "id": "320355260133",
+      "name": "Lowkey Dispensary \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:19.946Z",
+      "owner_id": null
+    },
+    {
+      "id": "320355260139",
+      "name": "Massachusetts Green Retail \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:33.116Z",
+      "owner_id": null
+    },
+    {
+      "id": "320355260140",
+      "name": "Natural Agricultural Products \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:34.351Z",
+      "owner_id": null
+    },
+    {
+      "id": "320355260141",
+      "name": "Dazed \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:35.937Z",
+      "owner_id": null
+    },
+    {
+      "id": "320357018349",
+      "name": "Simplicity Dispensary \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:35.305Z",
+      "owner_id": null
+    },
+    {
+      "id": "320361292478",
+      "name": "Elysian \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:29.910Z",
+      "owner_id": null
+    },
+    {
+      "id": "320363030206",
+      "name": "New Dia Co (retail) \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:21.019Z",
+      "owner_id": null
+    },
+    {
+      "id": "320363030208",
+      "name": "Boutiq \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:27.072Z",
+      "owner_id": null
+    },
+    {
+      "id": "320363030211",
+      "name": "UpTop \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:34.997Z",
+      "owner_id": null
+    },
+    {
+      "id": "320368406224",
+      "name": "New England Harvest \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:23.156Z",
+      "owner_id": null
+    },
+    {
+      "id": "320368406225",
+      "name": "Deezle Cannabis \u2014 AF Wholesale",
+      "amount": 0.0,
+      "stage": "appointmentscheduled",
+      "stage_label": "Hot Lead",
+      "closedate": null,
+      "createdate": "2026-04-09T22:50:27.414Z",
+      "owner_id": null
     }
   ]
 }

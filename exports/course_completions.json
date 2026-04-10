@@ -1,0 +1,33 @@
+{
+  "exported_at": "2026-04-10T01:58:02.894686+00:00",
+  "data": [
+    {
+      "id": "697a579f0967f6b175dd1325",
+      "total_responses": 2,
+      "completed": 1,
+      "in_progress": 1,
+      "responses": [
+        {
+          "name": "Richard Christopher",
+          "retailer": "Ideal Craft Cannabis",
+          "location": "Ideal Craft Cannabis",
+          "status": "in_progress",
+          "page": 0,
+          "created": "2026-04-10T01:19:11.664Z",
+          "updated": "2026-04-10T01:19:11.664Z",
+          "incentive_status": ""
+        },
+        {
+          "name": "Sophia El-Masri",
+          "retailer": "Ideal Craft Cannabis",
+          "location": "Ideal Craft Cannabis",
+          "status": "completed",
+          "page": 5,
+          "created": "2026-04-09T22:17:21.521Z",
+          "updated": "2026-04-09T22:19:37.843Z",
+          "incentive_status": "Claimed"
+        }
+      ]
+    }
+  ]
+}

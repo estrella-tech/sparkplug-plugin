@@ -20,6 +20,9 @@ PROJECT_ROOT = Path(__file__).parent.parent
 EXPORTS_DIR = PROJECT_ROOT / "exports"
 WEBHOOKS_PATH = PROJECT_ROOT / "config" / "webhooks.json"
 RECIPIENTS = ["giovanni@atomicfungi.com", "jared@atomicfungi.com", "katrinalindseyjones@gmail.com"]
+ADMIN_RECIPIENTS = ["giovanni@atomicfungi.com", "jakyla@atomicfungi.com"]
+ADMIN_CC = ["support@atomicfungi.com"]
+ADMIN_PROJECTS = {"label_redesign"}  # Task nags for these projects go to admin only
 
 
 def load_webhooks() -> dict:
@@ -80,6 +83,8 @@ def analyze_data() -> dict:
     drafts_export = load_export("gmail_drafts")
     leaderboard_export = load_export("budtender_leaderboard")
     chat_export = load_export("chat_messages")
+    courses_export = load_export("course_completions")
+    cta_export = load_export("cta_responses")
 
     retailers = retailers_export.get("data", [])
     sales_data = sales_export.get("data", [])
@@ -111,9 +116,15 @@ def analyze_data() -> dict:
         if rid not in sales_by_retailer:
             sales_by_retailer[rid] = {}
         if isinstance(data, dict):
+            # Try direct keys first
             total = data.get("total", data.get("totalUnits", data.get("value", 0)))
             if isinstance(total, dict):
                 total = total.get("total", total.get("value", 0))
+            # Sparkplug API returns {"rows": [{"value": N}]} format
+            if total == 0 and "rows" in data:
+                rows = data["rows"]
+                if rows and isinstance(rows, list) and len(rows) > 0:
+                    total = rows[0].get("value", 0)
         else:
             total = 0
         sales_by_retailer[rid][period] = total
@@ -181,14 +192,13 @@ def analyze_data() -> dict:
         days = f"{sc['days']} days" if isinstance(sc['days'], int) else "never contacted"
         action_items.append({"priority": "high", "text": f"{sc['name']} — {days} since last contact, {sc['deals']} active deal(s). Follow up.", "category": "crm"})
 
-    # Draft actions
-    if total_drafts > 5:
-        action_items.append({"priority": "medium", "text": f"{total_drafts} unsent email drafts in Gmail. Review and send or discard.", "category": "crm"})
+    # Draft count tracked but not surfaced as action item
 
-    # Snap engagement actions
+    # Snap engagement actions — only flag retailers with zero or very low engagement
     for r in retailers:
         rname = r.get("accountName", "unknown")
-        action_items.append({"priority": "low", "text": f"Push latest Snap content to {rname} budtenders.", "category": "marketing"})
+        if snap_stats["total_interactions"] > 0 and rname.lower() not in {r.lower() for r in budtender_rankings.keys()}:
+            action_items.append({"priority": "low", "text": f"{rname} — zero Snap engagement. Check if budtenders are set up.", "category": "marketing"})
 
     # --- Chat insights ---
     chat_data = chat_export.get("data", {}) if isinstance(chat_export.get("data"), dict) else {}
@@ -205,6 +215,15 @@ def analyze_data() -> dict:
 
     # --- Budtender Leaderboard (from Snap engagement) ---
     leaderboard = leaderboard_export.get("data", []) if isinstance(leaderboard_export.get("data"), list) else []
+
+    # --- Training Courses ---
+    courses_raw = courses_export.get("data", []) if isinstance(courses_export.get("data"), list) else []
+    course_responses = []
+    for course in courses_raw:
+        for r in course.get("responses", []):
+            course_responses.append(r)
+    completed_courses = [r for r in course_responses if r.get("status") == "completed"]
+    in_progress_courses = [r for r in course_responses if r.get("status") == "in_progress"]
 
     return {
         "date": today,
@@ -224,6 +243,9 @@ def analyze_data() -> dict:
         "recent_drafts": recent_drafts,
         "store_visits": store_visits,
         "recent_chat": recent_chat_messages,
+        "course_completed": completed_courses,
+        "course_in_progress": in_progress_courses,
+        "cta_responses": cta_export.get("data", []) if isinstance(cta_export.get("data"), list) else [],
         "action_items": action_items,
         "tasks": load_tasks(),
     }
@@ -247,9 +269,7 @@ def format_crm_chat(insights: dict) -> str:
     if insights["stale_companies"]:
         lines.append("")
 
-    # Drafts
-    if insights["total_drafts"] > 0:
-        lines.append(f"  {insights['total_drafts']} unsent drafts in Gmail")
+    # Drafts removed from team-facing reports
 
     # CRM actions
     crm_actions = [a for a in insights["action_items"] if a["category"] == "crm"]
@@ -324,16 +344,11 @@ def format_email_html(insights: dict) -> str:
         days = f"{sc['days']} days" if isinstance(sc['days'], int) else "Never"
         stale_html += f'<tr><td style="padding:4px 10px;border-bottom:1px solid #eee">{sc["name"]}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;text-align:center">{days}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;text-align:center">{sc["deals"]}</td></tr>'
 
-    # Draft alert
     draft_alert = ""
-    if insights["total_drafts"] > 0:
-        draft_alert = f'''<div style="background:#fff3cd;border-left:4px solid #c8a45a;padding:12px 16px;margin:20px 0;border-radius:0 4px 4px 0">
-            <b>{insights["total_drafts"]} unsent email drafts</b> sitting in Gmail. Review and send or discard to keep the pipeline moving.
-        </div>'''
 
-    # Task nagging section
+    # Task nagging section — filter admin tasks out of team email
     tasks = insights.get("tasks", [])
-    open_tasks = [t for t in tasks if t["status"] in ("open", "in_progress")]
+    open_tasks = [t for t in tasks if t["status"] in ("open", "in_progress") and t.get("project") not in ADMIN_PROJECTS]
     overdue_tasks = [t for t in open_tasks if t.get("overdue")]
     task_nag_html = ""
     if open_tasks:
@@ -368,19 +383,43 @@ def format_email_html(insights: dict) -> str:
     <div style="background:#1a3c2e;padding:24px 20px;border-radius:8px 8px 0 0">
         <h1 style="color:#c8a45a;margin:0;font-size:22px">AF Daily Intel</h1>
         <p style="color:#ffffff;margin:5px 0 0 0;font-size:14px">{date}</p>
-        <p style="color:#c8a45a;margin:8px 0 0 0;font-size:16px;font-weight:bold">${insights['hs_closed_won']:,.0f} Closed Won &nbsp;|&nbsp; {insights['hs_total_deals']} Deals in Pipeline &nbsp;|&nbsp; {insights['total_drafts']} Unsent Drafts</p>
+        <p style="color:#c8a45a;margin:8px 0 0 0;font-size:16px;font-weight:bold">${insights['hs_closed_won']:,.0f} Closed Won &nbsp;|&nbsp; {insights['hs_total_deals']} Deals in Pipeline</p>
     </div>
 
     <div style="background:#ffffff;padding:24px 20px;border-radius:0 0 8px 8px">
         {stale_warning}
 
-        <!-- ACTION ITEMS -->
-        <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:0">Action Items</h2>
-        <table style="width:100%;border-collapse:collapse">{action_html}</table>
+        <!-- SNAP ENGAGEMENT -->
+        <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:0">Snap Engagement</h2>
+        <table style="width:100%;border-collapse:collapse">
+            <tr><td style="padding:6px 10px">Total Interactions</td><td style="padding:6px 10px;font-weight:bold">{ss['total_interactions']}</td></tr>
+            <tr><td style="padding:6px 10px">Unique Budtenders</td><td style="padding:6px 10px;font-weight:bold">{ss['unique_employees']}</td></tr>
+            <tr><td style="padding:6px 10px">Unique Retailers</td><td style="padding:6px 10px;font-weight:bold">{ss['unique_retailers']}</td></tr>
+            <tr><td style="padding:6px 10px">Published Snaps</td><td style="padding:6px 10px;font-weight:bold">{ss['total_snaps']}</td></tr>
+        </table>
 
-        {draft_alert}
+        <!-- TRAINING COURSES -->
+        {"" if not insights.get("course_completed") and not insights.get("course_in_progress") else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Training Course Progress</h2>
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px;text-align:center">Status</th><th style="padding:6px 10px;text-align:center">Incentive</th></tr>
+            {"".join(f'<tr style="background:#f0f7f4"><td style="padding:5px 10px;border-bottom:1px solid #eee">{r.get("name","?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee">{r.get("retailer","?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center;color:#27ae60;font-weight:bold">Completed</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{r.get("incentive_status","")}</td></tr>' for r in insights.get("course_completed", []))}
+            {"".join(f'<tr><td style="padding:5px 10px;border-bottom:1px solid #eee">{r.get("name","?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee">{r.get("retailer","?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center;color:#e67e22">In Progress (p{r.get("page",0)+1})</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">—</td></tr>' for r in insights.get("course_in_progress", []))}
+        </table>
+        <p style="font-size:12px;color:#666;margin-top:5px">Total: {len(insights.get("course_completed",[]))} completed, {len(insights.get("course_in_progress",[]))} in progress</p>'''}
 
-        {task_nag_html}
+        <!-- SPARKPLUG SALES -->
+        <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Sparkplug Sales</h2>
+        <table style="width:100%;border-collapse:collapse">
+            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:8px 10px;text-align:left">Retailer</th><th style="padding:8px 10px;text-align:center">7d</th><th style="padding:8px 10px;text-align:center">30d</th><th style="padding:8px 10px;text-align:center">90d</th></tr>
+            {sales_rows}
+        </table>
+
+        <!-- BUDTENDER LEADERBOARD -->
+        {"" if not leaderboard_rows else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Budtender Leaderboard (Snap Engagement)</h2>
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px">Rank</th><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px;text-align:center">Views</th><th style="padding:6px 10px;text-align:center">Completions</th><th style="padding:6px 10px;text-align:center">CTAs</th><th style="padding:6px 10px;text-align:center">Rate</th></tr>
+            {leaderboard_rows}
+        </table>'''}
 
         <!-- DEAL PIPELINE -->
         <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Deal Pipeline</h2>
@@ -390,36 +429,12 @@ def format_email_html(insights: dict) -> str:
             <tr style="background:#1a3c2e;color:#ffffff"><td style="padding:8px 10px;font-weight:bold">Total</td><td style="padding:8px 10px;text-align:center;font-weight:bold">{insights['hs_total_deals']}</td><td style="padding:8px 10px;text-align:right;font-weight:bold">${insights['hs_total_value']:,.2f}</td></tr>
         </table>
 
-        <!-- STALE CONTACTS -->
-        {"" if not stale_html else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Needs Follow-Up (14+ days)</h2>
-        <table style="width:100%;border-collapse:collapse">
-            <tr style="background:#f8f8f8"><th style="padding:6px 10px;text-align:left">Company</th><th style="padding:6px 10px;text-align:center">Last Contact</th><th style="padding:6px 10px;text-align:center">Active Deals</th></tr>
-            {stale_html}
-        </table>'''}
-
-        <!-- SPARKPLUG SALES -->
-        <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Sparkplug Sales</h2>
-        <table style="width:100%;border-collapse:collapse">
-            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:8px 10px;text-align:left">Retailer</th><th style="padding:8px 10px;text-align:center">7d</th><th style="padding:8px 10px;text-align:center">30d</th><th style="padding:8px 10px;text-align:center">90d</th></tr>
-            {sales_rows}
-        </table>
-
-        <!-- BUDTENDER PERFORMANCE -->
-        {"" if not leaderboard_rows else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Budtender Leaderboard (Snap Engagement)</h2>
+        <!-- CTA RESPONSES -->
+        {"" if not insights.get("cta_responses") else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">CTA Responses ({len(insights["cta_responses"])})</h2>
         <table style="width:100%;border-collapse:collapse;font-size:13px">
-            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px">Rank</th><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px;text-align:center">Views</th><th style="padding:6px 10px;text-align:center">Completions</th><th style="padding:6px 10px;text-align:center">CTAs</th><th style="padding:6px 10px;text-align:center">Rate</th></tr>
-            {leaderboard_rows}
+            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px;text-align:left">Response</th></tr>
+            {"".join(f'<tr><td style="padding:5px 10px;border-bottom:1px solid #eee">{r.get("employee","?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee">{r.get("retailer","?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee">{str(r.get("response","")).replace(chr(10)," ").strip()[:120]}</td></tr>' for r in insights["cta_responses"])}
         </table>'''}
-
-
-        <!-- SNAP ENGAGEMENT -->
-        <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Snap Engagement</h2>
-        <table style="width:100%;border-collapse:collapse">
-            <tr><td style="padding:6px 10px">Total Interactions</td><td style="padding:6px 10px;font-weight:bold">{ss['total_interactions']}</td></tr>
-            <tr><td style="padding:6px 10px">Unique Budtenders</td><td style="padding:6px 10px;font-weight:bold">{ss['unique_employees']}</td></tr>
-            <tr><td style="padding:6px 10px">Unique Retailers</td><td style="padding:6px 10px;font-weight:bold">{ss['unique_retailers']}</td></tr>
-            <tr><td style="padding:6px 10px">Published Snaps</td><td style="padding:6px 10px;font-weight:bold">{ss['total_snaps']}</td></tr>
-        </table>
 
         <div style="margin-top:30px;padding-top:15px;border-top:1px solid #eee;color:#888;font-size:11px">
             Atomic Fungi Daily Intel — Generated automatically from Sparkplug, HubSpot, and Gmail data
@@ -430,15 +445,16 @@ def format_email_html(insights: dict) -> str:
     return html
 
 
-def send_email_func(subject: str, html_body: str, recipients: list[str], dry_run: bool = False):
-    report_path = EXPORTS_DIR / f"daily_intel_{datetime.now().strftime('%Y%m%d')}.html"
+def send_email_func(subject: str, html_body: str, recipients: list[str], dry_run: bool = False, cc: list[str] = None, filename: str = None):
+    fname = filename or f"daily_intel_{datetime.now().strftime('%Y%m%d')}.html"
+    report_path = EXPORTS_DIR / fname
     report_path.write_text(html_body, encoding="utf-8")
     print(f"  Report saved to {report_path}")
     if dry_run:
-        print("  [DRY RUN] Email not sent.")
+        print(f"  [DRY RUN] Email not sent. To: {recipients}{f' CC: {cc}' if cc else ''}")
         return
     from gmail_sender import send_email
-    success = send_email(to=recipients, subject=subject, html_body=html_body)
+    success = send_email(to=recipients, subject=subject, html_body=html_body, cc=cc)
     if not success:
         print(f"  Email failed — report saved at {report_path}")
 
@@ -552,12 +568,51 @@ def main():
         print("  No high-priority CRM items to schedule")
     print()
 
-    # Step 5: Email
+    # Step 5: Team email (no admin tasks)
     if not chat_only:
-        print("[5/7] Sending email...")
-        subject = f"AF Daily Intel — {insights['date']} | ${insights['hs_closed_won']:,.0f} Closed Won | {insights['total_drafts']} Unsent Drafts"
+        print("[5/7] Sending team email...")
+        subject = f"AF Daily Intel — {insights['date']} | ${insights['hs_closed_won']:,.0f} Closed Won | {insights['hs_total_deals']} Deals"
         html = format_email_html(insights)
         send_email_func(subject, html, RECIPIENTS, dry_run=dry_run)
+
+        # Step 6: Admin nag email (label redesign, kitchen, compliance)
+        admin_tasks = [t for t in insights.get("tasks", []) if t["status"] in ("open", "in_progress") and t.get("project") in ADMIN_PROJECTS]
+        if admin_tasks:
+            print("[6/7] Sending admin task nag email...")
+            admin_rows = ""
+            for t in sorted(admin_tasks, key=lambda x: (not x.get("overdue"), x.get("due") or "9999")):
+                if t.get("overdue"):
+                    bg = "background:#fde8e8;"
+                    badge = f'<span style="color:#e74c3c;font-weight:bold">OVERDUE ({t["days_overdue"]}d)</span>'
+                elif t["priority"] == "critical":
+                    bg = "background:#fff3cd;"
+                    badge = '<span style="color:#e67e22;font-weight:bold">CRITICAL</span>'
+                else:
+                    bg = ""
+                    badge = t["priority"].upper()
+                admin_rows += f'<tr style="{bg}"><td style="padding:6px 10px;border-bottom:1px solid #eee">{badge}</td><td style="padding:6px 10px;border-bottom:1px solid #eee">{t["title"]}</td><td style="padding:6px 10px;border-bottom:1px solid #eee">{t.get("due","")}</td></tr>'
+            overdue_admin = [t for t in admin_tasks if t.get("overdue")]
+            admin_html = f"""<!DOCTYPE html>
+<html><body style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px">
+    <div style="background:#1a3c2e;padding:20px;border-radius:8px 8px 0 0">
+        <h1 style="color:#c8a45a;margin:0;font-size:20px">AF Admin Tasks</h1>
+        <p style="color:#fff;margin:5px 0 0 0;font-size:13px">{insights['date']}</p>
+    </div>
+    <div style="background:#fff;padding:20px;border-radius:0 0 8px 8px">
+        <h2 style="color:{'#e74c3c' if overdue_admin else '#1a3c2e'};border-bottom:2px solid {'#e74c3c' if overdue_admin else '#c8a45a'};padding-bottom:8px">
+            {len(admin_tasks)} Admin Tasks{f' / {len(overdue_admin)} OVERDUE' if overdue_admin else ''}
+        </h2>
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:#f8f8f8"><th style="padding:6px 10px;text-align:left">Priority</th><th style="padding:6px 10px;text-align:left">Task</th><th style="padding:6px 10px">Due</th></tr>
+            {admin_rows}
+        </table>
+        <p style="color:#888;font-size:11px;margin-top:20px">This email is sent only to admin. Team does not see these tasks.</p>
+    </div>
+</body></html>"""
+            admin_subject = f"AF Admin Tasks — {insights['date']}{' — OVERDUE' if overdue_admin else ''}"
+            send_email_func(admin_subject, admin_html, ADMIN_RECIPIENTS, dry_run=dry_run, cc=ADMIN_CC, filename=f"admin_tasks_{datetime.now().strftime('%Y%m%d')}.html")
+        else:
+            print("[6/7] No admin tasks to nag")
     else:
         print("[5/7] Email skipped (--chat-only)")
 
