@@ -65,6 +65,13 @@ def load_tasks() -> list[dict]:
     return tasks
 
 
+def _fmt_delta(val):
+    if val is None:
+        return ""
+    sign = "+" if val >= 0 else ""
+    return f" ({sign}{val})"
+
+
 def analyze_data() -> dict:
     now = datetime.now(timezone.utc)
     today = now.strftime("%B %d, %Y")
@@ -138,12 +145,46 @@ def analyze_data() -> dict:
             ranked = sorted(data.items(), key=lambda x: x[1] if isinstance(x[1], (int, float)) else 0, reverse=True)
             budtender_rankings[rname] = ranked[:5]
 
-    # --- Snap stats ---
+    # --- Snap stats with daily/weekly deltas ---
+    total_interactions = snap_stats_raw.get("total_interactions", 0) if isinstance(snap_stats_raw, dict) else 0
+    unique_employees = snap_stats_raw.get("unique_employees", 0) if isinstance(snap_stats_raw, dict) else 0
+    unique_retailers = snap_stats_raw.get("unique_retailers", 0) if isinstance(snap_stats_raw, dict) else 0
+
+    # Load yesterday's and last week's snapshots for deltas
+    snapshot_dir = EXPORTS_DIR / "snapshots"
+    yesterday = (now - timedelta(days=1)).strftime("%Y-%m-%d")
+    last_week = (now - timedelta(days=7)).strftime("%Y-%m-%d")
+
+    def _load_snapshot(date_str):
+        path = snapshot_dir / f"{date_str}.json"
+        if path.exists():
+            with open(path) as f:
+                return json.load(f)
+        return None
+
+    yesterday_snap = _load_snapshot(yesterday)
+    week_ago_snap = _load_snapshot(last_week)
+
+    def _calc_delta(current, snapshot, key):
+        if not snapshot or not snapshot.get("totals"):
+            return None
+        prev = snapshot["totals"].get(key, 0)
+        return current - prev
+
+    daily_delta_interactions = _calc_delta(total_interactions, yesterday_snap, "total_interactions")
+    daily_delta_employees = _calc_delta(unique_employees, yesterday_snap, "unique_employees")
+    weekly_delta_interactions = _calc_delta(total_interactions, week_ago_snap, "total_interactions")
+    weekly_delta_employees = _calc_delta(unique_employees, week_ago_snap, "unique_employees")
+
     snap_stats = {
         "total_snaps": len(snaps),
-        "total_interactions": snap_stats_raw.get("total_interactions", 0) if isinstance(snap_stats_raw, dict) else 0,
-        "unique_employees": snap_stats_raw.get("unique_employees", 0) if isinstance(snap_stats_raw, dict) else 0,
-        "unique_retailers": snap_stats_raw.get("unique_retailers", 0) if isinstance(snap_stats_raw, dict) else 0,
+        "total_interactions": total_interactions,
+        "unique_employees": unique_employees,
+        "unique_retailers": unique_retailers,
+        "daily_delta_interactions": daily_delta_interactions,
+        "daily_delta_employees": daily_delta_employees,
+        "weekly_delta_interactions": weekly_delta_interactions,
+        "weekly_delta_employees": weekly_delta_employees,
     }
 
     # --- Per-Snap performance ---
@@ -323,16 +364,29 @@ def format_crm_chat(insights: dict) -> str:
 
 def format_marketing_chat(insights: dict) -> str:
     ss = insights["snap_stats"]
+    di = ss.get("daily_delta_interactions")
+    wi = ss.get("weekly_delta_interactions")
+    de = ss.get("daily_delta_employees")
+    we = ss.get("weekly_delta_employees")
+
+    def _d(val):
+        if val is None:
+            return ""
+        sign = "+" if val >= 0 else ""
+        return f" ({sign}{val})"
+
     lines = [
         f"*AF Snap Engagement — {insights['date_short']}*", "",
-        f"Total interactions: *{ss['total_interactions']}*",
-        f"Budtenders reached: *{ss['unique_employees']}*",
+        f"Total interactions: *{ss['total_interactions']}*{_d(di)} today{_d(wi)} this week",
+        f"Budtenders reached: *{ss['unique_employees']}*{_d(de)} today{_d(we)} this week",
         f"Retailers: *{ss['unique_retailers']}*",
         f"Published Snaps: *{ss['total_snaps']}*", "",
     ]
-    mkt_actions = [a for a in insights["action_items"] if a["category"] == "marketing"]
-    for a in mkt_actions[:3]:
-        lines.append(f"📌 {a['text']}")
+    # Course progress
+    completed = insights.get("course_completed", [])
+    in_progress = insights.get("course_in_progress", [])
+    if completed or in_progress:
+        lines.append(f"Training: {len(completed)} completed, {len(in_progress)} in progress")
     return "\n".join(lines)[:1000]
 
 
@@ -507,10 +561,11 @@ def format_email_html(insights: dict) -> str:
         <!-- SNAP ENGAGEMENT -->
         <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:0">Snap Engagement</h2>
         <table style="width:100%;border-collapse:collapse">
-            <tr><td style="padding:6px 10px">Total Interactions</td><td style="padding:6px 10px;font-weight:bold">{ss['total_interactions']}</td></tr>
-            <tr><td style="padding:6px 10px">Unique Budtenders</td><td style="padding:6px 10px;font-weight:bold">{ss['unique_employees']}</td></tr>
-            <tr><td style="padding:6px 10px">Unique Retailers</td><td style="padding:6px 10px;font-weight:bold">{ss['unique_retailers']}</td></tr>
-            <tr><td style="padding:6px 10px">Published Snaps</td><td style="padding:6px 10px;font-weight:bold">{ss['total_snaps']}</td></tr>
+            <tr style="background:#f8f8f8"><th style="padding:8px 10px;text-align:left"></th><th style="padding:8px 10px;text-align:center">Total</th><th style="padding:8px 10px;text-align:center">vs Yesterday</th><th style="padding:8px 10px;text-align:center">vs Last Week</th></tr>
+            <tr><td style="padding:6px 10px">Total Interactions</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['total_interactions']}</td><td style="padding:6px 10px;text-align:center;color:{'#27ae60' if (ss.get('daily_delta_interactions') or 0) > 0 else '#e74c3c' if (ss.get('daily_delta_interactions') or 0) < 0 else '#888'}">{_fmt_delta(ss.get('daily_delta_interactions')) or '—'}</td><td style="padding:6px 10px;text-align:center;color:{'#27ae60' if (ss.get('weekly_delta_interactions') or 0) > 0 else '#e74c3c' if (ss.get('weekly_delta_interactions') or 0) < 0 else '#888'}">{_fmt_delta(ss.get('weekly_delta_interactions')) or '—'}</td></tr>
+            <tr><td style="padding:6px 10px">Unique Budtenders</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['unique_employees']}</td><td style="padding:6px 10px;text-align:center;color:{'#27ae60' if (ss.get('daily_delta_employees') or 0) > 0 else '#e74c3c' if (ss.get('daily_delta_employees') or 0) < 0 else '#888'}">{_fmt_delta(ss.get('daily_delta_employees')) or '—'}</td><td style="padding:6px 10px;text-align:center;color:{'#27ae60' if (ss.get('weekly_delta_employees') or 0) > 0 else '#e74c3c' if (ss.get('weekly_delta_employees') or 0) < 0 else '#888'}">{_fmt_delta(ss.get('weekly_delta_employees')) or '—'}</td></tr>
+            <tr><td style="padding:6px 10px">Unique Retailers</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['unique_retailers']}</td><td colspan="2"></td></tr>
+            <tr><td style="padding:6px 10px">Published Snaps</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['total_snaps']}</td><td colspan="2"></td></tr>
         </table>
 
         <!-- SNAP PERFORMANCE -->

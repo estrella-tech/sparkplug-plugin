@@ -436,6 +436,40 @@ def run_export():
         "export_timestamp": now.isoformat(),
     })
 
+    # Save daily snapshot for trend tracking
+    snapshot_dir = EXPORT_DIR / "snapshots"
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+    today_str = now.strftime("%Y-%m-%d")
+    snap_summary_path = EXPORT_DIR / "snap_engagement_summary.json"
+    if snap_summary_path.exists():
+        summary = json.loads(snap_summary_path.read_text())
+        # Also grab per-snap and per-retailer breakdowns
+        snap_csv_path = EXPORT_DIR / "snap_engagement.csv"
+        per_retailer = {}
+        if snap_csv_path.exists():
+            with open(snap_csv_path, newline="", encoding="utf-8") as f:
+                for row in csv.DictReader(f):
+                    r = row.get("Retailer", "").strip()
+                    action = row.get("Action", "").strip()
+                    if r:
+                        if r not in per_retailer:
+                            per_retailer[r] = {"views": 0, "completions": 0, "ctas": 0}
+                        if action == "Story Started":
+                            per_retailer[r]["views"] += 1
+                        elif action == "Story Complete":
+                            per_retailer[r]["completions"] += 1
+                        elif action == "Story Text Question Answer":
+                            per_retailer[r]["ctas"] += 1
+        snapshot = {
+            "date": today_str,
+            "totals": summary.get("data", {}),
+            "per_retailer": per_retailer,
+        }
+        snapshot_path = snapshot_dir / f"{today_str}.json"
+        with open(snapshot_path, "w") as f:
+            json.dump(snapshot, f, indent=2)
+        print(f"\n  Snapshot saved: {snapshot_path.name}")
+
     print(f"\nDone! Exported to {EXPORT_DIR.resolve()}")
     return True
 

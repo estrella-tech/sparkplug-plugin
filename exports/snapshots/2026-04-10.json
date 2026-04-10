@@ -1,0 +1,506 @@
+{
+  "date": "2026-04-10",
+  "totals": {
+    "total_interactions": 2941,
+    "unique_employees": 287,
+    "unique_retailers": 99,
+    "snaps_with_data": 1
+  },
+  "per_retailer": {
+    "Garden Remedies (Retail)": {
+      "views": 46,
+      "completions": 20,
+      "ctas": 0
+    },
+    "Nova Farms (MA)": {
+      "views": 5,
+      "completions": 4,
+      "ctas": 1
+    },
+    "Bud's Goods": {
+      "views": 34,
+      "completions": 22,
+      "ctas": 3
+    },
+    "Cannabis Connection": {
+      "views": 6,
+      "completions": 4,
+      "ctas": 1
+    },
+    "NETA": {
+      "views": 13,
+      "completions": 5,
+      "ctas": 0
+    },
+    "Mayflower": {
+      "views": 27,
+      "completions": 15,
+      "ctas": 0
+    },
+    "Fine Fettle (MA)": {
+      "views": 23,
+      "completions": 19,
+      "ctas": 1
+    },
+    "Joint Operations - Wick": {
+      "views": 6,
+      "completions": 4,
+      "ctas": 0
+    },
+    "House Premium Cannabis": {
+      "views": 10,
+      "completions": 5,
+      "ctas": 0
+    },
+    "Collective Cannabis": {
+      "views": 25,
+      "completions": 18,
+      "ctas": 1
+    },
+    "Nature's Remedy (MA)": {
+      "views": 3,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Fine Fettle - West Springfield": {
+      "views": 13,
+      "completions": 9,
+      "ctas": 4
+    },
+    "East Boston Cannabis": {
+      "views": 10,
+      "completions": 7,
+      "ctas": 1
+    },
+    "Mello": {
+      "views": 23,
+      "completions": 5,
+      "ctas": 0
+    },
+    "Honey Northampton": {
+      "views": 22,
+      "completions": 14,
+      "ctas": 2
+    },
+    "Rolling Js": {
+      "views": 8,
+      "completions": 5,
+      "ctas": 1
+    },
+    "New England Harvest": {
+      "views": 5,
+      "completions": 4,
+      "ctas": 0
+    },
+    "Northeast Alternatives (Retail)": {
+      "views": 47,
+      "completions": 35,
+      "ctas": 7
+    },
+    "Green Gold Dispensary": {
+      "views": 5,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Apex Noire": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Misty Mountain Shop": {
+      "views": 2,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Redi": {
+      "views": 11,
+      "completions": 9,
+      "ctas": 1
+    },
+    "Lowkey Dispensary": {
+      "views": 12,
+      "completions": 5,
+      "ctas": 0
+    },
+    "CommCan": {
+      "views": 4,
+      "completions": 4,
+      "ctas": 3
+    },
+    "Cape Cod Cannabis": {
+      "views": 3,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Potency": {
+      "views": 4,
+      "completions": 4,
+      "ctas": 1
+    },
+    "RoadTrip Dispensary LLC.": {
+      "views": 4,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Diem Cannabis (MA)": {
+      "views": 46,
+      "completions": 26,
+      "ctas": 7
+    },
+    "Happy Valley": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Greatest Hits CC": {
+      "views": 14,
+      "completions": 6,
+      "ctas": 0
+    },
+    "Enlite": {
+      "views": 11,
+      "completions": 7,
+      "ctas": 1
+    },
+    "Pettals Cannabis - Attleboro": {
+      "views": 4,
+      "completions": 3,
+      "ctas": 0
+    },
+    "Apotho Therapeutics": {
+      "views": 11,
+      "completions": 7,
+      "ctas": 0
+    },
+    "Local Cannabis": {
+      "views": 12,
+      "completions": 7,
+      "ctas": 0
+    },
+    "Fyre Ants": {
+      "views": 3,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Greensoul": {
+      "views": 7,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Ideal Craft Cannabis": {
+      "views": 2,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Aura Cannabis": {
+      "views": 3,
+      "completions": 1,
+      "ctas": 0
+    },
+    "6 Bricks": {
+      "views": 5,
+      "completions": 3,
+      "ctas": 0
+    },
+    "Kush Groove": {
+      "views": 11,
+      "completions": 9,
+      "ctas": 5
+    },
+    "CANA Craft Cannabis": {
+      "views": 10,
+      "completions": 7,
+      "ctas": 1
+    },
+    "Smokey Leaf": {
+      "views": 4,
+      "completions": 3,
+      "ctas": 0
+    },
+    "The Botanist (MA) - Retail": {
+      "views": 17,
+      "completions": 6,
+      "ctas": 0
+    },
+    "Union Twist": {
+      "views": 4,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Toy Town THC": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Botera": {
+      "views": 3,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Pure Oasis": {
+      "views": 7,
+      "completions": 5,
+      "ctas": 1
+    },
+    "Eastern Cannabis Co. (Retail)": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "AYR Wellness (Retail - MA)": {
+      "views": 9,
+      "completions": 5,
+      "ctas": 0
+    },
+    "Boutiq": {
+      "views": 3,
+      "completions": 3,
+      "ctas": 0
+    },
+    "Greener Leaf": {
+      "views": 6,
+      "completions": 3,
+      "ctas": 0
+    },
+    "The Goods Community Cannabis": {
+      "views": 1,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Firebrand Cannabis": {
+      "views": 5,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Embr - MA": {
+      "views": 8,
+      "completions": 4,
+      "ctas": 1
+    },
+    "Alternative Therapies Group": {
+      "views": 2,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Deezle Cannabis": {
+      "views": 2,
+      "completions": 2,
+      "ctas": 1
+    },
+    "Green Meadows (Retail)": {
+      "views": 10,
+      "completions": 5,
+      "ctas": 2
+    },
+    "New Leaf": {
+      "views": 5,
+      "completions": 4,
+      "ctas": 0
+    },
+    "Primitiv": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Zahara Cannabis": {
+      "views": 14,
+      "completions": 8,
+      "ctas": 1
+    },
+    "The Green Lady Dispensary": {
+      "views": 6,
+      "completions": 4,
+      "ctas": 0
+    },
+    "Y Cannabis": {
+      "views": 8,
+      "completions": 3,
+      "ctas": 0
+    },
+    "Primus Cannabis": {
+      "views": 2,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Canna Provisions": {
+      "views": 4,
+      "completions": 4,
+      "ctas": 0
+    },
+    "High Hawk": {
+      "views": 4,
+      "completions": 2,
+      "ctas": 0
+    },
+    "1 Connection Care": {
+      "views": 2,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Brockton Green Heart": {
+      "views": 5,
+      "completions": 4,
+      "ctas": 1
+    },
+    "Good Chemistry (MA)": {
+      "views": 6,
+      "completions": 4,
+      "ctas": 0
+    },
+    "High Profile (MA)": {
+      "views": 8,
+      "completions": 6,
+      "ctas": 0
+    },
+    "kosa": {
+      "views": 4,
+      "completions": 3,
+      "ctas": 0
+    },
+    "Mission (MA)": {
+      "views": 4,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Local Roots Cannabis (Retail)": {
+      "views": 5,
+      "completions": 0,
+      "ctas": 0
+    },
+    "ZAZA Green": {
+      "views": 3,
+      "completions": 3,
+      "ctas": 1
+    },
+    "Massachusetts Green Retail": {
+      "views": 1,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Comm Ave Canna": {
+      "views": 2,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Temescal Wellness": {
+      "views": 1,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Elysian": {
+      "views": 2,
+      "completions": 1,
+      "ctas": 0
+    },
+    "New Dia Co (retail)": {
+      "views": 9,
+      "completions": 4,
+      "ctas": 1
+    },
+    "Health Circle": {
+      "views": 5,
+      "completions": 4,
+      "ctas": 2
+    },
+    "Bloom Brothers": {
+      "views": 1,
+      "completions": 0,
+      "ctas": 0
+    },
+    "ReLeaf Alternatives": {
+      "views": 3,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Zen Leaf (MA)": {
+      "views": 2,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Trinity Naturals": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Pettals Cannabis - Charlton": {
+      "views": 3,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Kapha": {
+      "views": 9,
+      "completions": 5,
+      "ctas": 2
+    },
+    "Hibrid": {
+      "views": 2,
+      "completions": 1,
+      "ctas": 0
+    },
+    "The Healing Center (MA)": {
+      "views": 3,
+      "completions": 3,
+      "ctas": 0
+    },
+    "Natural Agricultural Products": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Green4All": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "The Heritage Club": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 1
+    },
+    "Hidden Wonders": {
+      "views": 3,
+      "completions": 2,
+      "ctas": 0
+    },
+    "UpTop": {
+      "views": 1,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Bud Barn": {
+      "views": 2,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Simplicity Dispensary": {
+      "views": 1,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Cady Brook Cannabis": {
+      "views": 3,
+      "completions": 2,
+      "ctas": 0
+    },
+    "Cannabis Connection II, Inc": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Capeway Cannabis": {
+      "views": 1,
+      "completions": 1,
+      "ctas": 0
+    },
+    "Underground Legacy": {
+      "views": 1,
+      "completions": 0,
+      "ctas": 0
+    },
+    "Dazed": {
+      "views": 1,
+      "completions": 0,
+      "ctas": 0
+    }
+  }
+}
