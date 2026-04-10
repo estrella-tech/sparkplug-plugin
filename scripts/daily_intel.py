@@ -369,16 +369,15 @@ def format_marketing_chat(insights: dict) -> str:
     de = ss.get("daily_delta_employees")
     we = ss.get("weekly_delta_employees")
 
-    def _d(val):
-        if val is None:
-            return ""
-        sign = "+" if val >= 0 else ""
-        return f" ({sign}{val})"
+    day_i = f" | Yesterday: *{di}*" if di is not None else ""
+    week_i = f" | This week: *{wi}*" if wi is not None else ""
+    day_e = f" | Yesterday: *{de}*" if de is not None else ""
+    week_e = f" | This week: *{we}*" if we is not None else ""
 
     lines = [
         f"*AF Snap Engagement — {insights['date_short']}*", "",
-        f"Total interactions: *{ss['total_interactions']}*{_d(di)} today{_d(wi)} this week",
-        f"Budtenders reached: *{ss['unique_employees']}*{_d(de)} today{_d(we)} this week",
+        f"Total interactions: *{ss['total_interactions']}*{day_i}{week_i}",
+        f"Budtenders reached: *{ss['unique_employees']}*{day_e}{week_e}",
         f"Retailers: *{ss['unique_retailers']}*",
         f"Published Snaps: *{ss['total_snaps']}*", "",
     ]
@@ -561,9 +560,9 @@ def format_email_html(insights: dict) -> str:
         <!-- SNAP ENGAGEMENT -->
         <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:0">Snap Engagement</h2>
         <table style="width:100%;border-collapse:collapse">
-            <tr style="background:#f8f8f8"><th style="padding:8px 10px;text-align:left"></th><th style="padding:8px 10px;text-align:center">Total</th><th style="padding:8px 10px;text-align:center">vs Yesterday</th><th style="padding:8px 10px;text-align:center">vs Last Week</th></tr>
-            <tr><td style="padding:6px 10px">Total Interactions</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['total_interactions']}</td><td style="padding:6px 10px;text-align:center;color:{'#27ae60' if (ss.get('daily_delta_interactions') or 0) > 0 else '#e74c3c' if (ss.get('daily_delta_interactions') or 0) < 0 else '#888'}">{_fmt_delta(ss.get('daily_delta_interactions')) or '—'}</td><td style="padding:6px 10px;text-align:center;color:{'#27ae60' if (ss.get('weekly_delta_interactions') or 0) > 0 else '#e74c3c' if (ss.get('weekly_delta_interactions') or 0) < 0 else '#888'}">{_fmt_delta(ss.get('weekly_delta_interactions')) or '—'}</td></tr>
-            <tr><td style="padding:6px 10px">Unique Budtenders</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['unique_employees']}</td><td style="padding:6px 10px;text-align:center;color:{'#27ae60' if (ss.get('daily_delta_employees') or 0) > 0 else '#e74c3c' if (ss.get('daily_delta_employees') or 0) < 0 else '#888'}">{_fmt_delta(ss.get('daily_delta_employees')) or '—'}</td><td style="padding:6px 10px;text-align:center;color:{'#27ae60' if (ss.get('weekly_delta_employees') or 0) > 0 else '#e74c3c' if (ss.get('weekly_delta_employees') or 0) < 0 else '#888'}">{_fmt_delta(ss.get('weekly_delta_employees')) or '—'}</td></tr>
+            <tr style="background:#f8f8f8"><th style="padding:8px 10px;text-align:left"></th><th style="padding:8px 10px;text-align:center">All Time</th><th style="padding:8px 10px;text-align:center">Yesterday</th><th style="padding:8px 10px;text-align:center">This Week</th></tr>
+            <tr><td style="padding:6px 10px">Total Interactions</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['total_interactions']}</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss.get('daily_delta_interactions') if ss.get('daily_delta_interactions') is not None else '—'}</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss.get('weekly_delta_interactions') if ss.get('weekly_delta_interactions') is not None else '—'}</td></tr>
+            <tr><td style="padding:6px 10px">Unique Budtenders</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['unique_employees']}</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss.get('daily_delta_employees') if ss.get('daily_delta_employees') is not None else '—'}</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss.get('weekly_delta_employees') if ss.get('weekly_delta_employees') is not None else '—'}</td></tr>
             <tr><td style="padding:6px 10px">Unique Retailers</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['unique_retailers']}</td><td colspan="2"></td></tr>
             <tr><td style="padding:6px 10px">Published Snaps</td><td style="padding:6px 10px;font-weight:bold;text-align:center">{ss['total_snaps']}</td><td colspan="2"></td></tr>
         </table>
