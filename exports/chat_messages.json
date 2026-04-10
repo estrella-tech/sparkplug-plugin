@@ -1,7 +1,7 @@
 {
-  "exported_at": "2026-04-09T21:56:45.219698+00:00",
+  "exported_at": "2026-04-10T13:38:15.023674+00:00",
   "data": {
-    "total_messages": 172,
+    "total_messages": 174,
     "messages": [
       {
         "space": "AF - Team Chat",
@@ -597,6 +597,20 @@
         "sender": "Unknown",
         "text": "*AF CRM Update \u2014 2026-04-09*\n\nPipeline: 56 deals | $1,072 closed won\n  Verbal Commitment: 1 ($225)\n  First Order Placed: 5 ($1,328)\n  Tasting Done: 9 ($3,060)\n  Hot Lead: 34 ($1,679)\n  Contacted: 1 ($0)\n\n  Leaf Lux \u2014 never since contact\n  Leaf Relief Brockton \u2014 never since contact\n  HadLeaf Cannabis \u2014 never since contact\n\n  106 unsent drafts in Gmail\n\n\ud83d\udd34 Ideal Craft Cannabis \u2014 zero sales in 30 days. Needs store visit or sample drop.\n\ud83d\udd34 Major Bloom \u2014 zero sales in 30 days. Needs store visit or sample drop.\n\ud83d\udd34 Leaf Lux \u2014 never contacted since last contact, 1 active deal(s). Follow up.\n\ud83d\udd34 Leaf Relief Brockton \u2014 never contacted since last contact, 1 active deal(s). Follow up.",
         "created": "2026-04-09T17:59:36.650111Z"
+      },
+      {
+        "space": "AF - CRM",
+        "space_id": "AAQAO26pLzI",
+        "sender": "Unknown",
+        "text": "*AF CRM Update \u2014 2026-04-10*\n\nPipeline: 119 deals | $1,072 closed won\n  Verbal Commitment: 9 ($2,925)\n  First Order Placed: 5 ($1,328)\n  Tasting Done: 9 ($480)\n  Hot Lead: 82 ($1,559)\n  Sampled: 7 ($0)\n  Contacted: 1 ($0)\n\n  Ideal Craft Cannabis: 1 units (7d) / 1 units (30d)\n  Major Bloom: 3 units (7d) / 17 units (30d)\n\nTraining: 2 completed, 0 in progress",
+        "created": "2026-04-10T13:11:05.421711Z"
+      },
+      {
+        "space": "AF - CRM",
+        "space_id": "AAQAO26pLzI",
+        "sender": "Unknown",
+        "text": "Guy DM'd saying he works with a lot of cannabis brands that frequently host events and would love to connect the brand with them. \n\nIG:\n@747riffhoodz5 \nEmail:\nRiffhoodz5@gmail.com",
+        "created": "2026-04-10T13:26:27.029215Z"
       },
       {
         "space": "AF - Digital Marketing",
@@ -1229,6 +1243,13 @@
         "sender": "Unknown",
         "text": "*AF CRM Update \u2014 2026-04-09*\n\nPipeline: 56 deals | $1,072 closed won\n  Verbal Commitment: 1 ($225)\n  First Order Placed: 5 ($1,328)\n  Tasting Done: 9 ($3,060)\n  Hot Lead: 34 ($1,679)\n  Contacted: 1 ($0)\n\n  Leaf Lux \u2014 never since contact\n  Leaf Relief Brockton \u2014 never since contact\n  HadLeaf Cannabis \u2014 never since contact\n\n  106 unsent drafts in Gmail\n\n\ud83d\udd34 Ideal Craft Cannabis \u2014 zero sales in 30 days. Needs store visit or sample drop.\n\ud83d\udd34 Major Bloom \u2014 zero sales in 30 days. Needs store visit or sample drop.\n\ud83d\udd34 Leaf Lux \u2014 never contacted since last contact, 1 active deal(s). Follow up.\n\ud83d\udd34 Leaf Relief Brockton \u2014 never contacted since last contact, 1 active deal(s). Follow up.",
         "created": "2026-04-09T17:59:36.650111Z"
+      },
+      {
+        "space": "AF - CRM",
+        "space_id": "AAQAO26pLzI",
+        "sender": "Unknown",
+        "text": "*AF CRM Update \u2014 2026-04-10*\n\nPipeline: 119 deals | $1,072 closed won\n  Verbal Commitment: 9 ($2,925)\n  First Order Placed: 5 ($1,328)\n  Tasting Done: 9 ($480)\n  Hot Lead: 82 ($1,559)\n  Sampled: 7 ($0)\n  Contacted: 1 ($0)\n\n  Ideal Craft Cannabis: 1 units (7d) / 1 units (30d)\n  Major Bloom: 3 units (7d) / 17 units (30d)\n\nTraining: 2 completed, 0 in progress",
+        "created": "2026-04-10T13:11:05.421711Z"
       },
       {
         "space": "AF - Sample Requests",

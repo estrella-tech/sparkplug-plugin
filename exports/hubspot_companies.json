@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-04-10T01:58:10.308419+00:00",
+  "exported_at": "2026-04-10T13:38:10.517716+00:00",
   "data": [
     {
       "id": "137886332665",
@@ -3497,8 +3497,8 @@
       "id": "252674639560",
       "name": "Atomic Fungi",
       "domain": "atomicfungi.com",
-      "last_contacted": "2026-04-09T22:01:03.729Z",
-      "last_updated": "2026-04-09T23:53:12Z",
+      "last_contacted": "2026-04-10T13:31:11Z",
+      "last_updated": "2026-04-10T13:33:04Z",
       "num_contacts": 3,
       "num_deals": 0
     },
@@ -4030,6 +4030,15 @@
       "domain": "communitygrowthpartners.com",
       "last_contacted": null,
       "last_updated": null,
+      "num_contacts": 1,
+      "num_deals": 0
+    },
+    {
+      "id": "317748736761",
+      "name": null,
+      "domain": "cchgd.com",
+      "last_contacted": "2026-04-10T13:31:11Z",
+      "last_updated": "2026-04-10T13:33:04Z",
       "num_contacts": 1,
       "num_deals": 0
     }

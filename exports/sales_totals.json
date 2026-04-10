@@ -1,12 +1,12 @@
 {
-  "exported_at": "2026-04-09T21:56:24.993688+00:00",
+  "exported_at": "2026-04-10T13:37:46.547919+00:00",
   "data": [
     {
       "retailer_id": "64c7bccf2ce7de0012bd8022",
       "retailer_name": "Ideal Craft Cannabis",
       "period": "7d",
-      "date_start": "2026-04-02",
-      "date_end": "2026-04-09",
+      "date_start": "2026-04-03",
+      "date_end": "2026-04-10",
       "data": {
         "keys": [
           "value",
@@ -25,8 +25,8 @@
       "retailer_id": "64c7bccf2ce7de0012bd8022",
       "retailer_name": "Ideal Craft Cannabis",
       "period": "30d",
-      "date_start": "2026-03-10",
-      "date_end": "2026-04-09",
+      "date_start": "2026-03-11",
+      "date_end": "2026-04-10",
       "data": {
         "keys": [
           "value",
@@ -45,8 +45,8 @@
       "retailer_id": "64c7bccf2ce7de0012bd8022",
       "retailer_name": "Ideal Craft Cannabis",
       "period": "90d",
-      "date_start": "2026-01-09",
-      "date_end": "2026-04-09",
+      "date_start": "2026-01-10",
+      "date_end": "2026-04-10",
       "data": {
         "keys": [
           "value",
@@ -65,8 +65,8 @@
       "retailer_id": "65aedee5ae79f200127e9754",
       "retailer_name": "Major Bloom",
       "period": "7d",
-      "date_start": "2026-04-02",
-      "date_end": "2026-04-09",
+      "date_start": "2026-04-03",
+      "date_end": "2026-04-10",
       "data": {
         "keys": [
           "value",
@@ -85,8 +85,8 @@
       "retailer_id": "65aedee5ae79f200127e9754",
       "retailer_name": "Major Bloom",
       "period": "30d",
-      "date_start": "2026-03-10",
-      "date_end": "2026-04-09",
+      "date_start": "2026-03-11",
+      "date_end": "2026-04-10",
       "data": {
         "keys": [
           "value",
@@ -105,8 +105,8 @@
       "retailer_id": "65aedee5ae79f200127e9754",
       "retailer_name": "Major Bloom",
       "period": "90d",
-      "date_start": "2026-01-09",
-      "date_end": "2026-04-09",
+      "date_start": "2026-01-10",
+      "date_end": "2026-04-10",
       "data": {
         "keys": [
           "value",

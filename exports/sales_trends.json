@@ -1,11 +1,11 @@
 {
-  "exported_at": "2026-04-09T21:56:25.327627+00:00",
+  "exported_at": "2026-04-10T13:37:46.739094+00:00",
   "data": [
     {
       "retailer_id": "64c7bccf2ce7de0012bd8022",
       "retailer_name": "Ideal Craft Cannabis",
-      "date_start": "2026-03-10",
-      "date_end": "2026-04-09",
+      "date_start": "2026-03-11",
+      "date_end": "2026-04-10",
       "frequency": "weekly",
       "data": {
         "buckets": {
@@ -22,8 +22,8 @@
     {
       "retailer_id": "65aedee5ae79f200127e9754",
       "retailer_name": "Major Bloom",
-      "date_start": "2026-03-10",
-      "date_end": "2026-04-09",
+      "date_start": "2026-03-11",
+      "date_end": "2026-04-10",
       "frequency": "weekly",
       "data": {
         "buckets": {
