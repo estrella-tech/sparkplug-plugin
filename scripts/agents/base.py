@@ -37,8 +37,12 @@ async def run_agent(
     tools: list,
     max_turns: int = 15,
     model: str = "claude-sonnet-4-6",
+    extra_allowed_tools: list[str] = None,
 ) -> str:
-    """Run an agent with the given prompt and tools. Returns the final text output."""
+    """Run an agent with the given prompt and tools. Returns the final text output.
+
+    extra_allowed_tools: additional built-in tool names to allow (e.g. "WebSearch", "WebFetch")
+    """
     # Ensure API key is available
     api_key = _get_api_key()
     env = {}
@@ -48,8 +52,10 @@ async def run_agent(
     # Create in-process MCP server with the agent's tools
     server = create_sdk_mcp_server(name=f"af-{name}", tools=tools)
 
-    # Build allowed tool names
+    # Build allowed tool names (MCP tools + any built-in extras)
     allowed = [t.name for t in tools]
+    if extra_allowed_tools:
+        allowed.extend(extra_allowed_tools)
 
     options = ClaudeAgentOptions(
         system_prompt=system_prompt,
@@ -88,6 +94,7 @@ def run_agent_sync(
     tools: list,
     max_turns: int = 15,
     model: str = "claude-sonnet-4-6",
+    extra_allowed_tools: list[str] = None,
 ) -> str:
     """Synchronous wrapper for run_agent."""
-    return asyncio.run(run_agent(name, system_prompt, user_prompt, tools, max_turns, model))
+    return asyncio.run(run_agent(name, system_prompt, user_prompt, tools, max_turns, model, extra_allowed_tools))

@@ -110,6 +110,48 @@ def main():
     elif command == "tasks":
         no_email = "--no-email-scan" in args
         run_tasks(dry_run=dry_run, scan_emails=not no_email)
+    elif command == "research":
+        limit = 5
+        if "--limit" in args:
+            idx = args.index("--limit")
+            limit = int(args[idx + 1])
+        print("=" * 60)
+        print(f"RESEARCH AGENT — Finding social profiles {'(DRY RUN)' if dry_run else ''}")
+        print("=" * 60)
+        from agents.research_agent import run as run_research_fn
+        # Build targets from Tasting Done / Sampled / Verbal Commitment deals
+        import json
+        from email_utils import load_enrichment_data, fuzzy_match
+        enrichment = load_enrichment_data()
+        deals = json.loads((Path(__file__).parent.parent / "exports" / "hubspot_deals.json").read_text()).get("data", [])
+        apex = json.loads((Path(__file__).parent.parent / "exports" / "apex_contacts_deduped.json").read_text())
+        target_stages = {"Tasting Done", "Sampled", "Verbal Commitment"}
+        targets = []
+        seen = set()
+        for d in deals:
+            if d.get("stage_label") in target_stages:
+                name = d["name"].split("\u2014")[0].split("\u2013")[0].strip()
+                if name.lower() in seen:
+                    continue
+                seen.add(name.lower())
+                company = {"name": name}
+                bt_key, _ = fuzzy_match(name, enrichment.get("budtenders_by_retailer", {}), threshold=0.4)
+                if bt_key:
+                    bt_data = enrichment["budtenders_by_retailer"][bt_key]
+                    company["budtenders"] = sorted(bt_data.keys(), key=lambda x: sum(bt_data[x].values()), reverse=True)[:3]
+                contacts = []
+                for ac in apex:
+                    for bn in ac.get("buyer_names", []):
+                        if name.lower() in bn.lower() or bn.lower() in name.lower():
+                            contacts.append({"name": ac.get("name", ""), "email": ac.get("email", ""), "title": ac.get("title", "")})
+                            break
+                if contacts:
+                    company["contacts"] = contacts[:5]
+                targets.append(company)
+        targets = targets[:limit]
+        print(f"Researching {len(targets)} companies\n")
+        output = run_research_fn(targets, dry_run=dry_run)
+        print(output)
     elif command == "all":
         run_all(dry_run=dry_run)
     else:

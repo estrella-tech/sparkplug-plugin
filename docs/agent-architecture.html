@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atomic Fungi Agent Architecture</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0d1b14; color: #e0e0e0; padding: 40px; min-height: 100vh; }
+
+  h1 { color: #c8a45a; font-size: 28px; text-align: center; margin-bottom: 8px; letter-spacing: 1px; }
+  .subtitle { color: #7a9b8a; text-align: center; font-size: 14px; margin-bottom: 40px; }
+
+  .pipeline-flow { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 50px; }
+  .pipeline-step { background: #1a3c2e; border: 2px solid #c8a45a; border-radius: 12px; padding: 14px 24px; text-align: center; min-width: 140px; }
+  .pipeline-step .step-num { color: #c8a45a; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+  .pipeline-step .step-name { color: #fff; font-size: 16px; font-weight: 600; margin-top: 4px; }
+  .pipeline-step .step-desc { color: #7a9b8a; font-size: 11px; margin-top: 4px; }
+  .pipeline-arrow { color: #c8a45a; font-size: 28px; font-weight: bold; }
+
+  .main-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+  .section { background: #122a1f; border-radius: 16px; padding: 24px; border: 1px solid #1e4a38; }
+  .section h2 { color: #c8a45a; font-size: 16px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #1e4a38; display: flex; align-items: center; gap: 8px; }
+  .section h2 .icon { font-size: 20px; }
+
+  .tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .tool-group { background: #0d1b14; border-radius: 10px; padding: 14px; border: 1px solid #1e4a38; }
+  .tool-group h3 { color: #c8a45a; font-size: 13px; margin-bottom: 10px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+  .tool-group h3 .ticon { font-size: 16px; }
+  .tool-item { color: #a0c0b0; font-size: 12px; padding: 4px 0; padding-left: 12px; border-left: 2px solid #1e4a38; margin-bottom: 4px; font-family: 'Consolas', 'Monaco', monospace; }
+  .tool-item:hover { border-left-color: #c8a45a; color: #fff; }
+
+  .data-source { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: #0d1b14; border-radius: 8px; margin-bottom: 8px; border: 1px solid #1e4a38; transition: border-color 0.2s; }
+  .data-source:hover { border-color: #c8a45a; }
+  .data-source .ds-icon { font-size: 22px; flex-shrink: 0; }
+  .data-source .ds-name { color: #fff; font-size: 13px; font-weight: 600; }
+  .data-source .ds-detail { color: #7a9b8a; font-size: 11px; }
+
+  .output-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: #0d1b14; border-radius: 8px; margin-bottom: 8px; border: 1px solid #1e4a38; transition: border-color 0.2s; }
+  .output-item:hover { border-color: #c8a45a; }
+  .output-item .out-icon { font-size: 20px; flex-shrink: 0; }
+  .output-item .out-name { color: #fff; font-size: 13px; font-weight: 600; }
+  .output-item .out-detail { color: #7a9b8a; font-size: 11px; }
+
+  .agent-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .agent-card { background: #0d1b14; border-radius: 12px; padding: 16px; border: 1px solid #1e4a38; position: relative; overflow: hidden; }
+  .agent-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .agent-card.inbox::before { background: #3b82f6; }
+  .agent-card.respond::before { background: #10b981; }
+  .agent-card.task::before { background: #f59e0b; }
+  .agent-card .agent-name { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .agent-card .agent-file { color: #5a7a6a; font-size: 10px; font-family: monospace; margin-bottom: 8px; }
+  .agent-card .agent-desc { color: #a0c0b0; font-size: 12px; line-height: 1.5; }
+  .agent-card .agent-tools { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .agent-card .tool-tag { background: #1a3c2e; color: #c8a45a; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-family: monospace; }
+
+  .scripts-section { margin-top: 30px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+  .scripts-section h2 { color: #c8a45a; font-size: 16px; margin-bottom: 16px; }
+  .script-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .script-card { background: #122a1f; border-radius: 10px; padding: 14px; border: 1px solid #1e4a38; }
+  .script-card .script-name { color: #c8a45a; font-size: 12px; font-family: monospace; font-weight: 600; }
+  .script-card .script-desc { color: #7a9b8a; font-size: 11px; margin-top: 4px; }
+
+  .footer { text-align: center; margin-top: 50px; color: #3a5a4a; font-size: 11px; }
+
+  .connector { display: flex; align-items: center; justify-content: center; padding: 10px 0; }
+  .connector .line { width: 2px; height: 20px; background: #1e4a38; }
+  .connector .arrow-down { color: #c8a45a; font-size: 16px; }
+</style>
+</head>
+<body>
+
+<h1>Atomic Fungi Intelligence Platform</h1>
+<p class="subtitle">Claude Agent SDK + Sparkplug + HubSpot + Gmail + Google Calendar</p>
+
+<!-- Pipeline Flow -->
+<div class="pipeline-flow">
+  <div class="pipeline-step">
+    <div class="step-num">Step 1</div>
+    <div class="step-name">Inbox Agent</div>
+    <div class="step-desc">Triage + Star + Archive</div>
+  </div>
+  <div class="pipeline-arrow">&rarr;</div>
+  <div class="pipeline-step">
+    <div class="step-num">Step 2</div>
+    <div class="step-name">Auto-Respond</div>
+    <div class="step-desc">Draft Replies</div>
+  </div>
+  <div class="pipeline-arrow">&rarr;</div>
+  <div class="pipeline-step">
+    <div class="step-num">Step 3</div>
+    <div class="step-name">Task Agent</div>
+    <div class="step-desc">Nag + Create Tasks</div>
+  </div>
+  <div class="pipeline-arrow">&rarr;</div>
+  <div class="pipeline-step" style="border-color: #10b981;">
+    <div class="step-num" style="color: #10b981;">Output</div>
+    <div class="step-name">Giovanni Reviews</div>
+    <div class="step-desc">Approve + Send</div>
+  </div>
+</div>
+
+<!-- Main Grid: Data Sources | Agents + Tools | Outputs -->
+<div class="main-grid">
+
+  <!-- Left: Data Sources -->
+  <div class="section">
+    <h2><span class="icon">&#128202;</span> Data Sources</h2>
+    <div class="data-source">
+      <div class="ds-icon">&#9889;</div>
+      <div>
+        <div class="ds-name">Sparkplug API</div>
+        <div class="ds-detail">Sales, Snaps, budtenders, courses, CTAs</div>
+      </div>
+    </div>
+    <div class="data-source">
+      <div class="ds-icon">&#128200;</div>
+      <div>
+        <div class="ds-name">HubSpot CRM</div>
+        <div class="ds-detail">119 deals, 449 companies, 640+ contacts</div>
+      </div>
+    </div>
+    <div class="data-source">
+      <div class="ds-icon">&#9993;</div>
+      <div>
+        <div class="ds-name">Gmail</div>
+        <div class="ds-detail">Read, compose, drafts, labels, send</div>
+      </div>
+    </div>
+    <div class="data-source">
+      <div class="ds-icon">&#128197;</div>
+      <div>
+        <div class="ds-name">Google Calendar</div>
+        <div class="ds-detail">Events, free slots, reminders</div>
+      </div>
+    </div>
+    <div class="data-source">
+      <div class="ds-icon">&#128172;</div>
+      <div>
+        <div class="ds-name">Google Chat</div>
+        <div class="ds-detail">4 spaces: CRM, Marketing, Team, Samples</div>
+      </div>
+    </div>
+    <div class="data-source">
+      <div class="ds-icon">&#128218;</div>
+      <div>
+        <div class="ds-name">Apex / Dataverse</div>
+        <div class="ds-detail">302 buyers, 857 contact emails</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Center: Agents + Tools -->
+  <div class="section">
+    <h2><span class="icon">&#129302;</span> Agent Team (Claude Agent SDK)</h2>
+
+    <!-- Agent Cards -->
+    <div class="agent-cards">
+      <div class="agent-card inbox">
+        <div class="agent-name">Inbox Agent</div>
+        <div class="agent-file">agents/inbox_agent.py</div>
+        <div class="agent-desc">
+          Triages unread emails into 9 categories. Stars actionable items. Archives noise.
+        </div>
+        <div class="agent-tools">
+          <span class="tool-tag">gmail_search</span>
+          <span class="tool-tag">gmail_read</span>
+          <span class="tool-tag">gmail_modify_labels</span>
+          <span class="tool-tag">lookup_company</span>
+        </div>
+      </div>
+      <div class="agent-card respond">
+        <div class="agent-name">Auto-Respond Agent</div>
+        <div class="agent-file">agents/auto_respond.py</div>
+        <div class="agent-desc">
+          Reads starred emails. Checks prior contact. Drafts replies in Giovanni's voice. Books meetings.
+        </div>
+        <div class="agent-tools">
+          <span class="tool-tag">gmail_search</span>
+          <span class="tool-tag">gmail_read</span>
+          <span class="tool-tag">gmail_create_draft</span>
+          <span class="tool-tag">gmail_check_prior_contact</span>
+          <span class="tool-tag">calendar_find_free_slots</span>
+          <span class="tool-tag">lookup_company</span>
+        </div>
+      </div>
+      <div class="agent-card task">
+        <div class="agent-name">Task Agent</div>
+        <div class="agent-file">agents/task_agent.py</div>
+        <div class="agent-desc">
+          Nags on overdue tasks with escalating urgency. Scans emails for new action items. Creates tasks.
+        </div>
+        <div class="agent-tools">
+          <span class="tool-tag">tasks_list</span>
+          <span class="tool-tag">tasks_create</span>
+          <span class="tool-tag">tasks_update</span>
+          <span class="tool-tag">tasks_nag</span>
+          <span class="tool-tag">gmail_search</span>
+          <span class="tool-tag">gmail_read</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tool Grid -->
+    <div class="tool-grid">
+      <div class="tool-group">
+        <h3><span class="ticon">&#9993;</span> Gmail Tools (6)</h3>
+        <div class="tool-item">gmail_search</div>
+        <div class="tool-item">gmail_read</div>
+        <div class="tool-item">gmail_create_draft</div>
+        <div class="tool-item">gmail_send_draft</div>
+        <div class="tool-item">gmail_check_prior_contact</div>
+        <div class="tool-item">gmail_modify_labels</div>
+      </div>
+      <div class="tool-group">
+        <h3><span class="ticon">&#128197;</span> Calendar Tools (3)</h3>
+        <div class="tool-item">calendar_list_events</div>
+        <div class="tool-item">calendar_find_free_slots</div>
+        <div class="tool-item">calendar_create_event</div>
+      </div>
+      <div class="tool-group">
+        <h3><span class="ticon">&#9745;</span> Task Tools (4)</h3>
+        <div class="tool-item">tasks_list</div>
+        <div class="tool-item">tasks_create</div>
+        <div class="tool-item">tasks_update</div>
+        <div class="tool-item">tasks_nag</div>
+      </div>
+      <div class="tool-group">
+        <h3><span class="ticon">&#128269;</span> Enrichment (1)</h3>
+        <div class="tool-item">lookup_company</div>
+        <div style="color: #5a7a6a; font-size: 11px; margin-top: 8px;">HubSpot + Sparkplug cross-ref</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Outputs -->
+  <div class="section">
+    <h2><span class="icon">&#128640;</span> Outputs</h2>
+    <div class="output-item">
+      <div class="out-icon">&#128231;</div>
+      <div>
+        <div class="out-name">Daily Intel Email</div>
+        <div class="out-detail">Team: Snap, Courses, Sales, Leaderboard, Pipeline, CTAs</div>
+      </div>
+    </div>
+    <div class="output-item">
+      <div class="out-icon">&#128231;</div>
+      <div>
+        <div class="out-name">Admin Task Email</div>
+        <div class="out-detail">Giovanni + Jakyla, CC Colin</div>
+      </div>
+    </div>
+    <div class="output-item">
+      <div class="out-icon">&#128172;</div>
+      <div>
+        <div class="out-name">Google Chat Posts</div>
+        <div class="out-detail">CRM + Digital Marketing spaces</div>
+      </div>
+    </div>
+    <div class="output-item">
+      <div class="out-icon">&#128221;</div>
+      <div>
+        <div class="out-name">Email Drafts</div>
+        <div class="out-detail">Auto-respond, follow-ups, mass outreach</div>
+      </div>
+    </div>
+    <div class="output-item">
+      <div class="out-icon">&#128197;</div>
+      <div>
+        <div class="out-name">Calendar Events</div>
+        <div class="out-detail">Follow-ups, meetings, reminders</div>
+      </div>
+    </div>
+    <div class="output-item">
+      <div class="out-icon">&#128200;</div>
+      <div>
+        <div class="out-name">HubSpot Updates</div>
+        <div class="out-detail">Deal stages, tasks, contacts, companies</div>
+      </div>
+    </div>
+    <div class="output-item">
+      <div class="out-icon">&#128202;</div>
+      <div>
+        <div class="out-name">Daily Snapshots</div>
+        <div class="out-detail">Snap engagement trends (day/week)</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Scripts Section -->
+<div class="scripts-section">
+  <h2 style="color: #c8a45a; padding-bottom: 8px; border-bottom: 1px solid #1e4a38;">Standalone Scripts</h2>
+  <div class="script-grid" style="margin-top: 16px;">
+    <div class="script-card">
+      <div class="script-name">run_agents.py</div>
+      <div class="script-desc">CLI runner for the 3-agent pipeline (inbox, respond, tasks)</div>
+    </div>
+    <div class="script-card">
+      <div class="script-name">daily_intel.py</div>
+      <div class="script-desc">Daily email + Chat posts. Runs at 9 AM via cloud trigger.</div>
+    </div>
+    <div class="script-card">
+      <div class="script-name">export_data.py</div>
+      <div class="script-desc">Pulls Sparkplug + HubSpot + Gmail data. Saves daily snapshots.</div>
+    </div>
+    <div class="script-card">
+      <div class="script-name">mass_outreach.py</div>
+      <div class="script-desc">3-tier mass email drafts: CTA, follow-up, cold outreach.</div>
+    </div>
+    <div class="script-card">
+      <div class="script-name">rewrite_drafts.py</div>
+      <div class="script-desc">Rewrites outreach drafts in Giovanni's voice via Claude Sonnet.</div>
+    </div>
+    <div class="script-card">
+      <div class="script-name">store_visit_followup.py</div>
+      <div class="script-desc">Post-visit follow-up drafts with budtender data.</div>
+    </div>
+    <div class="script-card">
+      <div class="script-name">update_hubspot_deals.py</div>
+      <div class="script-desc">Batch update deal stages after store visits.</div>
+    </div>
+    <div class="script-card">
+      <div class="script-name">setup_jared_gmail.py</div>
+      <div class="script-desc">OAuth setup for Jared's Gmail account.</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Atomic Fungi Intelligence Platform &mdash; Built with Claude Agent SDK &mdash; April 2026
+</div>
+
+</body>
+</html>
