@@ -262,22 +262,16 @@ def format_crm_chat(insights: dict) -> str:
                 lines.append(f"  {stage}: {info['count']} (${info['value']:,.0f})")
         lines.append("")
 
-    # Stale
-    for sc in insights["stale_companies"][:3]:
-        days = f"{sc['days']}d" if isinstance(sc['days'], int) else "never"
-        lines.append(f"  {sc['name']} — {days} since contact")
-    if insights["stale_companies"]:
-        lines.append("")
+    # Sales
+    for rname, periods in insights["sales_by_retailer"].items():
+        s7 = periods.get("7d", 0)
+        s30 = periods.get("30d", 0)
+        lines.append(f"  {rname}: {s7} units (7d) / {s30} units (30d)")
 
-    # Drafts removed from team-facing reports
-
-    # CRM actions
-    crm_actions = [a for a in insights["action_items"] if a["category"] == "crm"]
-    if crm_actions:
+    # Course completions
+    if insights.get("course_completed") or insights.get("course_in_progress"):
         lines.append("")
-        for a in crm_actions[:4]:
-            emoji = {"high": "🔴", "medium": "🟡", "low": "🟢"}.get(a["priority"], "📌")
-            lines.append(f"{emoji} {a['text']}")
+        lines.append(f"Training: {len(insights.get('course_completed', []))} completed, {len(insights.get('course_in_progress', []))} in progress")
 
     return "\n".join(lines)[:1000]
 
