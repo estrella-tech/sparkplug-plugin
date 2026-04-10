@@ -29,12 +29,12 @@ APP_PASSWORD_PATH = CONFIG_DIR / "gmail_app_password.txt"
 SENDER_EMAIL = "giovanni@atomicfungi.com"
 
 
-def send_email(to: list[str], subject: str, html_body: str, sender: str = SENDER_EMAIL) -> bool:
+def send_email(to: list[str], subject: str, html_body: str, sender: str = SENDER_EMAIL, cc: list[str] = None) -> bool:
     """Send an HTML email. Returns True on success."""
     # Try OAuth2 first
     if OAUTH_TOKEN_PATH.exists() and OAUTH_CREDS_PATH.exists():
         try:
-            return _send_via_oauth2(to, subject, html_body, sender)
+            return _send_via_oauth2(to, subject, html_body, sender, cc=cc)
         except Exception as e:
             print(f"  OAuth2 send failed: {e}")
             print("  Falling back to SMTP...")
@@ -42,7 +42,7 @@ def send_email(to: list[str], subject: str, html_body: str, sender: str = SENDER
     # Try App Password
     if APP_PASSWORD_PATH.exists():
         password = APP_PASSWORD_PATH.read_text().strip()
-        return _send_via_smtp(to, subject, html_body, sender, password)
+        return _send_via_smtp(to, subject, html_body, sender, password, cc=cc)
 
     print("  No email credentials found. Set up one of:")
     print(f"    OAuth2: Run 'python gmail_sender.py setup' then authorize in browser")
@@ -50,23 +50,26 @@ def send_email(to: list[str], subject: str, html_body: str, sender: str = SENDER
     return False
 
 
-def _send_via_smtp(to: list[str], subject: str, html_body: str, sender: str, password: str) -> bool:
+def _send_via_smtp(to: list[str], subject: str, html_body: str, sender: str, password: str, cc: list[str] = None) -> bool:
     """Send via Gmail SMTP with App Password."""
     msg = MIMEMultipart("alternative")
     msg["From"] = sender
     msg["To"] = ", ".join(to)
+    if cc:
+        msg["Cc"] = ", ".join(cc)
     msg["Subject"] = subject
     msg.attach(MIMEText(html_body, "html"))
+    all_recipients = to + (cc or [])
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(sender, password)
-        server.sendmail(sender, to, msg.as_string())
+        server.sendmail(sender, all_recipients, msg.as_string())
 
     print(f"  Email sent via SMTP to {len(to)} recipients")
     return True
 
 
-def _send_via_oauth2(to: list[str], subject: str, html_body: str, sender: str) -> bool:
+def _send_via_oauth2(to: list[str], subject: str, html_body: str, sender: str, cc: list[str] = None) -> bool:
     """Send via Gmail API with OAuth2."""
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
@@ -92,13 +95,15 @@ def _send_via_oauth2(to: list[str], subject: str, html_body: str, sender: str) -
     msg = MIMEMultipart("alternative")
     msg["From"] = sender
     msg["To"] = ", ".join(to)
+    if cc:
+        msg["Cc"] = ", ".join(cc)
     msg["Subject"] = subject
     msg.attach(MIMEText(html_body, "html"))
 
     raw = base64.urlsafe_b64encode(msg.as_bytes()).decode()
     service.users().messages().send(userId="me", body={"raw": raw}).execute()
 
-    print(f"  Email sent via Gmail API to {len(to)} recipients")
+    print(f"  Email sent via Gmail API to {len(to)} recipients{f' (CC: {len(cc)})' if cc else ''}")
     return True
 
 
