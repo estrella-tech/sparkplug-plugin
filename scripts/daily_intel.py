@@ -146,6 +146,46 @@ def analyze_data() -> dict:
         "unique_retailers": snap_stats_raw.get("unique_retailers", 0) if isinstance(snap_stats_raw, dict) else 0,
     }
 
+    # --- Per-Snap performance ---
+    import csv as _csv
+    snap_perf = {}
+    snap_csv_path = EXPORTS_DIR / "snap_engagement.csv"
+    if snap_csv_path.exists():
+        with open(snap_csv_path, newline="", encoding="utf-8") as f:
+            for row in _csv.DictReader(f):
+                sname = row.get("snap_name", "").strip()
+                sid = row.get("snap_id", "").strip()
+                action = row.get("Action", "").strip()
+                if not sname:
+                    continue
+                key = f"{sid}|{sname}"
+                if key not in snap_perf:
+                    snap_perf[key] = {"name": sname, "id": sid, "views": 0, "completions": 0, "ctas": 0}
+                if action == "Story Started":
+                    snap_perf[key]["views"] += 1
+                elif action == "Story Complete":
+                    snap_perf[key]["completions"] += 1
+                elif action == "Story Text Question Answer":
+                    snap_perf[key]["ctas"] += 1
+    # Enrich with thumbnails and dates from snap metadata
+    snap_meta = {}
+    for s in snaps:
+        sid = str(s.get("storifymeSnapId", ""))
+        featured = s.get("featuredPeriods", [])
+        live_date = featured[0]["startDate"][:10] if featured else s.get("createdAt", "")[:10]
+        snap_meta[sid] = {
+            "thumbnail": s.get("thumbnailUrl", ""),
+            "date": live_date,
+            "pages": s.get("totalPages", 0),
+        }
+    for key in snap_perf:
+        sid = snap_perf[key]["id"]
+        meta = snap_meta.get(str(sid), {})
+        snap_perf[key]["thumbnail"] = meta.get("thumbnail", "")
+        snap_perf[key]["date"] = meta.get("date", "")
+        snap_perf[key]["pages"] = meta.get("pages", 0)
+    snap_performance = sorted(snap_perf.values(), key=lambda x: x["views"] + x["completions"] + x["ctas"], reverse=True)
+
     # --- HubSpot Pipeline ---
     hs_pipeline = pipeline if isinstance(pipeline, dict) else {}
     by_stage = hs_pipeline.get("by_stage", {})
@@ -245,7 +285,12 @@ def analyze_data() -> dict:
         "recent_chat": recent_chat_messages,
         "course_completed": completed_courses,
         "course_in_progress": in_progress_courses,
-        "cta_responses": cta_export.get("data", []) if isinstance(cta_export.get("data"), list) else [],
+        "all_companies": all_companies,
+        "snap_performance": snap_performance,
+        "cta_responses": sorted(
+            (cta_export.get("data", []) if isinstance(cta_export.get("data"), list) else []),
+            key=lambda x: x.get("date", ""), reverse=True
+        ),
         "action_items": action_items,
         "tasks": load_tasks(),
     }
@@ -340,6 +385,82 @@ def format_email_html(insights: dict) -> str:
 
     draft_alert = ""
 
+    # Snap Performance table with thumbnails
+    snap_perf_html = ""
+    if insights.get("snap_performance"):
+        sp_rows = ""
+        for s in insights["snap_performance"]:
+            thumb = s.get("thumbnail", "")
+            date = s.get("date", "")
+            pages = s.get("pages", "")
+            views = s["views"]
+            completions = s["completions"]
+            ctas = s["ctas"]
+            rate = f"{completions/views*100:.0f}%" if views > 0 else "—"
+            thumb_html = f'<img src="{thumb}" width="50" height="65" style="border-radius:4px;vertical-align:middle;margin-right:8px">' if thumb else ""
+            label = f'{thumb_html}<span style="font-size:12px;color:#666">{date} ({pages}p)</span>'
+            sp_rows += f'<tr><td style="padding:5px 10px;border-bottom:1px solid #eee">{label}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{views}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{completions}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{ctas}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{rate}</td></tr>'
+        snap_perf_html = f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Snap Performance</h2>
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px;text-align:left">Snap</th><th style="padding:6px 10px;text-align:center">Views</th><th style="padding:6px 10px;text-align:center">Completions</th><th style="padding:6px 10px;text-align:center">CTAs</th><th style="padding:6px 10px;text-align:center">Rate</th></tr>
+            {sp_rows}
+        </table>'''
+
+    # CTA Responses — grouped by retailer, with HubSpot contact cross-reference
+    cta_section = ""
+    cta_responses = insights.get("cta_responses", [])
+    if cta_responses:
+        # Group by retailer
+        by_retailer = {}
+        for r in cta_responses:
+            retailer = r.get("retailer", "Unknown")
+            by_retailer.setdefault(retailer, []).append(r)
+
+        # Cross-reference HubSpot for buyer contacts
+        hs_contacts_by_company = {}
+        for c in insights.get("all_companies", []):
+            cname = (c.get("name") or "").lower()
+            email = c.get("domain", "")
+            if cname:
+                hs_contacts_by_company[cname] = {
+                    "domain": email,
+                    "last_contacted": c.get("last_contacted", ""),
+                    "deals": c.get("num_deals", 0),
+                }
+
+        cta_rows = ""
+        for retailer in by_retailer:
+            responses = by_retailer[retailer]
+            # Find HubSpot match
+            hs_info = ""
+            r_lower = retailer.lower()
+            for cn, cdata in hs_contacts_by_company.items():
+                if r_lower in cn or cn in r_lower or (len(r_lower.split()[0]) > 3 and r_lower.split()[0] in cn):
+                    parts = []
+                    if cdata["domain"]:
+                        parts.append(cdata["domain"])
+                    if cdata["deals"]:
+                        parts.append(f'{cdata["deals"]} deal(s)')
+                    if cdata["last_contacted"]:
+                        parts.append(f'last contact: {cdata["last_contacted"][:10]}')
+                    hs_info = " | ".join(parts)
+                    break
+
+            # Retailer header row
+            hs_badge = f'<span style="color:#888;font-size:11px"> — {hs_info}</span>' if hs_info else ""
+            cta_rows += f'<tr style="background:#f0f7f4"><td colspan="3" style="padding:8px 10px;font-weight:bold;border-bottom:1px solid #ddd">{retailer}{hs_badge}</td></tr>'
+
+            for r in responses:
+                date = r.get("date", "")
+                resp_text = str(r.get("response", "")).replace("\n", " ").strip()[:120]
+                cta_rows += f'<tr><td style="padding:4px 10px 4px 20px;border-bottom:1px solid #eee;font-size:12px">{r.get("employee","?")}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-size:12px">{date}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-size:12px">{resp_text}</td></tr>'
+
+        cta_section = f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">CTA Responses ({len(cta_responses)})</h2>
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Date</th><th style="padding:6px 10px;text-align:left">Response</th></tr>
+            {cta_rows}
+        </table>'''
+
     # Task nagging section — filter admin tasks out of team email
     tasks = insights.get("tasks", [])
     open_tasks = [t for t in tasks if t["status"] in ("open", "in_progress") and t.get("project") not in ADMIN_PROJECTS]
@@ -392,6 +513,9 @@ def format_email_html(insights: dict) -> str:
             <tr><td style="padding:6px 10px">Published Snaps</td><td style="padding:6px 10px;font-weight:bold">{ss['total_snaps']}</td></tr>
         </table>
 
+        <!-- SNAP PERFORMANCE -->
+        {snap_perf_html}
+
         <!-- TRAINING COURSES -->
         {"" if not insights.get("course_completed") and not insights.get("course_in_progress") else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Training Course Progress</h2>
         <table style="width:100%;border-collapse:collapse;font-size:13px">
@@ -424,11 +548,7 @@ def format_email_html(insights: dict) -> str:
         </table>
 
         <!-- CTA RESPONSES -->
-        {"" if not insights.get("cta_responses") else f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">CTA Responses ({len(insights["cta_responses"])})</h2>
-        <table style="width:100%;border-collapse:collapse;font-size:13px">
-            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px;text-align:left">Response</th></tr>
-            {"".join(f'<tr><td style="padding:5px 10px;border-bottom:1px solid #eee">{r.get("employee","?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee">{r.get("retailer","?")}</td><td style="padding:5px 10px;border-bottom:1px solid #eee">{str(r.get("response","")).replace(chr(10)," ").strip()[:120]}</td></tr>' for r in insights["cta_responses"])}
-        </table>'''}
+        {cta_section}
 
         <div style="margin-top:30px;padding-top:15px;border-top:1px solid #eee;color:#888;font-size:11px">
             Atomic Fungi Daily Intel — Generated automatically from Sparkplug, HubSpot, and Gmail data

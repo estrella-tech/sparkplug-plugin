@@ -196,13 +196,14 @@ class SparkplugClient:
         return data.get("count", 0)
 
     def get_all_cta_responses(self) -> list[dict]:
-        """Pull all CTA/question responses across all Snaps. Returns list of response dicts."""
+        """Pull all CTA/question responses across all Snaps. Returns list of response dicts, newest first."""
         snaps = self.get_snaps_list()
         responses = []
         for s in snaps:
             sid = s.get("storifymeSnapId", "")
             if not sid:
                 continue
+            snap_date = s.get("updatedAt", s.get("createdAt", ""))
             try:
                 rows = self.get_snap_engagement(str(sid))
                 for r in rows:
@@ -215,7 +216,10 @@ class SparkplugClient:
                             "action": r.get("Action", ""),
                             "slide": r.get("Slide", ""),
                             "response": r.get("Response", ""),
+                            "date": snap_date[:10] if snap_date else "",
                         })
             except Exception:
                 pass
+        # Sort newest first
+        responses.sort(key=lambda x: x.get("date", ""), reverse=True)
         return responses

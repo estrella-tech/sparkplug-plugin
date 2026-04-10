@@ -1,581 +1,15 @@
 {
-  "exported_at": "2026-04-10T01:58:07.266641+00:00",
+  "exported_at": "2026-04-10T02:17:54.159404+00:00",
   "data": [
     {
       "snap_name": "Atomic Fungi",
-      "snap_id": 364780,
-      "employee": "Shannon Colter",
-      "retailer": "Fine Fettle (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "aclairmont@finefettle.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 364780,
-      "employee": "Austin Edwards",
-      "retailer": "Collective Cannabis",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Anthony.ritacco@campfirecannabis.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 364780,
-      "employee": "Marylou B.",
-      "retailer": "Bud's Goods",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Tbritton@budsgoods.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 364780,
-      "employee": "Ariana Rivera",
-      "retailer": "Fine Fettle - West Springfield",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Alapointe@finefettle.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 364780,
-      "employee": "Nicole Gomes",
-      "retailer": "East Boston Cannabis",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Tito@eastbostoncannibis.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 364780,
-      "employee": "Jose Dejesus",
-      "retailer": "Redi",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Info@tryredi.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 364780,
-      "employee": "Jaime Kelly",
-      "retailer": "Honey Northampton",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "ounceclub420@gmail.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Nick OBrien",
-      "retailer": "Mayflower",
-      "action": "Story Slider Answer",
-      "slide": 2,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Kevin Tessier",
-      "retailer": "Northeast Alternatives (Retail)",
-      "action": "Story Text Question Answer",
-      "slide": 3,
-      "response": "Chuck@nealternatives.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Miguel Cabrera",
-      "retailer": "6 Bricks",
-      "action": "Story Slider Answer",
-      "slide": 2,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Melissa Pantaleo",
-      "retailer": "Kush Groove",
-      "action": "Story Slider Answer",
-      "slide": 2,
-      "response": 99
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Melissa Pantaleo",
-      "retailer": "Kush Groove",
-      "action": "Story Text Question Answer",
-      "slide": 3,
-      "response": "lindsay@kushgroove.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Yona Browne",
-      "retailer": "Diem Cannabis (MA)",
-      "action": "Story Slider Answer",
-      "slide": 2,
-      "response": 43
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Samantha Nieves",
-      "retailer": "Diem Cannabis (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 3,
-      "response": "Samantha.nieves@hellodiem.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Brittany Hicks",
-      "retailer": "Pure Oasis",
-      "action": "Story Slider Answer",
-      "slide": 2,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Brittany Hicks",
-      "retailer": "Pure Oasis",
-      "action": "Story Text Question Answer",
-      "slide": 3,
-      "response": "Karim@pureoasis.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 367779,
-      "employee": "Paul Kenney",
-      "retailer": "Garden Remedies (Retail)",
-      "action": "Story Slider Answer",
-      "slide": 2,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "DREW CRONIN",
-      "retailer": "Fine Fettle - West Springfield",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Dcronin@finefettle.com\nFine Fettle\n175 Memorial Ave\nWest Springfield, MA\n01089"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Megan McCann",
-      "retailer": "Green Meadows (Retail)",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Mmccann@greenmeadows.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Johnathan Anderson",
-      "retailer": "Northeast Alternatives (Retail)",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "masterjackanderson@gmail.com Northeast Alternatives Seekonk at 1903 Fall River Avenue in Seekonk Massachusetts. Thank you so much!"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Rudy Barillas",
-      "retailer": "Brockton Green Heart",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Rudybarillas94@gmail.com\nGreen heart in Brockton "
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Amy White",
-      "retailer": "Diem Cannabis (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Amy.white@hellodiem.com. 74 Grafton Street, Worcester MA 01604"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Amy White",
-      "retailer": "Diem Cannabis (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Amy.white@hellodiem.com\n74 Grafton Street\nWorcester, MA \n01604"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Andrew Racine",
-      "retailer": "Kapha",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "racineandrew5@gmail.com\nKapha\n439pittsfield rd\nLenox, MA 01240"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Victoria Fleming",
-      "retailer": "Health Circle",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "darkpixie2488@gmail.com \n120 Enterprise Drive \nMarshfield, MA 02050"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Samantha Nieves",
-      "retailer": "Diem Cannabis (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Samantha.nieves@hellodiem.com\n211 Lewis st \nLynn mass 01902"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "joanne cardone",
-      "retailer": "Kush Groove",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Joanne@kushgroove.com\nKush groove \n912 crescent st \nBrockton ma "
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "James Gumataota",
-      "retailer": "New Dia Co (retail)",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "gumataotaojames@gmail.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Jake Guillotte",
-      "retailer": "Cannabis Connection",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Jaguillotte@ccofwestfield.com\nCannabis Connection of Westfield "
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Melissa Flores",
-      "retailer": "CommCan",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Melissa.flores0@outlook.com"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Kimberly Portillo Rodriguez",
-      "retailer": "",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Kimberlyr319@gmail.com\n430 Blue Hill Ave, Boston, MA 02121"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Jaime Kelly",
-      "retailer": "Honey Northampton",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "jaimeleekelly13@gmail.com \n17 East Street, Easthampton, MA 01027"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Nicholas Silva",
-      "retailer": "The Heritage Club",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Nick Silva\n116 Cambridge St. Boston MA 02129"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 391041,
-      "employee": "Jocelyn Arienti",
-      "retailer": "Potency",
-      "action": "Story Text Question Answer",
-      "slide": 2,
-      "response": "Jocelyn Arienti \nPotency at 1450 east st suite 1, Pittsfield MA 01201"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Amy White",
-      "retailer": "Diem Cannabis (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Zack Varner",
-      "retailer": "Enlite",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Jacob Mazza",
-      "retailer": "Northeast Alternatives (Retail)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in "
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Giovanni Morel",
-      "retailer": "Nova Farms (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "im in\n"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Bradys Diaz",
-      "retailer": "Diem Cannabis (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I'm in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Ashely Descartes",
-      "retailer": "Deezle Cannabis",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in\n"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Melissa Flores",
-      "retailer": "CommCan",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "IM IN "
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Johnathan Anderson",
-      "retailer": "Northeast Alternatives (Retail)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "IM IN"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Justin Candeias",
-      "retailer": "Zahara Cannabis",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "i'm in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Samantha Pelletier",
-      "retailer": "Northeast Alternatives (Retail)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I'm in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Jacob Swenson",
-      "retailer": "Northeast Alternatives (Retail)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I'm in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Justin Gabriel",
-      "retailer": "ZAZA Green",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "i\u2019m in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Johnny Mahan",
-      "retailer": "Bud's Goods",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in Abington "
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Yves Bellame",
-      "retailer": "Kush Groove",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I'm in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Ramon S",
-      "retailer": "Health Circle",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "IM IN"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Marylou B.",
-      "retailer": "Bud's Goods",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "Im in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Yona Browne",
-      "retailer": "Diem Cannabis (MA)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Edwin Vega",
-      "retailer": "Embr - MA",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "Im in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Rebecca Lewis",
-      "retailer": "Fine Fettle - West Springfield",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Megan McCann",
-      "retailer": "Green Meadows (Retail)",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Brittany Perry",
-      "retailer": "CANA Craft Cannabis",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I\u2019m in "
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Kyle Hewes",
-      "retailer": "Rolling Js",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "I'm in "
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 399070,
-      "employee": "Andrew Racine",
-      "retailer": "Kapha",
-      "action": "Story Text Question Answer",
-      "slide": 1,
-      "response": "Im in"
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 407108,
-      "employee": "Jose Dejesus",
-      "retailer": "Redi",
-      "action": "Story Slider Answer",
-      "slide": 1,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 407108,
-      "employee": "Brandon Garcia",
-      "retailer": "AYR Wellness (Retail - MA)",
-      "action": "Story Slider Answer",
-      "slide": 1,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 407108,
-      "employee": "Tabitha Eberlin",
-      "retailer": "Bud Barn",
-      "action": "Story Slider Answer",
-      "slide": 1,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 408691,
-      "employee": "Rebecca Heroux",
-      "retailer": "Apotho Therapeutics",
-      "action": "Story Slider Answer",
-      "slide": 1,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 408691,
-      "employee": "Steven Misitano",
-      "retailer": "Mayflower",
-      "action": "Story Slider Answer",
-      "slide": 1,
-      "response": 100
-    },
-    {
-      "snap_name": "Atomic Fungi",
-      "snap_id": 408691,
-      "employee": "Johnathan Anderson",
-      "retailer": "Northeast Alternatives (Retail)",
-      "action": "Story Slider Answer",
-      "slide": 1,
-      "response": 96
-    },
-    {
-      "snap_name": "Atomic Fungi",
       "snap_id": 414178,
       "employee": "Johnathan Anderson",
       "retailer": "Northeast Alternatives (Retail)",
       "action": "Story Text Question Answer",
       "slide": 1,
-      "response": "masterjackanderson@gmail.com"
+      "response": "masterjackanderson@gmail.com",
+      "date": "2026-04-06"
     },
     {
       "snap_name": "Atomic Fungi",
@@ -584,7 +18,8 @@
       "retailer": "Kush Groove",
       "action": "Story Text Question Answer",
       "slide": 1,
-      "response": "Yves@kushgroove.com"
+      "response": "Yves@kushgroove.com",
+      "date": "2026-04-06"
     },
     {
       "snap_name": "Atomic Fungi",
@@ -593,7 +28,8 @@
       "retailer": "CommCan",
       "action": "Story Text Question Answer",
       "slide": 1,
-      "response": "Cwtrudell4@yahoo.com"
+      "response": "Cwtrudell4@yahoo.com",
+      "date": "2026-04-06"
     },
     {
       "snap_name": "Atomic Fungi",
@@ -602,7 +38,8 @@
       "retailer": "Kush Groove",
       "action": "Story Text Question Answer",
       "slide": 1,
-      "response": "jcardone77@gmail.com"
+      "response": "jcardone77@gmail.com",
+      "date": "2026-04-06"
     },
     {
       "snap_name": "Atomic Fungi",
@@ -611,7 +48,638 @@
       "retailer": "Fine Fettle - West Springfield",
       "action": "Story Text Question Answer",
       "slide": 1,
-      "response": "Rglewis731@icloud.com"
+      "response": "Rglewis731@icloud.com",
+      "date": "2026-04-06"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 408691,
+      "employee": "Rebecca Heroux",
+      "retailer": "Apotho Therapeutics",
+      "action": "Story Slider Answer",
+      "slide": 1,
+      "response": 100,
+      "date": "2026-03-28"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 408691,
+      "employee": "Steven Misitano",
+      "retailer": "Mayflower",
+      "action": "Story Slider Answer",
+      "slide": 1,
+      "response": 100,
+      "date": "2026-03-28"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 408691,
+      "employee": "Johnathan Anderson",
+      "retailer": "Northeast Alternatives (Retail)",
+      "action": "Story Slider Answer",
+      "slide": 1,
+      "response": 96,
+      "date": "2026-03-28"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 407108,
+      "employee": "Jose Dejesus",
+      "retailer": "Redi",
+      "action": "Story Slider Answer",
+      "slide": 1,
+      "response": 100,
+      "date": "2026-03-27"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 407108,
+      "employee": "Brandon Garcia",
+      "retailer": "AYR Wellness (Retail - MA)",
+      "action": "Story Slider Answer",
+      "slide": 1,
+      "response": 100,
+      "date": "2026-03-27"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 407108,
+      "employee": "Tabitha Eberlin",
+      "retailer": "Bud Barn",
+      "action": "Story Slider Answer",
+      "slide": 1,
+      "response": 100,
+      "date": "2026-03-27"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Amy White",
+      "retailer": "Diem Cannabis (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Zack Varner",
+      "retailer": "Enlite",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Jacob Mazza",
+      "retailer": "Northeast Alternatives (Retail)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in ",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Giovanni Morel",
+      "retailer": "Nova Farms (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "im in\n",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Bradys Diaz",
+      "retailer": "Diem Cannabis (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I'm in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Ashely Descartes",
+      "retailer": "Deezle Cannabis",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in\n",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Melissa Flores",
+      "retailer": "CommCan",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "IM IN ",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Johnathan Anderson",
+      "retailer": "Northeast Alternatives (Retail)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "IM IN",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Justin Candeias",
+      "retailer": "Zahara Cannabis",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "i'm in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Samantha Pelletier",
+      "retailer": "Northeast Alternatives (Retail)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I'm in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Jacob Swenson",
+      "retailer": "Northeast Alternatives (Retail)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I'm in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Justin Gabriel",
+      "retailer": "ZAZA Green",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "i\u2019m in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Johnny Mahan",
+      "retailer": "Bud's Goods",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in Abington ",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Yves Bellame",
+      "retailer": "Kush Groove",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I'm in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Ramon S",
+      "retailer": "Health Circle",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "IM IN",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Marylou B.",
+      "retailer": "Bud's Goods",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "Im in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Yona Browne",
+      "retailer": "Diem Cannabis (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Edwin Vega",
+      "retailer": "Embr - MA",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "Im in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Rebecca Lewis",
+      "retailer": "Fine Fettle - West Springfield",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Megan McCann",
+      "retailer": "Green Meadows (Retail)",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Brittany Perry",
+      "retailer": "CANA Craft Cannabis",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I\u2019m in ",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Kyle Hewes",
+      "retailer": "Rolling Js",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "I'm in ",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 399070,
+      "employee": "Andrew Racine",
+      "retailer": "Kapha",
+      "action": "Story Text Question Answer",
+      "slide": 1,
+      "response": "Im in",
+      "date": "2026-03-24"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 364780,
+      "employee": "Shannon Colter",
+      "retailer": "Fine Fettle (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "aclairmont@finefettle.com",
+      "date": "2026-03-18"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 364780,
+      "employee": "Austin Edwards",
+      "retailer": "Collective Cannabis",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Anthony.ritacco@campfirecannabis.com",
+      "date": "2026-03-18"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 364780,
+      "employee": "Marylou B.",
+      "retailer": "Bud's Goods",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Tbritton@budsgoods.com",
+      "date": "2026-03-18"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 364780,
+      "employee": "Ariana Rivera",
+      "retailer": "Fine Fettle - West Springfield",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Alapointe@finefettle.com",
+      "date": "2026-03-18"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 364780,
+      "employee": "Nicole Gomes",
+      "retailer": "East Boston Cannabis",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Tito@eastbostoncannibis.com",
+      "date": "2026-03-18"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 364780,
+      "employee": "Jose Dejesus",
+      "retailer": "Redi",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Info@tryredi.com",
+      "date": "2026-03-18"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 364780,
+      "employee": "Jaime Kelly",
+      "retailer": "Honey Northampton",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "ounceclub420@gmail.com",
+      "date": "2026-03-18"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "DREW CRONIN",
+      "retailer": "Fine Fettle - West Springfield",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Dcronin@finefettle.com\nFine Fettle\n175 Memorial Ave\nWest Springfield, MA\n01089",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Megan McCann",
+      "retailer": "Green Meadows (Retail)",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Mmccann@greenmeadows.com",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Johnathan Anderson",
+      "retailer": "Northeast Alternatives (Retail)",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "masterjackanderson@gmail.com Northeast Alternatives Seekonk at 1903 Fall River Avenue in Seekonk Massachusetts. Thank you so much!",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Rudy Barillas",
+      "retailer": "Brockton Green Heart",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Rudybarillas94@gmail.com\nGreen heart in Brockton ",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Amy White",
+      "retailer": "Diem Cannabis (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Amy.white@hellodiem.com. 74 Grafton Street, Worcester MA 01604",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Amy White",
+      "retailer": "Diem Cannabis (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Amy.white@hellodiem.com\n74 Grafton Street\nWorcester, MA \n01604",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Andrew Racine",
+      "retailer": "Kapha",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "racineandrew5@gmail.com\nKapha\n439pittsfield rd\nLenox, MA 01240",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Victoria Fleming",
+      "retailer": "Health Circle",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "darkpixie2488@gmail.com \n120 Enterprise Drive \nMarshfield, MA 02050",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Samantha Nieves",
+      "retailer": "Diem Cannabis (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Samantha.nieves@hellodiem.com\n211 Lewis st \nLynn mass 01902",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "joanne cardone",
+      "retailer": "Kush Groove",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Joanne@kushgroove.com\nKush groove \n912 crescent st \nBrockton ma ",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "James Gumataota",
+      "retailer": "New Dia Co (retail)",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "gumataotaojames@gmail.com",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Jake Guillotte",
+      "retailer": "Cannabis Connection",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Jaguillotte@ccofwestfield.com\nCannabis Connection of Westfield ",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Melissa Flores",
+      "retailer": "CommCan",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Melissa.flores0@outlook.com",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Kimberly Portillo Rodriguez",
+      "retailer": "",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Kimberlyr319@gmail.com\n430 Blue Hill Ave, Boston, MA 02121",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Jaime Kelly",
+      "retailer": "Honey Northampton",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "jaimeleekelly13@gmail.com \n17 East Street, Easthampton, MA 01027",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Nicholas Silva",
+      "retailer": "The Heritage Club",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Nick Silva\n116 Cambridge St. Boston MA 02129",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 391041,
+      "employee": "Jocelyn Arienti",
+      "retailer": "Potency",
+      "action": "Story Text Question Answer",
+      "slide": 2,
+      "response": "Jocelyn Arienti \nPotency at 1450 east st suite 1, Pittsfield MA 01201",
+      "date": "2026-03-11"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Nick OBrien",
+      "retailer": "Mayflower",
+      "action": "Story Slider Answer",
+      "slide": 2,
+      "response": 100,
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Kevin Tessier",
+      "retailer": "Northeast Alternatives (Retail)",
+      "action": "Story Text Question Answer",
+      "slide": 3,
+      "response": "Chuck@nealternatives.com",
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Miguel Cabrera",
+      "retailer": "6 Bricks",
+      "action": "Story Slider Answer",
+      "slide": 2,
+      "response": 100,
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Melissa Pantaleo",
+      "retailer": "Kush Groove",
+      "action": "Story Slider Answer",
+      "slide": 2,
+      "response": 99,
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Melissa Pantaleo",
+      "retailer": "Kush Groove",
+      "action": "Story Text Question Answer",
+      "slide": 3,
+      "response": "lindsay@kushgroove.com",
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Yona Browne",
+      "retailer": "Diem Cannabis (MA)",
+      "action": "Story Slider Answer",
+      "slide": 2,
+      "response": 43,
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Samantha Nieves",
+      "retailer": "Diem Cannabis (MA)",
+      "action": "Story Text Question Answer",
+      "slide": 3,
+      "response": "Samantha.nieves@hellodiem.com",
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Brittany Hicks",
+      "retailer": "Pure Oasis",
+      "action": "Story Slider Answer",
+      "slide": 2,
+      "response": 100,
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Brittany Hicks",
+      "retailer": "Pure Oasis",
+      "action": "Story Text Question Answer",
+      "slide": 3,
+      "response": "Karim@pureoasis.com",
+      "date": "2026-02-03"
+    },
+    {
+      "snap_name": "Atomic Fungi",
+      "snap_id": 367779,
+      "employee": "Paul Kenney",
+      "retailer": "Garden Remedies (Retail)",
+      "action": "Story Slider Answer",
+      "slide": 2,
+      "response": 100,
+      "date": "2026-02-03"
     }
   ]
 }
