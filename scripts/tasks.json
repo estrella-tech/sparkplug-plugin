@@ -12,9 +12,10 @@
       "project": "label_redesign",
       "title": "Read D'Avon's inspection report (page 8 violations)",
       "priority": "critical",
-      "status": "open",
+      "status": "done",
       "due": "2026-04-10",
       "created": "2026-04-09",
+      "completed": "2026-04-22",
       "last_nagged": null,
       "nag_count": 0,
       "notes": "Attachment: Atomic Fungi NL GMP 2026.pdf. Plan of Correction was due Mar 27 — OVERDUE."
@@ -72,12 +73,13 @@
       "project": "label_redesign",
       "title": "Submit Plan of Correction form to D'Avon with before/after photos",
       "priority": "critical",
-      "status": "open",
+      "status": "done",
       "due": "2026-04-15",
       "created": "2026-04-09",
+      "completed": "2026-04-22",
       "last_nagged": null,
       "nag_count": 0,
-      "notes": "Use the Plan of Correction (Rev 3-15-17).docx template D'Avon attached. ALREADY OVERDUE from Mar 27."
+      "notes": "Submitted April 22 — confirmed in sent box."
     },
     {
       "id": "label-07",

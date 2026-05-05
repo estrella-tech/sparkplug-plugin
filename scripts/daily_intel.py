@@ -392,7 +392,7 @@ def format_marketing_chat(insights: dict) -> str:
 def format_email_html(insights: dict) -> str:
     date = insights["date"]
 
-    # Pipeline rows
+    # Pipeline rows (no revenue figures)
     stage_order = ["Hot Lead", "Contacted", "Sampled", "Tasting Done", "Verbal Commitment", "First Order Placed", "Closed Won", "Closed Lost"]
     pipeline_rows = ""
     for stage in stage_order:
@@ -400,7 +400,7 @@ def format_email_html(insights: dict) -> str:
         if info["count"] == 0:
             continue
         color = "#27ae60" if stage == "Closed Won" else "#e74c3c" if stage == "Closed Lost" else "#333"
-        pipeline_rows += f'<tr><td style="padding:6px 10px;border-bottom:1px solid #eee;color:{color}">{stage}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:center">{info["count"]}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right">${info["value"]:,.2f}</td></tr>'
+        pipeline_rows += f'<tr><td style="padding:6px 10px;border-bottom:1px solid #eee;color:{color}">{stage}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:center">{info["count"]}</td></tr>'
 
     # Sales rows
     sales_rows = ""
@@ -444,14 +444,14 @@ def format_email_html(insights: dict) -> str:
         sp_rows = ""
         for s in insights["snap_performance"]:
             thumb = s.get("thumbnail", "")
-            date = s.get("date", "")
+            snap_date = s.get("date", "")
             pages = s.get("pages", "")
             views = s["views"]
             completions = s["completions"]
             ctas = s["ctas"]
             rate = f"{completions/views*100:.0f}%" if views > 0 else "—"
             thumb_html = f'<img src="{thumb}" width="50" height="65" style="border-radius:4px;vertical-align:middle;margin-right:8px">' if thumb else ""
-            label = f'{thumb_html}<span style="font-size:12px;color:#666">{date} ({pages}p)</span>'
+            label = f'{thumb_html}<span style="font-size:12px;color:#666">{snap_date} ({pages}p)</span>'
             sp_rows += f'<tr><td style="padding:5px 10px;border-bottom:1px solid #eee">{label}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{views}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{completions}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{ctas}</td><td style="padding:5px 10px;border-bottom:1px solid #eee;text-align:center">{rate}</td></tr>'
         snap_perf_html = f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Snap Performance</h2>
         <table style="width:100%;border-collapse:collapse;font-size:13px">
@@ -504,9 +504,9 @@ def format_email_html(insights: dict) -> str:
             cta_rows += f'<tr style="background:#f0f7f4"><td colspan="3" style="padding:8px 10px;font-weight:bold;border-bottom:1px solid #ddd">{retailer}{hs_badge}</td></tr>'
 
             for r in responses:
-                date = r.get("date", "")
+                cta_date = r.get("date", "")
                 resp_text = str(r.get("response", "")).replace("\n", " ").strip()[:120]
-                cta_rows += f'<tr><td style="padding:4px 10px 4px 20px;border-bottom:1px solid #eee;font-size:12px">{r.get("employee","?")}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-size:12px">{date}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-size:12px">{resp_text}</td></tr>'
+                cta_rows += f'<tr><td style="padding:4px 10px 4px 20px;border-bottom:1px solid #eee;font-size:12px">{r.get("employee","?")}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-size:12px">{cta_date}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-size:12px">{resp_text}</td></tr>'
 
         cta_section = f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">CTA Responses ({len(cta_responses)})</h2>
         <table style="width:100%;border-collapse:collapse;font-size:13px">
@@ -551,7 +551,7 @@ def format_email_html(insights: dict) -> str:
     <div style="background:#1a3c2e;padding:24px 20px;border-radius:8px 8px 0 0">
         <h1 style="color:#c8a45a;margin:0;font-size:22px">AF Daily Intel</h1>
         <p style="color:#ffffff;margin:5px 0 0 0;font-size:14px">{date}</p>
-        <p style="color:#c8a45a;margin:8px 0 0 0;font-size:16px;font-weight:bold">${insights['hs_closed_won']:,.0f} Closed Won &nbsp;|&nbsp; {insights['hs_total_deals']} Deals in Pipeline</p>
+        <p style="color:#c8a45a;margin:8px 0 0 0;font-size:16px;font-weight:bold">{insights['hs_total_deals']} Deals in Pipeline</p>
     </div>
 
     <div style="background:#ffffff;padding:24px 20px;border-radius:0 0 8px 8px">
@@ -596,9 +596,9 @@ def format_email_html(insights: dict) -> str:
         <!-- DEAL PIPELINE -->
         <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Deal Pipeline</h2>
         <table style="width:100%;border-collapse:collapse">
-            <tr style="background:#f8f8f8"><th style="padding:8px 10px;text-align:left">Stage</th><th style="padding:8px 10px;text-align:center">Deals</th><th style="padding:8px 10px;text-align:right">Value</th></tr>
+            <tr style="background:#f8f8f8"><th style="padding:8px 10px;text-align:left">Stage</th><th style="padding:8px 10px;text-align:center">Deals</th></tr>
             {pipeline_rows}
-            <tr style="background:#1a3c2e;color:#ffffff"><td style="padding:8px 10px;font-weight:bold">Total</td><td style="padding:8px 10px;text-align:center;font-weight:bold">{insights['hs_total_deals']}</td><td style="padding:8px 10px;text-align:right;font-weight:bold">${insights['hs_total_value']:,.2f}</td></tr>
+            <tr style="background:#1a3c2e;color:#ffffff"><td style="padding:8px 10px;font-weight:bold">Total</td><td style="padding:8px 10px;text-align:center;font-weight:bold">{insights['hs_total_deals']}</td></tr>
         </table>
 
         <!-- CTA RESPONSES -->
@@ -739,7 +739,7 @@ def main():
     # Step 5: Team email (no admin tasks)
     if not chat_only:
         print("[5/7] Sending team email...")
-        subject = f"AF Daily Intel — {insights['date']} | ${insights['hs_closed_won']:,.0f} Closed Won | {insights['hs_total_deals']} Deals"
+        subject = f"AF Daily Intel — {insights['date']} | {insights['hs_total_deals']} Deals in Pipeline"
         html = format_email_html(insights)
         send_email_func(subject, html, RECIPIENTS, dry_run=dry_run)
 
