@@ -13,6 +13,22 @@ BASE_URL = "https://api-server-production.sparkplug-technology.io/api/v1"
 VENDOR_GROUP_ID = "691270b4e489475b3f933902"
 
 
+class _TokenExpiredError(Exception):
+    pass
+
+
+def _auto_refresh_token() -> bool:
+    """Call the token refresh agent. Returns True if a new token was saved."""
+    import subprocess
+    import sys
+    refresh_script = Path(__file__).parent.parent / "scripts" / "refresh_sparkplug_token.py"
+    if not refresh_script.exists():
+        return False
+    print("  [401] Token expired — attempting auto-refresh...")
+    result = subprocess.run([sys.executable, str(refresh_script)], capture_output=False)
+    return result.returncode == 0
+
+
 class SparkplugClient:
     """HTTP client for the Sparkplug internal API."""
 
@@ -80,23 +96,37 @@ class SparkplugClient:
     def _handle_response(self, resp: requests.Response) -> dict:
         if resp.status_code == 401:
             self._token = None  # Clear cached token
-            raise RuntimeError(
-                "Sparkplug API returned 401 Unauthorized — JWT token may be expired. "
-                "Re-extract from browser: DevTools → Application → Local Storage → my.sparkplug.app → token, "
-                "then save to ~/.sparkplug/sparkplug.json"
-            )
+            raise _TokenExpiredError()
         resp.raise_for_status()
         return resp.json()
 
     def _get(self, path: str, params: dict = None) -> dict:
         session = self._get_session()
-        resp = session.get(f"{BASE_URL}{path}", headers=self.headers, params=params, timeout=30)
-        return self._handle_response(resp)
+        try:
+            resp = session.get(f"{BASE_URL}{path}", headers=self.headers, params=params, timeout=30)
+            return self._handle_response(resp)
+        except _TokenExpiredError:
+            if _auto_refresh_token():
+                resp = session.get(f"{BASE_URL}{path}", headers=self.headers, params=params, timeout=30)
+                return self._handle_response(resp)
+            raise RuntimeError(
+                "Sparkplug API returned 401 — token expired and auto-refresh failed. "
+                "Run: python scripts/refresh_sparkplug_token.py --setup"
+            )
 
     def _post(self, path: str, body: dict) -> dict:
         session = self._get_session()
-        resp = session.post(f"{BASE_URL}{path}", headers=self.headers, json=body, timeout=30)
-        return self._handle_response(resp)
+        try:
+            resp = session.post(f"{BASE_URL}{path}", headers=self.headers, json=body, timeout=30)
+            return self._handle_response(resp)
+        except _TokenExpiredError:
+            if _auto_refresh_token():
+                resp = session.post(f"{BASE_URL}{path}", headers=self.headers, json=body, timeout=30)
+                return self._handle_response(resp)
+            raise RuntimeError(
+                "Sparkplug API returned 401 — token expired and auto-refresh failed. "
+                "Run: python scripts/refresh_sparkplug_token.py --setup"
+            )
 
     # ─── Core API methods ─────────────────────────────────────────────────────
 
