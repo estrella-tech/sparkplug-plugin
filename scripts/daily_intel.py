@@ -338,15 +338,7 @@ def analyze_data() -> dict:
 
 
 def format_crm_chat(insights: dict) -> str:
-    lines = [f"*AF CRM Update — {insights['date_short']}*", ""]
-
-    # Pipeline
-    if insights["hs_total_deals"]:
-        lines.append(f"Pipeline: {insights['hs_total_deals']} deals | ${insights['hs_closed_won']:,.0f} closed won")
-        for stage, info in insights["hs_pipeline"].items():
-            if info["count"] > 0 and stage not in ("Closed Won", "Closed Lost"):
-                lines.append(f"  {stage}: {info['count']} (${info['value']:,.0f})")
-        lines.append("")
+    lines = [f"*AF Snap Sales — {insights['date_short']}*", ""]
 
     # Sales
     for rname, periods in insights["sales_by_retailer"].items():
@@ -391,16 +383,6 @@ def format_marketing_chat(insights: dict) -> str:
 
 def format_email_html(insights: dict) -> str:
     date = insights["date"]
-
-    # Pipeline rows (no revenue figures)
-    stage_order = ["Hot Lead", "Contacted", "Sampled", "Tasting Done", "Verbal Commitment", "First Order Placed", "Closed Won", "Closed Lost"]
-    pipeline_rows = ""
-    for stage in stage_order:
-        info = insights["hs_pipeline"].get(stage, {"count": 0, "value": 0})
-        if info["count"] == 0:
-            continue
-        color = "#27ae60" if stage == "Closed Won" else "#e74c3c" if stage == "Closed Lost" else "#333"
-        pipeline_rows += f'<tr><td style="padding:6px 10px;border-bottom:1px solid #eee;color:{color}">{stage}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:center">{info["count"]}</td></tr>'
 
     # Sales rows
     sales_rows = ""
@@ -551,7 +533,7 @@ def format_email_html(insights: dict) -> str:
     <div style="background:#1a3c2e;padding:24px 20px;border-radius:8px 8px 0 0">
         <h1 style="color:#c8a45a;margin:0;font-size:22px">AF Daily Intel</h1>
         <p style="color:#ffffff;margin:5px 0 0 0;font-size:14px">{date}</p>
-        <p style="color:#c8a45a;margin:8px 0 0 0;font-size:16px;font-weight:bold">{insights['hs_total_deals']} Deals in Pipeline</p>
+        <p style="color:#c8a45a;margin:8px 0 0 0;font-size:16px;font-weight:bold">{insights['snap_stats']['total_interactions']} Total Snap Interactions</p>
     </div>
 
     <div style="background:#ffffff;padding:24px 20px;border-radius:0 0 8px 8px">
@@ -592,14 +574,6 @@ def format_email_html(insights: dict) -> str:
             <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px">Rank</th><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px;text-align:center">Views</th><th style="padding:6px 10px;text-align:center">Completions</th><th style="padding:6px 10px;text-align:center">CTAs</th><th style="padding:6px 10px;text-align:center">Rate</th></tr>
             {leaderboard_rows}
         </table>'''}
-
-        <!-- DEAL PIPELINE -->
-        <h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Deal Pipeline</h2>
-        <table style="width:100%;border-collapse:collapse">
-            <tr style="background:#f8f8f8"><th style="padding:8px 10px;text-align:left">Stage</th><th style="padding:8px 10px;text-align:center">Deals</th></tr>
-            {pipeline_rows}
-            <tr style="background:#1a3c2e;color:#ffffff"><td style="padding:8px 10px;font-weight:bold">Total</td><td style="padding:8px 10px;text-align:center;font-weight:bold">{insights['hs_total_deals']}</td></tr>
-        </table>
 
         <!-- CTA RESPONSES -->
         {cta_section}
@@ -742,7 +716,7 @@ def main():
     # Step 5: Team email (no admin tasks)
     if not chat_only:
         print("[5/7] Sending team email...")
-        subject = f"AF Daily Intel — {insights['date']} | {insights['hs_total_deals']} Deals in Pipeline"
+        subject = f"AF Daily Intel — {insights['date']}"
         html = format_email_html(insights)
         send_email_func(subject, html, RECIPIENTS, dry_run=dry_run)
 
