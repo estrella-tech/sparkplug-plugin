@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "servers"))
 PROJECT_ROOT = Path(__file__).parent.parent
 EXPORTS_DIR = PROJECT_ROOT / "exports"
 WEBHOOKS_PATH = PROJECT_ROOT / "config" / "webhooks.json"
-RECIPIENTS = ["giovanni@atomicfungi.com", "jared@atomicfungi.com", "katrinalindseyjones@gmail.com"]
+RECIPIENTS = ["giovanni@atomicfungi.com", "jared@atomicfungi.com", "katrinalindseyjones@gmail.com", "support@atomicfungi.com", "sima.kurepa@sparkplug.app", "sara.berthiaume@sparkplug.app"]
 ADMIN_RECIPIENTS = ["giovanni@atomicfungi.com", "jakyla@atomicfungi.com"]
 ADMIN_CC = ["support@atomicfungi.com"]
 ADMIN_PROJECTS = {"label_redesign"}  # Task nags for these projects go to admin only
