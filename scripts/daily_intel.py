@@ -496,6 +496,32 @@ def format_email_html(insights: dict) -> str:
             {cta_rows}
         </table>'''
 
+    # Email Captures — filter CTA responses that look like email addresses
+    import re as _re
+    _email_re = _re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
+    all_cta = insights.get("cta_responses", [])
+    email_captures = [r for r in all_cta if _email_re.match(str(r.get("response", "")).strip())]
+    email_section = ""
+    if email_captures:
+        # Group by retailer, sort each group newest first
+        by_retailer_email = {}
+        for r in sorted(email_captures, key=lambda x: x.get("date", ""), reverse=True):
+            retailer = r.get("retailer", "Unknown")
+            by_retailer_email.setdefault(retailer, []).append(r)
+
+        email_rows = ""
+        for retailer, responses in by_retailer_email.items():
+            email_rows += f'<tr style="background:#f0f7f4"><td colspan="3" style="padding:8px 10px;font-weight:bold;border-bottom:1px solid #ddd">{retailer}</td></tr>'
+            for r in responses:
+                email_rows += f'<tr><td style="padding:4px 10px 4px 20px;border-bottom:1px solid #eee;font-size:12px">{r.get("employee","?")}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-size:12px;color:#888">{r.get("date","")}</td><td style="padding:4px 10px;border-bottom:1px solid #eee;font-size:12px"><a href="mailto:{r.get("response","")}" style="color:#1a3c2e">{r.get("response","")}</a></td></tr>'
+
+        email_section = f'''<h2 style="color:#1a3c2e;border-bottom:2px solid #c8a45a;padding-bottom:8px;margin-top:30px">Email Captures ({len(email_captures)})</h2>
+        <p style="font-size:12px;color:#888;margin-top:-5px;margin-bottom:10px">All budtender emails submitted via Snap CTAs — newest first</p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px">
+            <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Date</th><th style="padding:6px 10px;text-align:left">Email</th></tr>
+            {email_rows}
+        </table>'''
+
     # Task nagging section — filter admin tasks out of team email
     tasks = insights.get("tasks", [])
     open_tasks = [t for t in tasks if t["status"] in ("open", "in_progress") and t.get("project") not in ADMIN_PROJECTS]
@@ -574,6 +600,9 @@ def format_email_html(insights: dict) -> str:
             <tr style="background:#1a3c2e;color:#ffffff"><th style="padding:6px 10px">Rank</th><th style="padding:6px 10px;text-align:left">Budtender</th><th style="padding:6px 10px;text-align:left">Retailer</th><th style="padding:6px 10px;text-align:center">Views</th><th style="padding:6px 10px;text-align:center">Completions</th><th style="padding:6px 10px;text-align:center">CTAs</th><th style="padding:6px 10px;text-align:center">Rate</th></tr>
             {leaderboard_rows}
         </table>'''}
+
+        <!-- EMAIL CAPTURES -->
+        {email_section}
 
         <!-- CTA RESPONSES -->
         {cta_section}
