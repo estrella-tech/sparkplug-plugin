@@ -697,22 +697,8 @@ def main():
     print(f"  Action items: {len(insights['action_items'])}")
     print()
 
-    # Step 3: Google Chat
-    print("[3/7] Posting to Google Chat...")
-    if not SEND_ENABLED:
-        print("  [DISABLED] Set SEND_ENABLED = True to post to Chat")
-    else:
-        webhooks = load_webhooks()
-        chat_messages = {
-            "crm": format_crm_chat(insights),
-            "digital_marketing": format_marketing_chat(insights),
-        }
-        for key, msg in chat_messages.items():
-            if not msg:
-                print(f"  {webhooks[key]['name']}: skipped")
-                continue
-            status = post_to_chat(webhooks[key]["url"], msg)
-            print(f"  {webhooks[key]['name']}: {'sent' if status == 200 else f'FAILED ({status})'}")
+    # Step 3: Google Chat — disabled
+    print("[3/7] Google Chat: disabled")
     print()
 
     # Step 4: Calendar events for high-priority action items
