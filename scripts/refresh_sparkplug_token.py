@@ -136,8 +136,14 @@ def try_playwright(headless: bool = True) -> str | None:
             context = browser.new_context()
             page = context.new_page()
 
-            page.goto(SPARKPLUG_URL, timeout=30000)
-            page.wait_for_load_state("networkidle", timeout=15000)
+            try:
+                page.goto(SPARKPLUG_URL, wait_until="domcontentloaded", timeout=30000)
+            except Exception:
+                pass  # ERR_ABORTED is expected when auth redirects fire before load
+            try:
+                page.wait_for_load_state("networkidle", timeout=15000)
+            except Exception:
+                pass
 
             # Try to detect if already logged in
             token = _extract_token_from_storage(page, debug=not headless)
@@ -256,6 +262,20 @@ def setup_credentials():
     print("Credentials are stored locally at:")
     print(f"  {CREDENTIALS_PATH}")
     print()
+
+    # Skip prompts if credentials already exist in file
+    if CREDENTIALS_PATH.exists():
+        existing = json.loads(CREDENTIALS_PATH.read_text())
+        if existing.get("email") and existing.get("password"):
+            print(f"  Credentials already saved for {existing['email']} — skipping prompts.")
+            print("Testing login now...")
+            token = try_playwright(headless=False)
+            if token:
+                save_token(token)
+                print("\nSetup complete. Token refresh will run automatically.")
+            else:
+                print("\nSetup failed — see above for details.")
+            return
 
     email = input("Sparkplug email: ").strip()
     import getpass
