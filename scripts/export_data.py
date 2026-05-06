@@ -423,12 +423,6 @@ def run_export():
     print(f"=== Data Export — {now.strftime('%Y-%m-%d %H:%M UTC')} ===\n")
 
     export_sparkplug()
-    print()
-    export_hubspot()
-    print()
-    export_gmail_drafts()
-    print()
-    export_chat_messages()
 
     # Write manifest
     export_json("_manifest", {

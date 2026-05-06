@@ -84,25 +84,16 @@ def analyze_data() -> dict:
     budtender_export = load_export("budtender_performance")
     snaps_export = load_export("snaps")
     snap_summary = load_export("snap_engagement_summary")
-    pipeline_export = load_export("hubspot_pipeline_summary")
-    deals_export = load_export("hubspot_deals")
-    companies_export = load_export("hubspot_companies")
-    drafts_export = load_export("gmail_drafts")
     leaderboard_export = load_export("budtender_leaderboard")
-    chat_export = load_export("chat_messages")
     courses_export = load_export("course_completions")
     cta_export = load_export("cta_responses")
 
     retailers = retailers_export.get("data", [])
     sales_data = sales_export.get("data", [])
-    trends_data = trends_export.get("data", [])
     budtender_data = budtender_export.get("data", [])
     snaps = snaps_export.get("data", [])
     snap_stats_raw = snap_summary.get("data", {})
-    pipeline = pipeline_export.get("data", {})
-    all_deals = deals_export.get("data", [])
-    all_companies = companies_export.get("data", [])
-    drafts_data = drafts_export.get("data", {})
+    all_companies = []
 
     # Freshness
     export_ts = retailers_export.get("exported_at", "")
@@ -227,72 +218,7 @@ def analyze_data() -> dict:
         snap_perf[key]["pages"] = meta.get("pages", 0)
     snap_performance = sorted(snap_perf.values(), key=lambda x: x["views"] + x["completions"] + x["ctas"], reverse=True)
 
-    # --- HubSpot Pipeline ---
-    hs_pipeline = pipeline if isinstance(pipeline, dict) else {}
-    by_stage = hs_pipeline.get("by_stage", {})
-    total_deals = hs_pipeline.get("total_deals", 0)
-    closed_won_value = hs_pipeline.get("closed_won_value", 0)
-    total_pipeline_value = hs_pipeline.get("total_value", 0)
-
-    # Stale companies (not contacted in 14+ days)
-    stale_companies = []
-    for c in all_companies:
-        last = c.get("last_contacted", "")
-        name = c.get("name", "Unknown")
-        if not last:
-            if c.get("num_deals", 0) > 0:
-                stale_companies.append({"name": name, "days": "never", "deals": c.get("num_deals", 0)})
-            continue
-        try:
-            last_dt = datetime.fromisoformat(last.replace("Z", "+00:00"))
-            days_ago = (now - last_dt).days
-            if days_ago >= 14 and c.get("num_deals", 0) > 0:
-                stale_companies.append({"name": name, "days": days_ago, "deals": c.get("num_deals", 0)})
-        except Exception:
-            pass
-    stale_companies.sort(key=lambda x: x["days"] if isinstance(x["days"], int) else 999, reverse=True)
-
-    # --- Gmail Drafts ---
-    total_drafts = drafts_data.get("total_drafts", 0) if isinstance(drafts_data, dict) else 0
-    recent_drafts = drafts_data.get("recent_drafts", []) if isinstance(drafts_data, dict) else []
-
-    # --- Action Items ---
     action_items = []
-
-    # Sales-based actions
-    for rname, periods in sales_by_retailer.items():
-        s7 = periods.get("7d", 0)
-        s30 = periods.get("30d", 0)
-        if s30 == 0 and s7 == 0:
-            action_items.append({"priority": "high", "text": f"{rname} — zero sales in 30 days. Needs store visit or sample drop.", "category": "crm"})
-        elif s7 == 0 and s30 > 0:
-            action_items.append({"priority": "medium", "text": f"{rname} — no sales this week ({s30} units/30d). Check stock or budtender engagement.", "category": "crm"})
-
-    # Stale company actions
-    for sc in stale_companies[:3]:
-        days = f"{sc['days']} days" if isinstance(sc['days'], int) else "never contacted"
-        action_items.append({"priority": "high", "text": f"{sc['name']} — {days} since last contact, {sc['deals']} active deal(s). Follow up.", "category": "crm"})
-
-    # Draft count tracked but not surfaced as action item
-
-    # Snap engagement actions — only flag retailers with zero or very low engagement
-    for r in retailers:
-        rname = r.get("accountName", "unknown")
-        if snap_stats["total_interactions"] > 0 and rname.lower() not in {r.lower() for r in budtender_rankings.keys()}:
-            action_items.append({"priority": "low", "text": f"{rname} — zero Snap engagement. Check if budtenders are set up.", "category": "marketing"})
-
-    # --- Chat insights ---
-    chat_data = chat_export.get("data", {}) if isinstance(chat_export.get("data"), dict) else {}
-    store_visits = chat_data.get("store_visits", [])
-    recent_chat_messages = chat_data.get("messages", [])[-20:]  # last 20 messages
-
-    if store_visits:
-        for sv in store_visits[:3]:
-            action_items.append({
-                "priority": "high",
-                "text": f"Store visit mentioned in {sv.get('space', 'chat')}: \"{sv.get('text', '')[:80]}...\" — generate follow-up emails",
-                "category": "crm",
-            })
 
     # --- Budtender Leaderboard (from Snap engagement) ---
     leaderboard = leaderboard_export.get("data", []) if isinstance(leaderboard_export.get("data"), list) else []
@@ -315,15 +241,15 @@ def analyze_data() -> dict:
         "budtender_rankings": budtender_rankings,
         "budtender_leaderboard": leaderboard[:15],
         "snap_stats": snap_stats,
-        "hs_pipeline": by_stage,
-        "hs_total_deals": total_deals,
-        "hs_closed_won": closed_won_value,
-        "hs_total_value": total_pipeline_value,
-        "stale_companies": stale_companies,
-        "total_drafts": total_drafts,
-        "recent_drafts": recent_drafts,
-        "store_visits": store_visits,
-        "recent_chat": recent_chat_messages,
+        "hs_pipeline": {},
+        "hs_total_deals": 0,
+        "hs_closed_won": 0,
+        "hs_total_value": 0,
+        "stale_companies": [],
+        "total_drafts": 0,
+        "recent_drafts": [],
+        "store_visits": [],
+        "recent_chat": [],
         "course_completed": completed_courses,
         "course_in_progress": in_progress_courses,
         "all_companies": all_companies,
@@ -701,31 +627,8 @@ def main():
     print("[3/7] Google Chat: disabled")
     print()
 
-    # Step 4: Calendar events for high-priority action items
-    print("[4/7] Creating calendar follow-ups...")
-    high_priority = [a for a in insights["action_items"] if a["priority"] == "high" and a["category"] == "crm"]
-    if high_priority:
-        try:
-            from email_utils import create_calendar_event
-            tomorrow = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y-%m-%d")
-            for a in high_priority[:3]:  # Max 3 calendar events per day
-                text = a["text"][:80]
-                if dry_run:
-                    print(f"  [DRY RUN] Would create event: {text}")
-                else:
-                    try:
-                        event_id = create_calendar_event(
-                            summary=f"AF Follow-Up: {text}",
-                            description=f"Auto-generated by AF Daily Intel pipeline.\n\nFull action: {a['text']}",
-                            start_date=tomorrow,
-                        )
-                        print(f"  Created: {text[:50]}... ({event_id})")
-                    except Exception as e:
-                        print(f"  Failed: {text[:50]}... ({e})")
-        except ImportError:
-            print("  Calendar not available (missing email_utils)")
-    else:
-        print("  No high-priority CRM items to schedule")
+    # Step 4: Calendar — disabled
+    print("[4/7] Calendar: disabled")
     print()
 
     # Step 5: Team email (no admin tasks)
@@ -735,46 +638,8 @@ def main():
         html = format_email_html(insights)
         send_email_func(subject, html, RECIPIENTS, dry_run=dry_run)
 
-        # Step 6: Admin nag email (label redesign, kitchen, compliance)
-        admin_tasks = [t for t in insights.get("tasks", []) if t["status"] in ("open", "in_progress") and t.get("project") in ADMIN_PROJECTS]
-        if admin_tasks and SEND_ENABLED:
-            print("[6/7] Sending admin task nag email...")
-            admin_rows = ""
-            for t in sorted(admin_tasks, key=lambda x: (not x.get("overdue"), x.get("due") or "9999")):
-                if t.get("overdue"):
-                    bg = "background:#fde8e8;"
-                    badge = f'<span style="color:#e74c3c;font-weight:bold">OVERDUE ({t["days_overdue"]}d)</span>'
-                elif t["priority"] == "critical":
-                    bg = "background:#fff3cd;"
-                    badge = '<span style="color:#e67e22;font-weight:bold">CRITICAL</span>'
-                else:
-                    bg = ""
-                    badge = t["priority"].upper()
-                admin_rows += f'<tr style="{bg}"><td style="padding:6px 10px;border-bottom:1px solid #eee">{badge}</td><td style="padding:6px 10px;border-bottom:1px solid #eee">{t["title"]}</td><td style="padding:6px 10px;border-bottom:1px solid #eee">{t.get("due","")}</td></tr>'
-            overdue_admin = [t for t in admin_tasks if t.get("overdue")]
-            admin_html = f"""<!DOCTYPE html>
-<html><body style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px">
-    <div style="background:#1a3c2e;padding:20px;border-radius:8px 8px 0 0">
-        <h1 style="color:#c8a45a;margin:0;font-size:20px">AF Admin Tasks</h1>
-        <p style="color:#fff;margin:5px 0 0 0;font-size:13px">{insights['date']}</p>
-    </div>
-    <div style="background:#fff;padding:20px;border-radius:0 0 8px 8px">
-        <h2 style="color:{'#e74c3c' if overdue_admin else '#1a3c2e'};border-bottom:2px solid {'#e74c3c' if overdue_admin else '#c8a45a'};padding-bottom:8px">
-            {len(admin_tasks)} Admin Tasks{f' / {len(overdue_admin)} OVERDUE' if overdue_admin else ''}
-        </h2>
-        <table style="width:100%;border-collapse:collapse;font-size:13px">
-            <tr style="background:#f8f8f8"><th style="padding:6px 10px;text-align:left">Priority</th><th style="padding:6px 10px;text-align:left">Task</th><th style="padding:6px 10px">Due</th></tr>
-            {admin_rows}
-        </table>
-        <p style="color:#888;font-size:11px;margin-top:20px">This email is sent only to admin. Team does not see these tasks.</p>
-    </div>
-</body></html>"""
-            admin_subject = f"AF Admin Tasks — {insights['date']}{' — OVERDUE' if overdue_admin else ''}"
-            send_email_func(admin_subject, admin_html, ADMIN_RECIPIENTS, dry_run=dry_run, cc=ADMIN_CC, filename=f"admin_tasks_{datetime.now().strftime('%Y%m%d')}.html")
-        elif admin_tasks:
-            print("[6/7] Admin tasks exist but SEND_ENABLED = False — skipped")
-        else:
-            print("[6/7] No admin tasks to nag")
+        # Step 6: Admin nag — disabled
+        print("[6/7] Admin nag: disabled")
     else:
         print("[5/7] Email skipped (--chat-only)")
 
