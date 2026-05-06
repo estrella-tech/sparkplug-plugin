@@ -627,8 +627,11 @@ def send_email_func(subject: str, html_body: str, recipients: list[str], dry_run
         print(f"  Email failed — report saved at {report_path}")
 
 
+SEND_ENABLED = False  # Set to True when ready to send to team + Chat
+
+
 def main():
-    dry_run = "--dry-run" in sys.argv
+    dry_run = "--dry-run" in sys.argv or not SEND_ENABLED
     chat_only = "--chat-only" in sys.argv
 
     print(f"=== Atomic Fungi Daily Intel Pipeline ===")
@@ -693,20 +696,20 @@ def main():
 
     # Step 3: Google Chat
     print("[3/7] Posting to Google Chat...")
-    webhooks = load_webhooks()
-    chat_messages = {
-        "crm": format_crm_chat(insights),
-        "digital_marketing": format_marketing_chat(insights),
-    }
-    for key, msg in chat_messages.items():
-        if not msg:
-            print(f"  {webhooks[key]['name']}: skipped")
-            continue
-        if dry_run:
-            print(f"  {webhooks[key]['name']}: [DRY RUN] {len(msg)} chars")
-            continue
-        status = post_to_chat(webhooks[key]["url"], msg)
-        print(f"  {webhooks[key]['name']}: {'sent' if status == 200 else f'FAILED ({status})'}")
+    if not SEND_ENABLED:
+        print("  [DISABLED] Set SEND_ENABLED = True to post to Chat")
+    else:
+        webhooks = load_webhooks()
+        chat_messages = {
+            "crm": format_crm_chat(insights),
+            "digital_marketing": format_marketing_chat(insights),
+        }
+        for key, msg in chat_messages.items():
+            if not msg:
+                print(f"  {webhooks[key]['name']}: skipped")
+                continue
+            status = post_to_chat(webhooks[key]["url"], msg)
+            print(f"  {webhooks[key]['name']}: {'sent' if status == 200 else f'FAILED ({status})'}")
     print()
 
     # Step 4: Calendar events for high-priority action items
@@ -745,7 +748,7 @@ def main():
 
         # Step 6: Admin nag email (label redesign, kitchen, compliance)
         admin_tasks = [t for t in insights.get("tasks", []) if t["status"] in ("open", "in_progress") and t.get("project") in ADMIN_PROJECTS]
-        if admin_tasks:
+        if admin_tasks and SEND_ENABLED:
             print("[6/7] Sending admin task nag email...")
             admin_rows = ""
             for t in sorted(admin_tasks, key=lambda x: (not x.get("overdue"), x.get("due") or "9999")):
@@ -779,6 +782,8 @@ def main():
 </body></html>"""
             admin_subject = f"AF Admin Tasks — {insights['date']}{' — OVERDUE' if overdue_admin else ''}"
             send_email_func(admin_subject, admin_html, ADMIN_RECIPIENTS, dry_run=dry_run, cc=ADMIN_CC, filename=f"admin_tasks_{datetime.now().strftime('%Y%m%d')}.html")
+        elif admin_tasks:
+            print("[6/7] Admin tasks exist but SEND_ENABLED = False — skipped")
         else:
             print("[6/7] No admin tasks to nag")
     else:
