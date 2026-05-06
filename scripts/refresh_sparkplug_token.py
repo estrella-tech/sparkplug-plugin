@@ -140,7 +140,7 @@ def try_playwright(headless: bool = True) -> str | None:
             page.wait_for_load_state("networkidle", timeout=15000)
 
             # Try to detect if already logged in
-            token = _extract_token_from_storage(page)
+            token = _extract_token_from_storage(page, debug=not headless)
             if token:
                 browser.close()
                 return token
@@ -148,56 +148,77 @@ def try_playwright(headless: bool = True) -> str | None:
             # Fill login form — try common selectors
             _fill_login_form(page, email, password)
 
-            # Wait for redirect after login
-            page.wait_for_load_state("networkidle", timeout=20000)
+            # Wait for app to fully load after login
+            try:
+                page.wait_for_load_state("networkidle", timeout=20000)
+            except Exception:
+                pass
+            page.wait_for_timeout(3000)
 
-            # Give the app a moment to write localStorage
-            page.wait_for_timeout(2000)
+            token = _extract_token_from_storage(page, debug=not headless)
 
-            token = _extract_token_from_storage(page)
+            if not token and not headless:
+                # Print current URL to help diagnose
+                print(f"  Current URL after login: {page.url}")
+                print(f"  Page title: {page.title()}")
+
             browser.close()
 
             if token:
                 print("  Login successful, token extracted.")
             else:
-                print("  Login may have succeeded but couldn't find token in localStorage.")
-                print(f"  Try running with HEADLESS=0: HEADLESS=0 python {__file__}")
+                print("  Couldn't find token. Run with HEADLESS=0 to debug:")
+                print(f"    set HEADLESS=0 && python scripts/refresh_sparkplug_token.py --setup")
             return token
     except Exception as e:
         print(f"  Playwright error: {e}")
         return None
 
 
-def _extract_token_from_storage(page) -> str | None:
-    """Check localStorage for any JWT-shaped value."""
-    for key in TOKEN_KEYS:
+def _extract_token_from_storage(page, debug: bool = False) -> str | None:
+    """Check localStorage and sessionStorage for any JWT-shaped value."""
+
+    def _scan_storage(js_obj: str) -> str | None:
         try:
-            val = page.evaluate(f"localStorage.getItem('{key}')")
-            if val and len(str(val)) > 40:
-                clean = str(val).strip().strip('"')
-                if "." in clean:  # JWTs have dots
-                    return clean
-        except Exception:
-            pass
-    # Broader scan: grab all localStorage keys and look for anything JWT-shaped
-    try:
-        all_storage = page.evaluate("""
-            (() => {
-                const out = {};
-                for (let i = 0; i < localStorage.length; i++) {
-                    const k = localStorage.key(i);
-                    out[k] = localStorage.getItem(k);
-                }
-                return out;
-            })()
-        """)
-        for k, v in (all_storage or {}).items():
-            if v and isinstance(v, str) and len(v) > 40 and v.count(".") >= 2:
-                # Looks like a JWT (three base64 segments)
-                return v.strip().strip('"')
-    except Exception:
-        pass
-    return None
+            all_items = page.evaluate(f"""
+                (() => {{
+                    const out = {{}};
+                    for (let i = 0; i < {js_obj}.length; i++) {{
+                        const k = {js_obj}.key(i);
+                        out[k] = {js_obj}.getItem(k);
+                    }}
+                    return out;
+                }})()
+            """)
+            if debug and all_items:
+                print(f"\n  [{js_obj} keys]: {list(all_items.keys())}")
+            for k, v in (all_items or {}).items():
+                if not v or not isinstance(v, str):
+                    continue
+                # Direct JWT check (three base64 segments separated by dots)
+                candidate = v.strip().strip('"')
+                if len(candidate) > 40 and candidate.count(".") >= 2:
+                    return candidate
+                # Might be stored as JSON containing a token field
+                if v.startswith("{"):
+                    try:
+                        parsed = json.loads(v)
+                        for tk in TOKEN_KEYS:
+                            inner = parsed.get(tk, "")
+                            if inner and len(str(inner)) > 40 and "." in str(inner):
+                                return str(inner)
+                    except Exception:
+                        pass
+        except Exception as e:
+            if debug:
+                print(f"  [{js_obj} scan error]: {e}")
+        return None
+
+    token = _scan_storage("localStorage")
+    if token:
+        return token
+    token = _scan_storage("sessionStorage")
+    return token
 
 
 def _fill_login_form(page, email: str, password: str):
