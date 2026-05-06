@@ -17,6 +17,8 @@ Thumbs.db
 *.plugin
 config/sparkplug.json
 
-# Log files from outreach scripts
-exports/rewrite_log.json
-exports/followup_log.json
+# Generated exports (data files, reports)
+exports/*.html
+exports/*.csv
+exports/*.json
+exports/snapshots/
