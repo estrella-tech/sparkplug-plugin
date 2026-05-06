@@ -31,8 +31,8 @@ ELECTRON_PATHS = [
     Path.home() / "Library" / "Application Support" / "Sparkplug" / "Local Storage" / "leveldb",
 ]
 
-# Keys Sparkplug might use in localStorage
-TOKEN_KEYS = ["token", "jwt_token", "authToken", "auth_token", "accessToken", "access_token", "id_token"]
+# Keys Sparkplug might use in localStorage (confirmed: sparkplug::jwtToken)
+TOKEN_KEYS = ["sparkplug::jwtToken", "token", "jwt_token", "authToken", "auth_token", "accessToken", "access_token", "id_token"]
 
 
 def load_existing_config() -> dict:
