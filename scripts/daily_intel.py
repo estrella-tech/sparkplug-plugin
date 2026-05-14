@@ -564,7 +564,8 @@ def main():
     chat_only = "--chat-only" in sys.argv
 
     print(f"=== Atomic Fungi Daily Intel Pipeline ===")
-    print(f"Time: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n")
+    print(f"Time: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"Running from: {Path(__file__).parent.parent.resolve()}\n")
 
     # Step 0: Inbox cleanup
     print("[0/7] Cleaning inbox...")
